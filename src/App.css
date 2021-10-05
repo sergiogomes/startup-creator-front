@@ -58,3 +58,7 @@
   font-weight: bold;
   border-radius: 12px;
 }
+
+.inputEmail {
+  margin: 15px;
+}
