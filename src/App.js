@@ -37,6 +37,8 @@ const Dashboard = () => {
         respostaId : event.target.value 
       };
 
+      console.log();
+
       setRespostaAluno(respostaAluno => [...respostaAluno, resposta]);
 
 
@@ -148,7 +150,7 @@ const Dashboard = () => {
       <Jumbotron className="painel" style={{ background: '#8c6531' }}>
         <h1 className="pergunta">Informe o email cadastro no curso:</h1>
         <Form style={{ background: '#8c6531' }}>
-          <fieldset className="alternativasRadius">
+          <fieldset>
             <Form.Group as={Row} className="mb-3">
               <Form.Control 
                 className="inputEmail"
