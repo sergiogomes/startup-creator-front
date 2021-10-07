@@ -49,6 +49,8 @@ const Dashboard = () => {
         respostaId : event.target.value 
       };
 
+      gravarAlternativa(resposta.perguntaId, resposta.respostaId);
+
       setRespostaAluno(respostaAluno => [...respostaAluno, resposta]);
     } catch (error) {
       console.log(error);
@@ -68,20 +70,27 @@ const Dashboard = () => {
   const enviarResposta = async (event) => {
     try {
       event.preventDefault();
-      const objeto = {
-        respostas : respostaAluno,
-        provas_id : perguntas[0].provas_id,
-        email: emailAluno.email,
-        participantes_competicoes_id: prova.competicoes_id
-      }
-
       setIsProvaRespondida(true);
-
-      console.log('-- respostaAluno -->', objeto);
     } catch (error) {
       console.log(error);
     }
   };
+
+  const gravarAlternativa = async (perguntaId, respostaId) => {
+    try {
+      const objeto = {
+        participantes_id : aluno.id,
+        participantes_competicoes_id : prova.competicoes_id,
+        respostas_id: respostaId,
+        perguntas_id: perguntaId,
+        provas_id: perguntas[0].provas_id
+      }
+
+      await api.post(`/participante/respostas`, objeto);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   const validarEmail  = async (event) => {
     try {
@@ -95,7 +104,6 @@ const Dashboard = () => {
       const { participante } = data;
       setAluno(participante);
       setIsAluno(true);
-      console.log(aluno);
     } catch (error) {
       notifyError('O email apresentado não faz parte da nossa base de alunos.');
       console.log(error);
@@ -114,8 +122,6 @@ const Dashboard = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    console.log('handlesubmit ', event.target);
   }
 
   useEffect(() => {
