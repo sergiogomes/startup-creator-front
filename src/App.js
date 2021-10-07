@@ -65,8 +65,9 @@ const Dashboard = () => {
     }
   };
 
-  const enviarResposta = async () => {
+  const enviarResposta = async (event) => {
     try {
+      event.preventDefault();
       const objeto = {
         respostas : respostaAluno,
         provas_id : perguntas[0].provas_id,
@@ -82,8 +83,9 @@ const Dashboard = () => {
     }
   };
 
-  const validarEmail  = async () => {
+  const validarEmail  = async (event) => {
     try {
+      event.preventDefault();
       if (!EmailValidator.validate(emailAluno.email)) {
         notifyError('Informe o seu email.');
         return;
@@ -140,7 +142,7 @@ const Dashboard = () => {
               </Form.Group>
               <div className="center">
                   <Form.Group as={Row} className="mb-3">
-                    <Button type="button" className="btnEnviarRespostas" onClick={validarEmail}>ACESSAR&nbsp;PROVA</Button>
+                    <Button type="submit" className="btnEnviarRespostas" onClick={validarEmail}>ACESSAR&nbsp;PROVA</Button>
                     <ToastContainer />
                   </Form.Group>
                 </div>
@@ -198,12 +200,15 @@ const Dashboard = () => {
           </>
         ) : (
           <Jumbotron className="painel" style={{ background: '#8c6531' }}>
-            <h1 className="pergunta center">Prova finalizada. TTT</h1>
+            <h1 className="pergunta center">Prova finalizada!</h1>
+            <h1 className="pergunta center">Valeu seu Rico e sua Rica.</h1>
             <Form style={{ background: '#8c6531' }}>
               <fieldset>
                 <Form.Group as={Row} className="mb-3">
                 <Lottie
                   options={defaultOptions}
+                  height={400}
+                  width={400}
                   isStopped={false}
                   isPaused={false}
                 />
