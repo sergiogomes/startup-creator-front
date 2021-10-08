@@ -1,6 +1,9 @@
 import { React, useEffect, useState } from 'react';
 
 import Lottie from 'react-lottie';
+import Analytics from 'analytics'
+import googleAnalytics from '@analytics/google-analytics'
+
 import * as EmailValidator from 'email-validator';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Container from 'react-bootstrap/Container';
@@ -127,7 +130,16 @@ const Dashboard = () => {
   }
 
   useEffect(() => {
-    // getProva();
+    const analytics = Analytics({
+      app: 'prova-cdr-123',
+      plugins: [
+        googleAnalytics({
+          trackingId: 'G-P3DRTL8QKN'
+        })
+      ]
+    })
+    
+    analytics.page()
   }, []);
 
   return (
