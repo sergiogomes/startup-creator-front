@@ -100,10 +100,12 @@ const Dashboard = () => {
         return;
       }
 
-      const { data } = await api.post(`/email/validar`, emailAluno);
-      const { participante } = data;
-      setAluno(participante);
-      setIsAluno(true);
+      await api.post(`/email/validar`, emailAluno).then((res) => {
+        getProva();
+        const { participante } = res.data;
+        setAluno(participante);
+        setIsAluno(true);
+      });
     } catch (error) {
       notifyError('O email apresentado não faz parte da nossa base de alunos.');
       console.log(error);
@@ -125,7 +127,7 @@ const Dashboard = () => {
   }
 
   useEffect(() => {
-    getProva();
+    // getProva();
   }, []);
 
   return (
