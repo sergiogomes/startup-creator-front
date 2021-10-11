@@ -137,9 +137,9 @@ const Dashboard = () => {
           trackingId: 'G-P3DRTL8QKN'
         })
       ]
-    })
+    });
     
-    analytics.page()
+    analytics.page();
   }, []);
 
   return (
