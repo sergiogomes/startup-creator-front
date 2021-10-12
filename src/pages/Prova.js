@@ -95,6 +95,21 @@ const Dashboard = () => {
     }
   }
 
+  const gravarCodigoLive = async (event) => {
+    try {
+      const objeto = {
+        participantes_id : aluno.id,
+        codigo: event.target.value
+      }
+
+      if (objeto.codigo.length === 4) {
+        await api.post(`/codigos/live`, objeto);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   const validarEmail  = async (event) => {
     try {
       event.preventDefault();
@@ -173,7 +188,7 @@ const Dashboard = () => {
         <>
         {!isProvaRespondida ? (
           <>
-            <h1 className="nota center">A prova 1, estará disponível entre os dias 12 até 18 de outubro.</h1>
+            <h1 className="nota center">A prova 1, estará disponível entre os dias 12 até 18 de outubro, às 23H59.</h1>
           {perguntas.map((pergunta, i) => {
             return (
               <>
@@ -210,6 +225,22 @@ const Dashboard = () => {
               </>
               )
             })}
+            <Jumbotron className="painel" style={{ background: '#8c6531' }}>
+              <Form style={{ background: '#8c6531' }} onSubmit={handleSubmit}>
+                <h1 className="pergunta">Insira o código da live informado no dia 12 de outubro de 2021:</h1>
+                <fieldset className="alternativasRadius">
+                  <Form.Group as={Row} className="mb-3">
+                    <Form.Control
+                      placeholder=""
+                      style={{ textTransform: 'uppercase' }}
+                      type="email"
+                      maxLength="4"
+                      onChange={gravarCodigoLive}
+                    />
+                  </Form.Group>
+                </fieldset>
+              </Form>
+            </Jumbotron>
             <div className="center">
               <Form.Group as={Row} className="mb-3">
                 <Button type="submit" className="btnEnviarRespostas" onClick={enviarResposta}>ENVIAR&nbsp;RESPOSTAS</Button>
