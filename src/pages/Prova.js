@@ -235,6 +235,7 @@ const Dashboard = () => {
                       style={{ textTransform: 'uppercase' }}
                       type="email"
                       maxLength="4"
+                      className="inputCodigo"
                       onChange={gravarCodigoLive}
                     />
                   </Form.Group>
@@ -246,7 +247,7 @@ const Dashboard = () => {
                 <Button type="submit" className="btnEnviarRespostas" onClick={enviarResposta}>ENVIAR&nbsp;RESPOSTAS</Button>
               </Form.Group>
             </div>
-            <h1 className="nota center">Lembre-se: isso é só a sombra do que há de vir. #TMJADF</h1>
+            <h1 className="nota center">Lembre-se: isso é só a sombra doque há de vir. #TMJADF</h1>
           </>
         ) : (
           <Jumbotron className="painel" style={{ background: '#8c6531' }}>
