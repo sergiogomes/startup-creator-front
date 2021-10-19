@@ -11,6 +11,7 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import Table from 'react-bootstrap/Table';
 
 import { ToastContainer } from 'react-toastify';
 import { notifyError } from '../utils/toasts';
@@ -19,7 +20,7 @@ import api from '../services/api';
 
 import animationData from '../lottie/check.json';
 
-import '../../src/App.css';
+import '../../src/AutoGoverno.css';
 
 const Dashboard = () => {
 
@@ -34,7 +35,7 @@ const Dashboard = () => {
 
   const getProva = async () => {
     try {
-      const { data } = await api.get(`/prova`);
+      const { data } = await api.get(`/prova/2`);
       const { perguntas, respostas, prova } = data.provaAtual;
       setPerguntas(perguntas);
       setRespostas(respostas);
@@ -74,6 +75,8 @@ const Dashboard = () => {
     try {
       event.preventDefault();
       setIsProvaRespondida(true);
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
     } catch (error) {
       console.log(error);
     }
@@ -95,21 +98,6 @@ const Dashboard = () => {
     }
   }
 
-  const gravarCodigoLive = async (event) => {
-    try {
-      const objeto = {
-        participantes_id : aluno.id,
-        codigo: event.target.value
-      }
-
-      if (objeto.codigo.length === 4) {
-        await api.post(`/codigos/live`, objeto);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
   const validarEmail  = async (event) => {
     try {
       event.preventDefault();
@@ -118,7 +106,7 @@ const Dashboard = () => {
         return;
       }
 
-      await api.post(`/email/validar`, emailAluno).then((res) => {
+      await api.post(`/email/validar/ip`, emailAluno).then((res) => {
         getProva();
         const { participante } = res.data;
         setAluno(participante);
@@ -160,12 +148,12 @@ const Dashboard = () => {
   return (
     <Container className="p-3" style={{ background: '#000' }}>
       <div className="centerImg">
-        <img src={"img/CDR600x300.png"} alt="A Ciência da Riqueza" height="75"/>
+        <img src={"img/logo-ip.png"} alt="Método IP 127" height="40"/>
       </div>
       {!isAluno ? (
-        <Jumbotron className="painel" style={{ background: '#8c6531' }}>
-          <h1 className="pergunta">Informe o email cadastrado no curso:</h1>
-          <Form style={{ background: '#8c6531' }}>
+        <Jumbotron className="painel" style={{ background: '#1a1a1a' }}>
+          <h1 className="pergunta">Email cadastrado no Método IP 127</h1>
+          <Form style={{ background: '#1a1a1a' }}>
             <fieldset>
               <Form.Group as={Row} className="mb-3">
                 <Form.Control 
@@ -177,7 +165,7 @@ const Dashboard = () => {
               </Form.Group>
               <div className="center">
                   <Form.Group as={Row} className="mb-3">
-                    <Button type="submit" className="btnEnviarRespostasProva" onClick={validarEmail}>ACESSAR&nbsp;PROVA</Button>
+                    <Button type="submit" className="btnEnviarRespostas" onClick={validarEmail}>ACESSAR&nbsp;ENQUETE</Button>
                     <ToastContainer />
                   </Form.Group>
                 </div>
@@ -188,12 +176,12 @@ const Dashboard = () => {
         <>
         {!isProvaRespondida ? (
           <>
-            <h1 className="nota center">A prova 2 estará disponível entre os dias 19 até 25 de outubro, às 23H59.</h1>
+            <h1 className="nota center">Enquete sobre BLOQUEIOS</h1>
           {perguntas.map((pergunta, i) => {
             return (
               <>
-                <Jumbotron className="painel" style={{ background: '#8c6531' }}>
-                  <Form style={{ background: '#8c6531' }} onSubmit={handleSubmit}>
+                <Jumbotron className="painel" style={{ background: '#1a1a1a' }}>
+                  <Form style={{ background: '#1a1a1a' }} onSubmit={handleSubmit}>
                   <h1 className="pergunta">{`${i + 1}) ${pergunta.pergunta}`}</h1>
                   <fieldset className="alternativasRadius">
                     <Form.Group as={Row} className="mb-3">
@@ -225,44 +213,85 @@ const Dashboard = () => {
               </>
               )
             })}
-            <Jumbotron className="painel" style={{ background: '#8c6531' }}>
-              <Form style={{ background: '#8c6531' }} onSubmit={handleSubmit}>
-                <h1 className="pergunta">Insira o código da live informado no dia 19 de outubro de 2021:</h1>
-                <fieldset className="alternativasRadius">
-                  <Form.Group as={Row} className="mb-3">
-                    <Form.Control
-                      placeholder=""
-                      style={{ textTransform: 'uppercase' }}
-                      type="email"
-                      maxLength="4"
-                      className="inputCodigo"
-                      onChange={gravarCodigoLive}
-                    />
-                  </Form.Group>
-                </fieldset>
-              </Form>
-            </Jumbotron>
             <div className="center">
               <Form.Group as={Row} className="mb-3">
-                <Button type="submit" className="btnEnviarRespostasProva" onClick={enviarResposta}>ENVIAR&nbsp;RESPOSTAS</Button>
+                <Button type="submit" className="btnEnviarRespostas" onClick={enviarResposta}>ENVIAR&nbsp;RESPOSTAS</Button>
               </Form.Group>
             </div>
             <h1 className="nota center">Lembre-se: isso é só a sombra doque há de vir. #TMJADF</h1>
           </>
         ) : (
-          <Jumbotron className="painel" style={{ background: '#8c6531' }}>
-            <h1 className="pergunta center">Prova finalizada!</h1>
-            <h1 className="pergunta center">Valeu seu Rico e sua Rica.</h1>
-            <Form style={{ background: '#8c6531' }}>
+          <Jumbotron className="painel" style={{ background: '#1a1a1a' }}>
+            <h1 className="pergunta center">Ranking de Bloqueios 🚫</h1>
+            <Form style={{ background: '#1a1a1a' }}>
               <fieldset>
                 <Form.Group as={Row} className="mb-3">
-                <Lottie
-                  options={defaultOptions}
-                  height={400}
-                  width={400}
-                  isStopped={false}
-                  isPaused={false}
-                />
+                  <Table striped bordered hover variant="dark" style={{ margin: "25px" }}>
+                    <tbody>
+                      <tr>
+                        <td className="">1º</td>
+                        <td className="">APRENDIZAGEM</td>
+                        <td className="center">85%</td>
+                      </tr>
+                      <tr>
+                        <td className="">2º</td>
+                        <td className="">AUTOIMAGEM</td>
+                        <td className="center">79%</td>
+                      </tr>
+                      <tr>
+                        <td className="">3º</td>
+                        <td className="">BLOQUEIO CRIATIVO</td>
+                        <td className="center">71%</td>
+                      </tr>
+                      <tr>
+                        <td className="">4º</td>
+                        <td className="">COMPLEXO DE INFERIORIDADE</td>
+                        <td className="center">70%</td>
+                      </tr>
+                      <tr>
+                        <td className="">5º</td>
+                        <td className="">CRÍTICAS</td>
+                        <td className="center">60%</td>
+                      </tr>
+                      <tr>
+                        <td className="">6º</td>
+                        <td className="">CULPA</td>
+                        <td className="center">59%</td>
+                      </tr>
+                      <tr>
+                        <td className="">7º</td>
+                        <td className="">DEPRESSÃO E ANSIEDADE</td>
+                        <td className="center">45%</td>
+                      </tr>
+                      {/* <tr>
+                        <td className="center">8) ESCASSEZ 41%</td>
+                      </tr>
+                      <tr>
+                        <td className="center">9) MEDO DE ERRAR 39%</td>
+                      </tr>
+                      <tr>
+                        <td className="center">10) PAIS DITADORES 38%</td>
+                      </tr>
+                      <tr>
+                        <td className="center">11) PROCRASTINAÇÃO 35%</td>
+                      </tr>
+                      <tr>
+                        <td className="center">12) REJEIÇÃO 20%</td>
+                      </tr>
+                      <tr>
+                        <td className="center">13) RELIGIOSIDADE 18%</td>
+                      </tr>
+                      <tr>
+                        <td className="center">14) SEXUAL 15%</td>
+                      </tr>
+                      <tr>
+                        <td className="center">15) TIMIDEZ 13%</td>
+                      </tr>
+                      <tr>
+                        <td className="center">16) VITIMISMO 4%</td>
+                      </tr> */}
+                    </tbody>
+                  </Table>
                 </Form.Group>
               </fieldset>
             </Form>

@@ -12,8 +12,7 @@
 
 .nota {
   color: #fff;
-  font-family: 'Arial, Helvetica, sans-serif';
-  font-style: italic;
+  font-style: normal !important;
   font-size: 25px;
   text-align: center;
   padding: 5px;
@@ -53,9 +52,9 @@
   padding-left: 10px;
 }
 
-.btnEnviarRespostasProva {
-  background: #f1ce63;
-  border-color: #f1ce63;
+.btnEnviarRespostas {
+  background: #e20000;
+  border-color: #e20000;
   font-weight: bold;
   border-radius: 12px;
 }
