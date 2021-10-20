@@ -1,6 +1,5 @@
 import { React, useEffect, useState } from 'react';
 
-import Lottie from 'react-lottie';
 import Analytics from 'analytics'
 import googleAnalytics from '@analytics/google-analytics'
 
@@ -32,6 +31,7 @@ const Dashboard = () => {
   const [isAluno, setIsAluno] = useState(false);
   const [aluno, setAluno] = useState({});
   const [isProvaRespondida, setIsProvaRespondida] = useState(false);
+  const [rankBloqueios, setRankBloqueios] = useState([]);
 
   const getProva = async () => {
     try {
@@ -74,6 +74,7 @@ const Dashboard = () => {
   const enviarResposta = async (event) => {
     try {
       event.preventDefault();
+      getRankBloqueios();
       setIsProvaRespondida(true);
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
@@ -98,7 +99,7 @@ const Dashboard = () => {
     }
   }
 
-  const validarEmail  = async (event) => {
+  const validarEmail = async (event) => {
     try {
       event.preventDefault();
       if (!EmailValidator.validate(emailAluno.email)) {
@@ -119,14 +120,18 @@ const Dashboard = () => {
     }
   };
 
-  const defaultOptions = {
-    loop: true,
-    autoplay: true, 
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice'
+  const getRankBloqueios = async () => {
+    try {
+
+      await api.get(`/resultado/bloqueios/${aluno.id}`).then((res) => {
+        setRankBloqueios(res.data);
+      });
+    } catch (error) {
+      notifyError('O rank de bloqueios, não está disponivel no momento.');
+      console.log(error);
+      setIsAluno(false);
     }
-  };
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -182,6 +187,17 @@ const Dashboard = () => {
               <>
                 <Jumbotron className="painel" style={{ background: '#1a1a1a' }}>
                   <Form style={{ background: '#1a1a1a' }} onSubmit={handleSubmit}>
+                  <span style={{ 
+                    backgroundColor: '#C2A98D', 
+                    borderRadius: '5px', 
+                    padding: '6px',
+                    fontSize: '10px',
+                    fontWeight: 'bolder'
+                  }}>
+                    {`${pergunta.categoria}`}
+                  </span>
+                  <br />
+                  <br />
                   <h1 className="pergunta">{`${i + 1}) ${pergunta.pergunta}`}</h1>
                   <fieldset className="alternativasRadius">
                     <Form.Group as={Row} className="mb-3">
@@ -228,68 +244,17 @@ const Dashboard = () => {
                 <Form.Group as={Row} className="mb-3">
                   <Table striped bordered hover variant="dark" style={{ margin: "25px" }}>
                     <tbody>
-                      <tr>
-                        <td className="">1º</td>
-                        <td className="">APRENDIZAGEM</td>
-                        <td className="center">85%</td>
-                      </tr>
-                      <tr>
-                        <td className="">2º</td>
-                        <td className="">AUTOIMAGEM</td>
-                        <td className="center">79%</td>
-                      </tr>
-                      <tr>
-                        <td className="">3º</td>
-                        <td className="">BLOQUEIO CRIATIVO</td>
-                        <td className="center">71%</td>
-                      </tr>
-                      <tr>
-                        <td className="">4º</td>
-                        <td className="">COMPLEXO DE INFERIORIDADE</td>
-                        <td className="center">70%</td>
-                      </tr>
-                      <tr>
-                        <td className="">5º</td>
-                        <td className="">CRÍTICAS</td>
-                        <td className="center">60%</td>
-                      </tr>
-                      <tr>
-                        <td className="">6º</td>
-                        <td className="">CULPA</td>
-                        <td className="center">59%</td>
-                      </tr>
-                      <tr>
-                        <td className="">7º</td>
-                        <td className="">DEPRESSÃO E ANSIEDADE</td>
-                        <td className="center">45%</td>
-                      </tr>
-                      {/* <tr>
-                        <td className="center">8) ESCASSEZ 41%</td>
-                      </tr>
-                      <tr>
-                        <td className="center">9) MEDO DE ERRAR 39%</td>
-                      </tr>
-                      <tr>
-                        <td className="center">10) PAIS DITADORES 38%</td>
-                      </tr>
-                      <tr>
-                        <td className="center">11) PROCRASTINAÇÃO 35%</td>
-                      </tr>
-                      <tr>
-                        <td className="center">12) REJEIÇÃO 20%</td>
-                      </tr>
-                      <tr>
-                        <td className="center">13) RELIGIOSIDADE 18%</td>
-                      </tr>
-                      <tr>
-                        <td className="center">14) SEXUAL 15%</td>
-                      </tr>
-                      <tr>
-                        <td className="center">15) TIMIDEZ 13%</td>
-                      </tr>
-                      <tr>
-                        <td className="center">16) VITIMISMO 4%</td>
-                      </tr> */}
+                      {rankBloqueios.map((rank, i) => {
+                        return (
+                          <>
+                            <tr>
+                              <td className="">{`${i + 1}`}º</td>
+                              <td className="">{`${rank.categoria}`}</td>
+                              <td className="center">{`${rank.porcentagem}`}%</td>
+                            </tr>
+                          </>
+                        )
+                      })}
                     </tbody>
                   </Table>
                 </Form.Group>
