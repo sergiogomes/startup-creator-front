@@ -20,7 +20,7 @@ const TurmaIp127 = () => {
   const getRankBloqueios = async () => {
     try {
 
-      await api.get(`/resultado/bloqueios/comex`).then((res) => {
+      await api.get(`/resultado/bloqueios-comex`).then((res) => {
         setRankBloqueios(res.data);
       });
     } catch (error) {
