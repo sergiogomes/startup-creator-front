@@ -242,14 +242,20 @@ const Dashboard = () => {
             <Form style={{ background: '#1a1a1a' }}>
               <fieldset>
                 <Form.Group as={Row} className="mb-3">
-                  <Table striped bordered hover variant="dark" style={{ margin: "25px" }}>
+                  <Table striped bordered hover variant="dark">
                     <tbody>
                       {rankBloqueios.map((rank, i) => {
                         return (
                           <>
                             <tr>
                               <td className="">{`${i + 1}`}º</td>
-                              <td className="">{`${rank.categoria}`}</td>
+                              <td 
+                                style={{ 
+                                  fontSize: '13px',
+                                  whiteSpace: 'nowrap'
+                                }} 
+                                className="">{`${rank.categoria}`}
+                              </td>
                               <td className="center">{`${rank.porcentagem}`}%</td>
                             </tr>
                           </>
