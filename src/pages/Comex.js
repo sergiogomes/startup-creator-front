@@ -17,8 +17,6 @@ import { notifyError } from '../utils/toasts';
 
 import api from '../services/api';
 
-import animationData from '../lottie/check.json';
-
 import '../../src/AutoGoverno.css';
 
 const Dashboard = () => {
@@ -107,10 +105,10 @@ const Dashboard = () => {
         return;
       }
 
-      await api.post(`/email/validar/ip`, emailAluno).then((res) => {
+      await api.post(`/email/comex/ip`, emailAluno).then((res) => {
         getProva();
-        const { participante } = res.data;
-        setAluno(participante);
+        const { id } = res.data;
+        setAluno({id});
         setIsAluno(true);
       });
     } catch (error) {
@@ -153,18 +151,18 @@ const Dashboard = () => {
   return (
     <Container className="p-3" style={{ background: '#000' }}>
       <div className="centerImg">
-        <img src={"img/logo-ip.png"} alt="Método IP 127" height="40"/>
+        <img src={"img/metodo-ip-comex.png"} alt="Método IP 127" height="40"/>
       </div>
       {!isAluno ? (
         <Jumbotron className="painel" style={{ background: '#1a1a1a' }}>
-          <h1 className="pergunta">Email cadastrado na compra do método IP 127</h1>
+          <h1 className="pergunta">Apenas membros do COMEX</h1>
           <Form style={{ background: '#1a1a1a' }}>
             <fieldset>
               <Form.Group as={Row} className="mb-3">
                 <Form.Control 
                   className="inputEmail"
                   type="email"
-                  placeholder="Digite aqui..."
+                  placeholder="Digite aqui o seu email.."
                   onChange={salvarEmailAluno}
                 />
               </Form.Group>
