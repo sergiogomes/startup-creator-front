@@ -247,7 +247,7 @@ const Dashboard = () => {
                       {rankBloqueios.map((rank, i) => {
                         return (
                           <>
-                            <tr>
+                            <tr style={{ backgroundColor: i === 0 ?'#e20000': '' }} >
                               <td className="">{`${i + 1}`}º</td>
                               <td 
                                 style={{ 
