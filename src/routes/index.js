@@ -4,6 +4,7 @@ import { Switch } from 'react-router-dom';
 import Route from './Route';
 
 import EuToNaLive from '../pages/EuToNaLive';
+import Executivos from '../pages/Executivos';
 import AutoGoverno127 from '../pages/AutoGoverno127';
 import TurmaIp127 from '../pages/TurmaIp127';
 import Comex from '../pages/Comex';
@@ -15,6 +16,7 @@ const Routes = () => (
   <Switch>
     <Route path="/" exact component={Prova} />
     <Route path="/eutonalive" component={EuToNaLive} />
+    <Route path="/executivos" component={Executivos} />
     <Route path="/ip" component={AutoGoverno127} />
     <Route path="/ip-127" component={TurmaIp127} />
     <Route path="/comex" component={Comex} />
