@@ -5,7 +5,7 @@ import Route from './Route';
 
 import EuToNaLive from '../pages/EuToNaLive';
 import Executivos from '../pages/Executivos';
-import AutoGoverno127 from '../pages/AutoGoverno127';
+import Ip from '../pages/Ip';
 import TurmaIp127 from '../pages/TurmaIp127';
 import Comex from '../pages/Comex';
 import ComexRank from '../pages/ComexRank';
@@ -17,7 +17,7 @@ const Routes = () => (
     <Route path="/" exact component={Prova} />
     <Route path="/eutonalive" component={EuToNaLive} />
     <Route path="/executivos" component={Executivos} />
-    <Route path="/ip" component={AutoGoverno127} />
+    <Route path="/ip" component={Ip} />
     <Route path="/ip-127" component={TurmaIp127} />
     <Route path="/comex" component={Comex} />
     <Route path="/comex-rank" component={ComexRank} />

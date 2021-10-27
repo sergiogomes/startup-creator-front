@@ -17,8 +17,6 @@ import { notifyError } from '../utils/toasts';
 
 import api from '../services/api';
 
-import animationData from '../lottie/check.json';
-
 import '../../src/AutoGoverno.css';
 
 const Dashboard = () => {
