@@ -105,10 +105,10 @@ const Dashboard = () => {
         return;
       }
 
-      await api.post(`/email/validar/ip`, emailAluno).then((res) => {
+      await api.post(`/email/cadastrar/ip`, emailAluno).then((res) => {
         getProva();
-        const { participante } = res.data;
-        setAluno(participante);
+        const { id } = res.data;
+        setAluno({id});
         setIsAluno(true);
       });
     } catch (error) {
