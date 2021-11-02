@@ -188,7 +188,7 @@ const Dashboard = () => {
         <>
         {!isProvaRespondida ? (
           <>
-            <h1 className="nota center">A prova 4 estará disponível entre os dias 02 até 08 de novembro, às 23H59.</h1>
+            <h1 className="nota center">A prova 3 estará disponível até 05 de novembro, às 23H59.</h1>
           {perguntas.map((pergunta, i) => {
             return (
               <>
