@@ -11,6 +11,7 @@ import Comex from '../pages/Comex';
 import ComexRank from '../pages/ComexRank';
 import Prova from '../pages/Prova';
 import Rank from '../pages/Rank';
+import RotaDigital from '../pages/RotaDigital';
 
 const Routes = () => (
   <Switch>
@@ -22,6 +23,7 @@ const Routes = () => (
     <Route path="/comex" component={Comex} />
     <Route path="/comex-rank" component={ComexRank} />
     <Route path="/rank" component={Rank} />
+    <Route path="/teste-rota-digital" component={RotaDigital} />
   </Switch>
 );
 
