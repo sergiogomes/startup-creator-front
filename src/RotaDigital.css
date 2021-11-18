@@ -56,6 +56,15 @@
   border-color: #FF006E;
   font-weight: bold;
   border-radius: 12px;
+  height: 60px;
+}
+
+.btnEnviarRespostasWhats {
+  background: #25D366;
+  border-color: #25D366;
+  font-weight: bold;
+  border-radius: 12px;
+  height: 60px;
 }
 
 .inputEmail {
@@ -65,4 +74,22 @@
 .inputCodigo {
   margin: 15px;
   margin-left: 5px;
+}
+
+.tituloResultado {
+  font-size: 30px;
+}
+
+.perfil {
+  font-size: 30px;
+  font-weight: bold;
+  color: #2751e5;
+}
+
+.descricaoResultado {
+  font-size: 16px;
+}
+
+.logoBotaoWhats {
+  height: 18px;
 }

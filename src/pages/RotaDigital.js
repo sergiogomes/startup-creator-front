@@ -1,16 +1,11 @@
 import { React, useEffect, useState } from 'react';
 
-import Analytics from 'analytics'
-import googleAnalytics from '@analytics/google-analytics'
-
-import * as EmailValidator from 'email-validator';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import Table from 'react-bootstrap/Table';
 
 import { ToastContainer } from 'react-toastify';
 import { notifyError } from '../utils/toasts';
@@ -24,12 +19,15 @@ const Dashboard = () => {
   const [perguntas, setPerguntas] = useState([]);
   const [respostas, setRespostas] = useState([]);
   const [respostaAluno, setRespostaAluno] = useState([]);
-  const [emailAluno, setEmailAluno] = useState('');
   const [prova, setProva] = useState('');
   const [isAluno, setIsAluno] = useState(false);
   const [aluno, setAluno] = useState({});
   const [isProvaRespondida, setIsProvaRespondida] = useState(false);
   const [rankBloqueios, setRankBloqueios] = useState([]);
+  const [expert, setExpert] = useState(0);
+  const [coprodutor, setCoprodutor] = useState(0);
+  const [lancador, setLancador] = useState(0);
+  const [perfilSelecionado, setPerfilSelecionado] = useState('Carregando...');
 
   const getProva = async () => {
     try {
@@ -46,33 +44,53 @@ const Dashboard = () => {
 
   const salvarResposta = async (event) => {
     try {
-      const resposta = {
-        perguntaId : event.target.name,
-        respostaId : event.target.value 
-      };
+      const opcao = event.target.getAttribute('opcao');
 
-      gravarAlternativa(resposta.perguntaId, resposta.respostaId);
+      if (opcao === 'A') {
+        setExpert(expert + 1);
+      }
 
-      setRespostaAluno(respostaAluno => [...respostaAluno, resposta]);
+      if (opcao === 'B') {
+        setCoprodutor(coprodutor + 1);
+      }
+
+      if (opcao === 'C') {
+        setLancador(lancador + 1);
+      }
+      setPerfilSelecionado(getPerfil());
     } catch (error) {
       console.log(error);
     }
   };
 
-  const salvarEmailAluno  = async (event) => {
-    try {
-      const email = event.target.value;
+  const getPerfil = () => {
+    console.log(Math.max(...[expert, coprodutor, lancador]));
+    const maiorValor = Math.max(...[expert, coprodutor, lancador]);
 
-      setEmailAluno({...emailAluno, email});
-    } catch (error) {
-      console.log(error);
+    if (expert > 0 && expert === maiorValor) {
+      return 'EXPERT';
     }
-  };
+
+    if (coprodutor > 0 && coprodutor === maiorValor) {
+      return 'COPRODUTOR';
+    }
+
+    if (lancador > 0 && lancador === maiorValor) {
+      return 'LANÇADOR';
+    }
+
+    return false;
+  }
 
   const enviarResposta = async (event) => {
     try {
+      if((expert + lancador + coprodutor) <= 6) {
+        notifyError('Por favor responda todas as perguntas.');
+        return false;
+      }
+
       event.preventDefault();
-      getRankBloqueios();
+
       setIsProvaRespondida(true);
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
@@ -97,26 +115,9 @@ const Dashboard = () => {
     }
   }
 
-  const validarEmail = async (event) => {
-    try {
-      event.preventDefault();
-      if (!EmailValidator.validate(emailAluno.email)) {
-        notifyError('Informe o seu email.');
-        return;
-      }
-
-      await api.post(`/email/cadastrar/ip`, emailAluno).then((res) => {
-        getProva();
-        const { id } = res.data;
-        setAluno({id});
-        setIsAluno(true);
-      });
-    } catch (error) {
-      notifyError('O email apresentado não faz parte da nossa base de alunos.');
-      console.log(error);
-      setIsAluno(false);
-    }
-  };
+  const abrirLink = () => {
+    window.open("https://devzap.com.br/api-engennier/campanha/api/redirect/6171aea830769c0001c9993b");
+  }
 
   const getRankBloqueios = async () => {
     try {
@@ -125,7 +126,7 @@ const Dashboard = () => {
         setRankBloqueios(res.data);
       });
     } catch (error) {
-      notifyError('O rank de bloqueios, não está disponivel no momento.');
+      notifyError('O resultado ainda não está disponivel.');
       console.log(error);
       setIsAluno(false);
     }
@@ -146,47 +147,17 @@ const Dashboard = () => {
       </div>
       {isAluno ? (
         <Jumbotron className="painel" style={{ background: '#1a1a1a' }}>
-          <h1 className="pergunta">Email</h1>
-          <Form style={{ background: '#1a1a1a' }}>
-            <fieldset>
-              <Form.Group as={Row} className="mb-3">
-                <Form.Control 
-                  className="inputEmail"
-                  type="email"
-                  placeholder="Digite aqui..."
-                  onChange={salvarEmailAluno}
-                />
-              </Form.Group>
-              <div className="center">
-                  <Form.Group as={Row} className="mb-3">
-                    <Button type="submit" className="btnEnviarRespostas" onClick={validarEmail}>ACESSAR&nbsp;ENQUETE</Button>
-                    <ToastContainer />
-                  </Form.Group>
-                </div>
-            </fieldset>
-          </Form>
         </Jumbotron>
       ) : (
         <>
         {!isProvaRespondida ? (
           <>
-            <h1 className="nota center">Teste de aptidão digital</h1>
+            <h1 className="nota center">TESTE DE APTIDÃO DIGITAL</h1>
           {perguntas.map((pergunta, i) => {
             return (
               <>
                 <Jumbotron className="painel" style={{ background: '#1a1a1a' }}>
                   <Form style={{ background: '#1a1a1a' }} onSubmit={handleSubmit}>
-                  {/* <span style={{ 
-                    backgroundColor: '#C2A98D', 
-                    borderRadius: '5px', 
-                    padding: '6px',
-                    fontSize: '10px',
-                    fontWeight: 'bolder'
-                  }}>
-                    {`${pergunta.categoria}`}
-                  </span> */}
-                  <br />
-                  <br />
                   <h1 className="pergunta">{`${i + 1}) ${pergunta.pergunta}`}</h1>
                   <fieldset className="alternativasRadius">
                     <Form.Group as={Row} className="mb-3">
@@ -205,6 +176,7 @@ const Dashboard = () => {
                                 onChange={salvarResposta}
                                 name={`${pergunta.id}`}
                                 value={`${resposta.id}`}
+                                opcao={`${resposta.opcao}`}
                                 id={`formHorizontalRadios${resposta.id}`}
                                 className="alternativa" />
                               </>
@@ -229,34 +201,35 @@ const Dashboard = () => {
           </>
         ) : (
           <Jumbotron className="painel" style={{ background: '#1a1a1a' }}>
-            <h1 className="pergunta center">Ranking de Bloqueios 🚫</h1>
-            <Form style={{ background: '#1a1a1a' }}>
-              <fieldset>
+            <div className="">
+              <h1 className="pergunta center tituloResultado">TESTE CONCLUÍDO</h1>
+              <br />
+              <h1 className="pergunta center">SEU PERFIL DIGITAL É: </h1>
+              <h1 className="pergunta center perfil">{`${perfilSelecionado}`}</h1>
+              
+              <br />
+              <h1 className="pergunta center descricaoResultado">Hoje existem milhares de oportunidades na internet para pessoas que possuem esse mesmo perfil.</h1>
+
+              <br />
+              <h1 className="pergunta center descricaoResultado">E seguindo a rota correta você aumenta as suas chances de fazer muito dinheiro nesse universo. Se quiser aprender como se tornar uma dessas pessoas…</h1>
+
+              <br />
+              <h1 className="pergunta center descricaoResultado">Toque no botão abaixo e entre no meu Grupo Exclusivo para ter acessos a e-books gratuitos e outro conteúdos que vão te ajudar a ter sucesso no mercado digital.</h1>
+              
+              <br />
+              <div className="center">
                 <Form.Group as={Row} className="mb-3">
-                  <Table striped bordered hover variant="dark">
-                    <tbody>
-                      {rankBloqueios.map((rank, i) => {
-                        return (
-                          <>
-                            <tr style={{ backgroundColor: i === 0 ?'#e20000': '' }} >
-                              <td className="">{`${i + 1}`}º</td>
-                              <td 
-                                style={{ 
-                                  fontSize: '13px',
-                                  whiteSpace: 'nowrap'
-                                }} 
-                                className="">{`${rank.categoria}`}
-                              </td>
-                              <td className="center">{`${rank.porcentagem}`}%</td>
-                            </tr>
-                          </>
-                        )
-                      })}
-                    </tbody>
-                  </Table>
+                  <Button className="btnEnviarRespostasWhats" onClick={abrirLink}>
+                    <img className="logoBotaoWhats" src={"img/whatsapp-branco.png"} />
+                    &nbsp;QUERO RECEBER OS CONTEÚDOS
+                  </Button>
+                  <ToastContainer />
                 </Form.Group>
-              </fieldset>
-            </Form>
+              </div>
+              
+              <h1 className="pergunta center">Grupo Fechado e Silencioso</h1>
+            </div>
+
           </Jumbotron>
         )}
         </>
