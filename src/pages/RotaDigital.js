@@ -28,6 +28,8 @@ const Dashboard = () => {
   const [coprodutor, setCoprodutor] = useState(0);
   const [lancador, setLancador] = useState(0);
   const [perfilSelecionado, setPerfilSelecionado] = useState('Carregando...');
+  const [paginas, setPaginas] = useState([132, 133, 134, 135, 136, 137, 138]);
+  const [perguntaAtual, setPerguntaAtual] = useState(132);
 
   const getProva = async () => {
     try {
@@ -36,6 +38,7 @@ const Dashboard = () => {
       setPerguntas(perguntas);
       setRespostas(respostas);
       setProva(prova);
+      exibirPergunta(132);
     } catch (error) {
       console.log(error);
       notifyError('Neste momento não tem prova disponivel! Fique atendo nas lives de terça!');
@@ -57,11 +60,42 @@ const Dashboard = () => {
       if (opcao === 'C') {
         setLancador(lancador + 1);
       }
+      exibirProximaPergunta();
       setPerfilSelecionado(getPerfil());
     } catch (error) {
       console.log(error);
     }
   };
+
+  const exibirProximaPergunta = () => {
+    if (perguntaAtual === 138) {
+      enviarResposta();
+      return;
+    }
+
+    if (perguntaAtual === 0) {
+      exibirPergunta(132);
+      setPerguntaAtual(132);
+      return;
+    }
+
+    if (perguntaAtual >= 132) {
+      exibirPergunta(perguntaAtual + 1);
+      setPerguntaAtual(perguntaAtual + 1);
+      esconderPergunta(perguntaAtual);
+      return;
+    }
+  }
+
+  const exibirPergunta = (id) => {
+    console.log('exibir pergunta', id);
+    document.getElementById(`pergunta-${id}`).style.display = 'block';
+  }
+
+  const esconderPergunta = (id) => {
+    console.log('esconder pergunta', id);
+    document.getElementById(`pergunta-${id}`).style.display = 'none';
+  }
 
   const getPerfil = () => {
     console.log(Math.max(...[expert, coprodutor, lancador]));
@@ -84,12 +118,12 @@ const Dashboard = () => {
 
   const enviarResposta = async (event) => {
     try {
-      if((expert + lancador + coprodutor) <= 6) {
+      if((expert + lancador + coprodutor) <= 5) {
         notifyError('Por favor responda todas as perguntas.');
         return false;
       }
 
-      event.preventDefault();
+      // event.preventDefault();
 
       setIsProvaRespondida(true);
       document.body.scrollTop = 0;
@@ -119,19 +153,6 @@ const Dashboard = () => {
     window.open("https://devzap.com.br/api-engennier/campanha/api/redirect/6171aea830769c0001c9993b");
   }
 
-  const getRankBloqueios = async () => {
-    try {
-
-      await api.get(`/resultado/bloqueios/${aluno.id}`).then((res) => {
-        setRankBloqueios(res.data);
-      });
-    } catch (error) {
-      notifyError('O resultado ainda não está disponivel.');
-      console.log(error);
-      setIsAluno(false);
-    }
-  }
-
   const handleSubmit = (event) => {
     event.preventDefault();
   }
@@ -156,7 +177,7 @@ const Dashboard = () => {
           {perguntas.map((pergunta, i) => {
             return (
               <>
-                <Jumbotron className="painel" style={{ background: '#1a1a1a' }}>
+                <Jumbotron className="painel" id={`pergunta-${pergunta.id}`} style={{ background: '#1a1a1a', display: 'none' }}>
                   <Form style={{ background: '#1a1a1a' }} onSubmit={handleSubmit}>
                   <h1 className="pergunta">{`${i + 1}) ${pergunta.pergunta}`}</h1>
                   <fieldset className="alternativasRadius">
@@ -190,11 +211,11 @@ const Dashboard = () => {
               </>
               )
             })}
-            <div className="center">
+            {/* <div className="center">
               <Form.Group as={Row} className="mb-3">
-                <Button type="submit" className="btnEnviarRespostas" onClick={enviarResposta}>ENVIAR&nbsp;RESPOSTAS</Button>
+                <Button type="button" className="btnEnviarRespostas" onClick={enviarResposta}>ENVIAR&nbsp;RESPOSTAS</Button>
               </Form.Group>
-            </div>
+            </div> */}
             <h1 className="nota center">Descubra o caminho ideal para o seu sucesso na internet.</h1>
             <h1 className="nota center"></h1>
 
