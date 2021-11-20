@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import Iframe from 'react-iframe';
 
 import { ToastContainer } from 'react-toastify';
 import { notifyError } from '../utils/toasts';
@@ -102,7 +103,7 @@ const Dashboard = () => {
     const maiorValor = Math.max(...[expert, coprodutor, lancador]);
 
     if (expert > 0 && expert === maiorValor) {
-      return 'EXPERT';
+      return 'ESPECIALISTA';
     }
 
     if (coprodutor > 0 && coprodutor === maiorValor) {
@@ -227,16 +228,24 @@ const Dashboard = () => {
               <br />
               <h1 className="pergunta center">SEU PERFIL DIGITAL É: </h1>
               <h1 className="pergunta center perfil">{`${perfilSelecionado}`}</h1>
-              
-              <br />
-              <h1 className="pergunta center descricaoResultado">Hoje existem milhares de oportunidades na internet para pessoas que possuem esse mesmo perfil.</h1>
+
+              {perfilSelecionado === 'ESPECIALISTA' ? (
+                <Iframe url="http://www.youtube.com/embed/84iHW5laImM"
+                  width="100%"
+                  height="450px"
+                  display="initial"
+                  position="relative"
+                />
+              ) : (
+                <Iframe url="http://www.youtube.com/embed/EYmUMUPf0DA"
+                  width="100%"
+                  height="450px"
+                  display="initial"
+                  position="relative"
+                />
+              )}
 
               <br />
-              <h1 className="pergunta center descricaoResultado">E seguindo a rota correta você aumenta as suas chances de fazer muito dinheiro nesse universo. Se quiser aprender como se tornar uma dessas pessoas…</h1>
-
-              <br />
-              <h1 className="pergunta center descricaoResultado">Toque no botão abaixo e entre no meu Grupo Exclusivo para ter acessos a e-books gratuitos e outro conteúdos que vão te ajudar a ter sucesso no mercado digital.</h1>
-              
               <br />
               <div className="center">
                 <Form.Group as={Row} className="mb-3">
