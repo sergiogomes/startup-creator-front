@@ -151,7 +151,7 @@ const Dashboard = () => {
   }
 
   const abrirLink = () => {
-    window.open("https://devzap.com.br/api-engennier/campanha/api/redirectlink/61980a40ccda18000126b49e");
+    window.open("https://devzap.com.br/api-engennier/campanha/api/redirect/6171aea830769c0001c9993b");
   }
 
   const handleSubmit = (event) => {
