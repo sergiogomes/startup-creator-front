@@ -164,8 +164,13 @@ const ChristianBarbosa = () => {
 
   return (
     <Container className="p-3" style={{
-      background: "linear-gradient(to right, #019CAD, #4880EC)",
-      height: '100%'
+      // background: "linear-gradient(to right, #019CAD, #4880EC)",
+      background: "-webkit-gradient(linear, left top, left bottom, from(#019CAD), to(#4880EC)) fixed",
+      width: '100%',
+      backgroundAttachment: 'fixed',
+      maxWidth: 'none',
+      backgroundRepeat: 'no-repeat',
+      minHeight: '720px'
     }}>
       <div className="centerImg">
         <img src={"img/logo-omat.png"} alt="OMAT" height="80"/>
@@ -219,34 +224,118 @@ const ChristianBarbosa = () => {
         ) : (
           <Jumbotron className="painel" style={{ background: '#595BDC' }}>
             <div className="">
-              <h1 className="pergunta center tituloResultado">TESTE CONCLUÍDO</h1>
-              <br />
-              {/* <h1 className="pergunta center">SEU PERFIL DIGITAL É: </h1> */}
-              <h1 className="pergunta center">{`${perfilSelecionado}`}</h1>
+              <h1 className="pergunta tituloResultado">{`${perfilSelecionado}`}</h1>
 
-              {/* {perfilSelecionado === 'ESPECIALISTA' ? (
-                <Iframe url="http://www.youtube.com/embed/84iHW5laImM"
-                  width="100%"
-                  height="450px"
-                  display="initial"
-                  position="relative"
-                />
-              ) : (
-                <Iframe url="http://www.youtube.com/embed/EYmUMUPf0DA"
-                  width="100%"
-                  height="450px"
-                  display="initial"
-                  position="relative"
-                />
-              )} */}
+              {perfilSelecionado === 'Seu 2022 está no caminho para ser um dos melhores anos.' ? (
+                <>
+                <br />
+                <p className="pergunta">
+                  Parabéns! De acordo com seu teste, você tem tido um ano com bons resultados. Provavelmente você tem conseguido fazer as coisas acontecerem, a pergunta que fica é que se isso tem matado a sua qualidade de vida.
+                </p>
+                <p className="pergunta">
+                  Não adianta ter resultados sem equilíbrio. Suas decisões precisam estar alinhadas com essas duas ideias em mente. Você pode escolher ter mais tempo, sabendo decidir que atividades executar, que atividades recusar, que atividades delegar. E mesmo quando você acha que não está tomando decisão nenhuma, você está escolhendo entregar a decisão na mão das circunstâncias. Algo como “deixa a vida me levar”. Só não vale reclamar depois e dizer que você não queria isso. Você pode escolher ter mais vida, se optar por fazer coisas importantes para você, aproveitar seus relacionamentos, fazer esporte, se dedicar a você.
+                </p>
+                <p className="pergunta">
+                  Um ano só é completo com equilíbrio na sua rotina. E se você está conseguindo tempo para isso, parabéns. Caso contrário é sempre tempo de reavaliar a sua forma de planejar e como a sua produtividade pode aumentar.
+                </p>
+                <p className="pergunta">
+                  <strong>Venha aprender mais técnicas para fazer um planejamento anual eficiente com equilíbrio na sua produtividade.</strong> Na semana de 6/12 teremos o workshop gratuito do O Melhor Ano de Todos, que vai ter aulas para ajudar você a estruturar seu plano, seus indicadores, seus sistemas e usar tempo com mais produtividade.
+                </p>
 
-              <br />
-              <br />
+                <p className="pergunta">
+                  <strong>Para ser avisado, clique no botão abaixo para entrar no grupo do Whatsapp e não perder nenhum aviso das aulas.</strong>
+                </p>
+                </>
+              ) : (<></>)
+              }
+
+              {perfilSelecionado === 'Você pode fazer 2022 ser ainda melhor.' ? (
+                <>
+                <br />
+                <p className="pergunta">
+                  Os planos parecem que não estão saindo do lugar para você. 
+                  Talvez o ano atual tenha sido de muito esforço com pouco resultado e isso precisa mudar.
+                </p>
+                <p className="pergunta">
+                  O que está impedindo você de criar um ano melhor é a falta de clareza do que realmente é importante para você, 
+                  a alocação do seu tempo nesse rumo e a criação de metas que ajudem você a evoluir na direção das coisas realmente importantes da vida.
+                </p>
+                <p className="pergunta">
+                  Os planos acabam não saindo do papel, porque provavelmente você não tem dedicado tempo suficiente ao planejamento e sua execução. Quando falamos de planejar, 
+                  não significa que é algo escrito e que não vai ser alterado, muito pelo contrário. Fazer um planejamento anual do jeito correto ajuda você a ter mais clareza para o ano, 
+                  ajuda você a definir as prioridades quando surgem oportunidades que não vão agregar, 
+                  dizer não as coisas que não fazem sentido e ajustar a rota quando necessário.
+                </p>
+                <p className="pergunta">
+                  Planejar aumenta as chances de as coisas darem certo,
+                  pois coloca a sua mente focada naquilo que você quer, afasta das dúvidas e diminui a incerteza.
+                </p>
+
+                <p className="pergunta">
+                  O que você precisa fazer imediatamente para ter um ano mais favorável:
+                </p>
+
+                <ul className="pergunta pontos">
+                  <li>Aumentar seu autoconhecimento, entendendo seus pontos fortes e seus pontos fracos</li>
+                  <li>Escrever as coisas que precisa obter para os próximos 90 dias e depois selecionar apenas 1 que seja factível de ser feita nesse período, criar uma lista de tarefas e colocar na sua agenda algo relacionado a esses itens todo dia.</li>
+                  <li>Coloque seu foco em desenvolver mais as suas habilidades, em aprender coisas novas que possam ser colocadas em praticamente imediatamente e que tenham relação com seus objetivos.</li>
+                  <li>Aprender a planejar seu tempo da forma correta. Troque o planejamento diário por um planejamento de três dias ou a semana toda. Antecipação é a chave do equilíbrio.</li>
+                </ul>
+
+                <p className="pergunta">
+                  <strong>Você precisa urgentemente criar um plano para 2022.</strong> Na semana de 6/12 teremos o workshop gratuito do O Melhor Ano de Todos, que vai ter aulas para ajudar você a estruturar seu plano, seus indicadores, seus sistemas e usar tempo com mais produtividade.
+                </p>
+
+                <p className="pergunta">
+                  <strong>Para ser avisado, clique no botão abaixo para entrar no grupo do Whatsapp e não perder nenhum aviso das aulas.</strong>
+                </p>
+                </>
+              ) : (<></>)
+              }
+
+              {perfilSelecionado === 'Você precisa urgentemente criar um 2022 melhor.' ? (
+                <>
+                <br />
+                <p className="pergunta">
+                  Os planos parecem que não estão saindo do lugar para você. Talvez o ano atual tenha sido de muito esforço com pouco resultado e isso precisa mudar.
+                </p>
+                <p className="pergunta">
+                  O que está impedindo você de criar um ano melhor é a falta de clareza do que realmente é importante para você, a alocação do seu tempo nesse rumo e a criação de metas que ajudem você a evoluir na direção das coisas realmente importantes da vida.
+                </p>
+                <p className="pergunta">
+                  Os planos acabam não saindo do papel, porque provavelmente você não tem dedicado tempo suficiente ao planejamento e sua execução. Quando falamos de planejar, não significa que é algo escrito e que não vai ser alterado, muito pelo contrário. Fazer um planejamento anual do jeito correto ajuda você a ter mais clareza para o ano, ajuda você a definir as prioridades quando surgem oportunidades que não vão agregar, dizer não as coisas que não fazem sentido e ajustar a rota quando necessário.
+                </p>
+                <p className="pergunta">
+                  Planejar aumenta as chances de as coisas darem certo, pois coloca a sua mente focada naquilo que você quer, afasta das dúvidas e diminui a incerteza.
+                </p>
+
+                <p className="pergunta">
+                  O que você precisa fazer imediatamente para ter um ano mais favorável:
+                </p>
+
+                <ul className="pergunta pontos">
+                  <li>Aumentar seu autoconhecimento, entendendo seus pontos fortes e seus pontos fracos</li>
+                  <li>Escrever as coisas que precisa obter para os próximos 90 dias e depois selecionar apenas 1 que seja factível de ser feita nesse período, criar uma lista de tarefas e colocar na sua agenda algo relacionado a esses itens todo dia.</li>
+                  <li>Coloque seu foco em desenvolver mais as suas habilidades, em aprender coisas novas que possam ser colocadas em praticamente imediatamente e que tenham relação com seus objetivos.</li>
+                  <li>Aprender a planejar seu tempo da forma correta. Troque o planejamento diário por um planejamento de três dias ou a semana toda. Antecipação é a chave do equilíbrio.</li>
+                </ul>
+
+                <p className="pergunta">
+                  <strong>Você precisa urgentemente criar um plano para 2022.</strong> Na semana de 6/12 teremos o workshop gratuito do O Melhor Ano de Todos, que vai ter aulas para ajudar você a estruturar seu plano, seus indicadores, seus sistemas e usar tempo com mais produtividade.
+                </p>
+
+                <p className="pergunta">
+                  <strong>Para ser avisado, clique no botão abaixo para entrar no grupo do Whatsapp e não perder nenhum aviso das aulas.</strong>
+                </p>
+                </>
+              ) : (<></>)
+              }
+
               <div className="center">
                 <Form.Group as={Row} className="mb-3">
                   <Button className="btnEnviarRespostasWhats" onClick={abrirLink}>
                     <img className="logoBotaoWhats" src={"img/whatsapp-branco.png"} />
-                    &nbsp;QUERO RECEBER OS CONTEÚDOS
+                    &nbsp;QUERO ENTRAR NO GRUPO
                   </Button>
                   <ToastContainer />
                 </Form.Group>
