@@ -267,6 +267,11 @@ const Dashboard = () => {
       <div className="centerImg">
         <img className="logoRotaDigital" src={"img/mp-branco.png"} alt="Rota Digital" />
       </div>
+      <noscript>
+        <img height="1" width="1" style="display:none"
+          src="https://www.facebook.com/tr?id=146287563581051&ev=PageView&noscript=1"
+        />
+      </noscript>
     </Container>
   );
 };
