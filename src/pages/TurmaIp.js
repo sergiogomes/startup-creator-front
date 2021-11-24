@@ -12,7 +12,7 @@ import api from '../services/api';
 
 import '../../src/AutoGoverno.css';
 
-const TurmaIp127 = () => {
+const TurmaIp = () => {
 
   const [isAluno, setIsAluno] = useState(false);
   const [rankBloqueios, setRankBloqueios] = useState([]);
@@ -41,7 +41,7 @@ const TurmaIp127 = () => {
       </div>
       {!isAluno ? (
         <Jumbotron className="painel" style={{ background: '#1a1a1a' }}>
-          <h1 className="pergunta center">Turma 127</h1>
+          <h1 className="pergunta center">Turma 128</h1>
           <h1 className="pergunta center">Ranking de Bloqueios 🚫</h1>
           <Form style={{ background: '#1a1a1a' }}>
             <fieldset>
@@ -81,4 +81,4 @@ const TurmaIp127 = () => {
   );
 };
 
-export default TurmaIp127;
+export default TurmaIp;
