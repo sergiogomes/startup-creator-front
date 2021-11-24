@@ -155,7 +155,7 @@ const Dashboard = () => {
       </div>
       {!isAluno ? (
         <Jumbotron className="painel" style={{ background: '#1a1a1a' }}>
-          <h1 className="pergunta">Email cadastrado na compra do método IP 127</h1>
+          <h1 className="pergunta">Email cadastrado na compra do MÉTODO IP</h1>
           <Form style={{ background: '#1a1a1a' }}>
             <fieldset>
               <Form.Group as={Row} className="mb-3">
@@ -168,7 +168,7 @@ const Dashboard = () => {
               </Form.Group>
               <div className="center">
                   <Form.Group as={Row} className="mb-3">
-                    <Button type="submit" className="btnEnviarRespostas" onClick={validarEmail}>ACESSAR&nbsp;ENQUETE</Button>
+                    <Button type="submit" className="btnEnviarRespostasIP" onClick={validarEmail}>ACESSAR&nbsp;ENQUETE</Button>
                     <ToastContainer />
                   </Form.Group>
                 </div>
@@ -229,7 +229,7 @@ const Dashboard = () => {
             })}
             <div className="center">
               <Form.Group as={Row} className="mb-3">
-                <Button type="submit" className="btnEnviarRespostas" onClick={enviarResposta}>ENVIAR&nbsp;RESPOSTAS</Button>
+                <Button type="submit" className="btnEnviarRespostasIP" onClick={enviarResposta}>ENVIAR&nbsp;RESPOSTAS</Button>
               </Form.Group>
             </div>
             <h1 className="nota center">Lembre-se: isso é só a sombra doque há de vir. #TMJADF</h1>
