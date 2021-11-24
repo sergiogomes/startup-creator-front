@@ -13,9 +13,9 @@ import { notifyError } from '../utils/toasts';
 
 import api from '../services/api';
 
-import '../../src/RotaDigital.css';
+import '../../src/ChristianBarbosa.css';
 
-const Dashboard = () => {
+const ChristianBarbosa = () => {
 
   const [perguntas, setPerguntas] = useState([]);
   const [respostas, setRespostas] = useState([]);
@@ -29,17 +29,17 @@ const Dashboard = () => {
   const [coprodutor, setCoprodutor] = useState(0);
   const [lancador, setLancador] = useState(0);
   const [perfilSelecionado, setPerfilSelecionado] = useState('Carregando...');
-  const [paginas, setPaginas] = useState([132, 133, 134, 135, 136, 137, 138]);
-  const [perguntaAtual, setPerguntaAtual] = useState(132);
+  const [paginas, setPaginas] = useState([149, 150, 151, 152, 153, 154, 155, 156, 157, 158]);
+  const [perguntaAtual, setPerguntaAtual] = useState(149);
 
   const getProva = async () => {
     try {
-      const { data } = await api.get(`/prova/8`);
+      const { data } = await api.get(`/prova/10`);
       const { perguntas, respostas, prova } = data.provaAtual;
       setPerguntas(perguntas);
       setRespostas(respostas);
       setProva(prova);
-      exibirPergunta(132);
+      exibirPergunta(149);
     } catch (error) {
       console.log(error);
       notifyError('Neste momento não tem prova disponivel! Fique atendo nas lives de terça!');
@@ -69,18 +69,18 @@ const Dashboard = () => {
   };
 
   const exibirProximaPergunta = () => {
-    if (perguntaAtual === 138) {
+    if (perguntaAtual === 158) {
       enviarResposta();
       return;
     }
 
     if (perguntaAtual === 0) {
-      exibirPergunta(132);
-      setPerguntaAtual(132);
+      exibirPergunta(149);
+      setPerguntaAtual(149);
       return;
     }
 
-    if (perguntaAtual >= 132) {
+    if (perguntaAtual >= 149) {
       exibirPergunta(perguntaAtual + 1);
       setPerguntaAtual(perguntaAtual + 1);
       esconderPergunta(perguntaAtual);
@@ -103,15 +103,15 @@ const Dashboard = () => {
     const maiorValor = Math.max(...[expert, coprodutor, lancador]);
 
     if (expert > 0 && expert === maiorValor) {
-      return 'ESPECIALISTA';
+      return 'Seu 2022 está no caminho para ser um dos melhores anos.';
     }
 
     if (coprodutor > 0 && coprodutor === maiorValor) {
-      return 'COPRODUTOR';
+      return 'Você pode fazer 2022 ser ainda melhor.';
     }
 
     if (lancador > 0 && lancador === maiorValor) {
-      return 'LANÇADOR';
+      return 'Você precisa urgentemente criar um 2022 melhor.';
     }
 
     return false;
@@ -119,7 +119,7 @@ const Dashboard = () => {
 
   const enviarResposta = async (event) => {
     try {
-      if((expert + lancador + coprodutor) <= 5) {
+      if((expert + lancador + coprodutor) <= 8) {
         notifyError('Por favor responda todas as perguntas.');
         return false;
       }
@@ -151,7 +151,7 @@ const Dashboard = () => {
   }
 
   const abrirLink = () => {
-    window.open("https://devzap.com.br/api-engennier/campanha/api/redirect/6171aea830769c0001c9993b");
+    window.open("https://devzap.com.br/api-engennier/campanha/api/redirect/61805a7ac9ddf60001facee1");
   }
 
   const handleSubmit = (event) => {
@@ -163,23 +163,26 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <Container className="p-3" style={{ background: '#000' }}>
+    <Container className="p-3" style={{
+      background: "linear-gradient(to right, #019CAD, #4880EC)",
+      height: '100%'
+    }}>
       <div className="centerImg">
-        <img src={"img/rota-digital-branco.png"} alt="Rota Digital" height="80"/>
+        <img src={"img/logo-omat.png"} alt="OMAT" height="80"/>
       </div>
       {isAluno ? (
-        <Jumbotron className="painel" style={{ background: '#1a1a1a' }}>
+        <Jumbotron className="painel" style={{ background: '#595BDC' }}>
         </Jumbotron>
       ) : (
         <>
         {!isProvaRespondida ? (
           <>
-            <h1 className="nota center">TESTE DE APTIDÃO DIGITAL</h1>
+            <h1 className="notaChristian center">DESCUBRA AGORA O QUE TE IMPEDE DE CONQUISTAR AS TÃO SONHADAS METAS DE ANO NOVO…</h1>
           {perguntas.map((pergunta, i) => {
             return (
               <>
-                <Jumbotron className="painel" id={`pergunta-${pergunta.id}`} style={{ background: '#1a1a1a', display: 'none' }}>
-                  <Form style={{ background: '#1a1a1a' }} onSubmit={handleSubmit}>
+                <Jumbotron className="painel" id={`pergunta-${pergunta.id}`} style={{ background: '#595BDC', display: 'none' }}>
+                  <Form style={{ background: '#595BDC' }} onSubmit={handleSubmit}>
                   <h1 className="pergunta">{`${i + 1}) ${pergunta.pergunta}`}</h1>
                   <fieldset className="alternativasRadius">
                     <Form.Group as={Row} className="mb-3">
@@ -212,24 +215,16 @@ const Dashboard = () => {
               </>
               )
             })}
-            {/* <div className="center">
-              <Form.Group as={Row} className="mb-3">
-                <Button type="button" className="btnEnviarRespostas" onClick={enviarResposta}>ENVIAR&nbsp;RESPOSTAS</Button>
-              </Form.Group>
-            </div> */}
-            <h1 className="nota center">Descubra o caminho ideal para o seu sucesso na internet.</h1>
-            <h1 className="nota center"></h1>
-
           </>
         ) : (
-          <Jumbotron className="painel" style={{ background: '#1a1a1a' }}>
+          <Jumbotron className="painel" style={{ background: '#595BDC' }}>
             <div className="">
               <h1 className="pergunta center tituloResultado">TESTE CONCLUÍDO</h1>
               <br />
-              <h1 className="pergunta center">SEU PERFIL DIGITAL É: </h1>
-              <h1 className="pergunta center perfil">{`${perfilSelecionado}`}</h1>
+              {/* <h1 className="pergunta center">SEU PERFIL DIGITAL É: </h1> */}
+              <h1 className="pergunta center">{`${perfilSelecionado}`}</h1>
 
-              {perfilSelecionado === 'ESPECIALISTA' ? (
+              {/* {perfilSelecionado === 'ESPECIALISTA' ? (
                 <Iframe url="http://www.youtube.com/embed/84iHW5laImM"
                   width="100%"
                   height="450px"
@@ -243,7 +238,7 @@ const Dashboard = () => {
                   display="initial"
                   position="relative"
                 />
-              )}
+              )} */}
 
               <br />
               <br />
@@ -265,10 +260,10 @@ const Dashboard = () => {
         </>
       )}
       <div className="centerImg">
-        <img className="logoRotaDigital" src={"img/mp-branco.png"} alt="Rota Digital" />
+        <img className="logoRotaDigital" src={"img/logo-christian-barbosa.png"} alt="Rota Digital" />
       </div>
     </Container>
   );
 };
 
-export default Dashboard;
+export default ChristianBarbosa;

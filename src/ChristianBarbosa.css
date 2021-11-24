@@ -1,0 +1,95 @@
+.header {
+  text-align: center;
+}
+
+.logoRotaDigital {
+  height: 50px;
+  align-items: center !important;
+  display: flex;
+  justify-content: center;
+}
+
+.notaChristian {
+  color: #fff;
+  font-style: bold;
+  font-size: 25px;
+  text-align: center;
+  padding: 5px;
+}
+
+.pergunta {
+  color: #fff;
+  font-style: bold;
+  font-size: 20px;
+}
+
+.center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.centerImg {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.painel {
+  border-radius: 25px;
+}
+
+.alternativa {
+  border-radius: 25px;
+  border: 1px solid #fff;
+  padding: 10px;
+  border: 10px;
+}
+
+.alternativasRadius {
+  padding-left: 10px;
+}
+
+.btnEnviarRespostas {
+  background: #FF006E;
+  border-color: #FF006E;
+  font-weight: bold;
+  border-radius: 12px;
+  height: 60px;
+}
+
+.btnEnviarRespostasWhats {
+  background: #25D366;
+  border-color: #25D366;
+  font-weight: bold;
+  border-radius: 12px;
+  height: 60px;
+}
+
+.inputEmail {
+  margin: 15px;
+}
+
+.inputCodigo {
+  margin: 15px;
+  margin-left: 5px;
+}
+
+.tituloResultado {
+  font-size: 30px;
+}
+
+.perfil {
+  font-size: 30px;
+  font-weight: bold;
+  color: #2751e5;
+}
+
+.descricaoResultado {
+  font-size: 16px;
+}
+
+.logoBotaoWhats {
+  height: 18px;
+}
