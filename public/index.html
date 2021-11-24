@@ -40,12 +40,15 @@
       'https://connect.facebook.net/en_US/fbevents.js');
       fbq('init', '146287563581051');
       fbq('track', 'PageView');
+      fbq('track', 'Lead');
 
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
       gtag('config', 'AW-455561195');
+
+      gtag('event', 'conversion', {'send_to': 'AW-455561195/NWLjCPmR_4ADEOufndkB'});
     }
   </script>
   <noscript>
