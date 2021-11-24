@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import Iframe from 'react-iframe';
+import { Helmet } from "react-helmet";
 
 import { ToastContainer } from 'react-toastify';
 import { notifyError } from '../utils/toasts';
@@ -349,13 +349,42 @@ const ChristianBarbosa = () => {
         </>
       )}
       <div className="centerImg">
-        <img className="logoRotaDigital" src={"img/logo-christian-barbosa.png"} alt="Rota Digital" />
+        <img className="logoRotaDigital" src={"img/logo-christian-barbosa.png"} alt="Christian Barbosa" />
       </div>
+      <Helmet>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-413413781"></script>
+        <script>
+          {`
+            if (document.location.pathname.indexOf("/teste-christian-barbosa") == 0) {
+              console.log('teste-christian-barbosa');
+        
+              !function(f,b,e,v,n,t,s)
+              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+              n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', '1156502128048829');
+              fbq('track', 'PageView');
+              fbq('track', 'Lead');
+        
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+        
+              gtag('config', 'AW-413413781');
+              gtag('event', 'conversion', {'send_to': 'AW-413413781/0mPjCPDTs4IDEJXjkMUB'});
+            }
+          `}
+        </script>
+      </Helmet>
       <noscript>
-      <img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=1156502128048829&ev=PageView&noscript=1"
-      />
-  </noscript>
+        <img height="1" width="1" style="display:none"
+          src="https://www.facebook.com/tr?id=1156502128048829&ev=PageView&noscript=1"
+        />
+      </noscript>
     </Container>
   );
 };
