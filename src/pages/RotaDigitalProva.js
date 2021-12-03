@@ -135,7 +135,7 @@ const RotaDigitalProva = () => {
   }
 
   const abrirLink = () => {
-    window.open("https://devzap.com.br/api-engennier/campanha/api/redirect/6171aea830769c0001c9993b");
+    window.open("https://t.me/clubdomp");
   }
 
   const gravarNome = async (event) => {
@@ -298,20 +298,21 @@ const RotaDigitalProva = () => {
         ) : (
           <Jumbotron className="painel" style={{ background: '#1a1a1a' }}>
             <div className="">
-              <h1 className="pergunta center tituloResultado">PROVA CONCLUÍDA</h1>
+              <h1 className="pergunta center tituloResultado">PARABÉNS, PROVA CONCLUÍDA!</h1>
               <br />
-
+              <h1 className="pergunta center">O sorteio será efetuado na Live de Domingo às 22:30!</h1>
+              <br />
+              <h1 className="pergunta center">Se você não está no grupo do Telegram entre agora mesmo para acompanhar as informações.</h1>
+              <br />
               <div className="center">
                 <Form.Group as={Row} className="mb-3">
                   <Button className="btnEnviarRespostasTelegram" onClick={abrirLink}>
                     <img className="logoBotaoWhats" src={"img/logo-telegram.png"} />
-                    &nbsp;ENTRE NO GRUPO E ACOMPANHE O RESULTADO DO SORTEIO
+                    &nbsp;&nbsp;Entrar no Club do MP
                   </Button>
                   <ToastContainer />
                 </Form.Group>
               </div>
-              
-              <h1 className="pergunta center">Grupo Fechado e Silencioso</h1>
             </div>
 
           </Jumbotron>
