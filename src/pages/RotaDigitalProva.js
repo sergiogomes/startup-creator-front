@@ -101,10 +101,10 @@ const RotaDigitalProva = () => {
 
   const enviarResposta = async (event) => {
     try {
-      if((expert + lancador + coprodutor) <= 8) {
-        notifyError('Por favor responda todas as perguntas.');
-        return false;
-      }
+      // if((expert + lancador + coprodutor) <= 8) {
+      //   notifyError('Por favor responda todas as perguntas.');
+      //   return false;
+      // }
 
       // event.preventDefault();
 
@@ -303,9 +303,9 @@ const RotaDigitalProva = () => {
 
               <div className="center">
                 <Form.Group as={Row} className="mb-3">
-                  <Button className="btnEnviarRespostasWhats" onClick={abrirLink}>
-                    <img className="logoBotaoWhats" src={"img/whatsapp-branco.png"} />
-                    &nbsp;ENTRE NO GRUPO E ACOMPANHE O RESULTADO
+                  <Button className="btnEnviarRespostasTelegram" onClick={abrirLink}>
+                    <img className="logoBotaoWhats" src={"img/logo-telegram.png"} />
+                    &nbsp;ENTRE NO GRUPO E ACOMPANHE O RESULTADO DO SORTEIO
                   </Button>
                   <ToastContainer />
                 </Form.Group>
