@@ -135,7 +135,7 @@ const RotaDigitalProva = () => {
   }
 
   const abrirLink = () => {
-    window.open("https://t.me/clubdomp");
+    window.open("https://devzap.com.br/api-engennier/campanha/api/redirectlink/61980a40ccda18000126b49e");
   }
 
   const gravarNome = async (event) => {
@@ -224,6 +224,20 @@ const RotaDigitalProva = () => {
       </div>
       {isAluno ? (
         <Jumbotron className="painel" style={{ background: '#1a1a1a' }}>
+          <h1 className="tituloUm">
+            Participe da prova, <strong> acerte 80% ou 
+            mais</strong> das questões relacionadas ao evento e concorra a um &nbsp;
+            <span className="italicoSublinhado">
+              Macbook, um IPhone e uma vaga no LX Club.
+            </span>
+          </h1>
+          <br />
+          <h1 className="center tituloDois">
+            Preencha as informações abaixo e participe.
+          </h1>
+          <h1 className="center tituloDois">
+            Mas atenção, a prova pode ser feita somente uma vez! 
+          </h1>
           <Form>
             <Form.Group className="mb-3 pergunta" controlId="formBasicEmail">
               <Form.Label>Nome</Form.Label>
@@ -239,7 +253,13 @@ const RotaDigitalProva = () => {
               <Form.Control type="cpf" placeholder="" onChange={gravarCPF} />
               <br />
               <Form.Text className="center">
-                Atenção a prova pode ser feita somente uma vez...
+                O resultado do sorteio será na aula de domingo (05/12), às 22:30, e o 
+                link será liberado para quem estiver no grupo de WhatsApp. 
+              </Form.Text>
+              <br />
+              <Form.Text className="center">
+                É imprescindível que você esteja presente. Se você for contemplado e não estiver assistindo a aula, 
+                vamos sortear outra pessoa.
               </Form.Text>
             </Form.Group>
             <br />
@@ -300,15 +320,18 @@ const RotaDigitalProva = () => {
             <div className="">
               <h1 className="pergunta center tituloResultado">PARABÉNS, PROVA CONCLUÍDA!</h1>
               <br />
-              <h1 className="pergunta center">O sorteio será efetuado na Live de Domingo às 22:30!</h1>
+              <h1 className="pergunta center">O sorteio será efetuado na Aula de Domingo, às 22:30, e o link será enviado para quem estiver no grupo de WhatsApp!</h1>
               <br />
-              <h1 className="pergunta center">Se você não está no grupo do Telegram entre agora mesmo para acompanhar as informações.</h1>
+              <h1 className="pergunta center">
+                Se você não está no grupo entre agora 
+                mesmo para acompanhar as informações.
+              </h1>
               <br />
               <div className="center">
                 <Form.Group as={Row} className="mb-3">
-                  <Button className="btnEnviarRespostasTelegram" onClick={abrirLink}>
-                    <img className="logoBotaoWhats" src={"img/logo-telegram.png"} />
-                    &nbsp;&nbsp;Entrar no Club do MP
+                  <Button className="btnEnviarRespostasWhats" onClick={abrirLink}>
+                    <img className="logoBotaoWhats" src={"img/whatsapp-branco.png"} />
+                    &nbsp;&nbsp;Toque aqui para entrar no grupo
                   </Button>
                   <ToastContainer />
                 </Form.Group>

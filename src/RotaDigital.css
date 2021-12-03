@@ -101,3 +101,18 @@
 .logoBotaoWhats {
   height: 18px;
 }
+
+.italicoSublinhado {
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.tituloUm {
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.tituloDois {
+  color: #ffffff;
+  font-size: 13px;
+}
