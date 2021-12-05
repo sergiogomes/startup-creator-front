@@ -31,7 +31,7 @@ const RotaDigitalProva = () => {
   const [coprodutor, setCoprodutor] = useState(0);
   const [lancador, setLancador] = useState(0);
   const [perfilSelecionado, setPerfilSelecionado] = useState('Carregando...');
-  const [paginas, setPaginas] = useState([169, 170, 171, 172, 173, 174, 175, 176, 177, 178]);
+  const [paginas, setPaginas] = useState([169, 170, 172, 173, 174, 175, 176, 177, 178]);
   const [perguntaAtual, setPerguntaAtual] = useState(169);
 
   const [nome, setNome] = useState('');
@@ -78,6 +78,13 @@ const RotaDigitalProva = () => {
     if (perguntaAtual === 0) {
       exibirPergunta(169);
       setPerguntaAtual(169);
+      return;
+    }
+
+    if (perguntaAtual === 170) {
+      exibirPergunta(perguntaAtual + 2);
+      setPerguntaAtual(perguntaAtual + 2);
+      esconderPergunta(perguntaAtual);
       return;
     }
 
