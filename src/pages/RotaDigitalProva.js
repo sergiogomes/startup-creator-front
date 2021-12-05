@@ -260,7 +260,7 @@ const RotaDigitalProva = () => {
               <Form.Control type="cpf" placeholder="" onChange={gravarCPF} />
               <br />
               <Form.Text className="center">
-                O resultado do sorteio será na aula de domingo (05/12), às 22:30, e o 
+                O resultado do sorteio será na aula de hoje (05/12), às 22:30, e o 
                 link será liberado para quem estiver no grupo de WhatsApp. 
               </Form.Text>
               <br />
@@ -327,7 +327,7 @@ const RotaDigitalProva = () => {
             <div className="">
               <h1 className="pergunta center tituloResultado">PARABÉNS, PROVA CONCLUÍDA!</h1>
               <br />
-              <h1 className="pergunta center">O sorteio será efetuado na Aula de Domingo, às 22:30, e o link será enviado para quem estiver no grupo de WhatsApp!</h1>
+              <h1 className="pergunta center">O sorteio será efetuado na Aula de Hoje, às 22:30, e o link será enviado para quem estiver no grupo de WhatsApp!</h1>
               <br />
               <h1 className="pergunta center">
                 Se você não está no grupo entre agora 
