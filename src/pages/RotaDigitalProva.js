@@ -327,22 +327,22 @@ const RotaDigitalProva = () => {
             <div className="">
               <h1 className="pergunta center tituloResultado">PARABÉNS, PROVA CONCLUÍDA!</h1>
               <br />
-              <h1 className="pergunta center">O sorteio será efetuado na Aula de Hoje, às 22:30, e o link será enviado para quem estiver no grupo de WhatsApp!</h1>
-              <br />
-              <h1 className="pergunta center">
+              <h1 className="pergunta center">O sorteio será efetuado na Aula de Hoje, às 22:30, o link da live será enviado no canal do Telegram, fique de olho!</h1>
+              {/* <br /> */}
+              {/* <h1 className="pergunta center">
                 Se você não está no grupo entre agora 
                 mesmo para acompanhar as informações.
               </h1>
               <br />
               <div className="center">
                 <Form.Group as={Row} className="mb-3">
-                  <Button className="btnEnviarRespostasWhats" onClick={abrirLink}>
+                  <Button className="btnEnviarRespostasTelegram" onClick={abrirLink}>
                     <img className="logoBotaoWhats" src={"img/whatsapp-branco.png"} />
                     &nbsp;&nbsp;Toque aqui para entrar no grupo
                   </Button>
                   <ToastContainer />
                 </Form.Group>
-              </div>
+              </div> */}
             </div>
 
           </Jumbotron>
