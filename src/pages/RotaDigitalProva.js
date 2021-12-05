@@ -264,10 +264,10 @@ const RotaDigitalProva = () => {
                 link será liberado para quem estiver no grupo de WhatsApp. 
               </Form.Text>
               <br />
-              {/* <Form.Text className="center">
+              <Form.Text className="center">
                 É imprescindível que você esteja presente. Se você for contemplado e não estiver assistindo a aula, 
                 vamos sortear outra pessoa.
-              </Form.Text> */}
+              </Form.Text>
             </Form.Group>
             <br />
             <div className="center">
