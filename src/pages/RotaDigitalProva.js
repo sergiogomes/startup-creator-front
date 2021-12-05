@@ -266,7 +266,7 @@ const RotaDigitalProva = () => {
               <br />
               <Form.Text className="center">
                 É imprescindível que você esteja presente. Se você for contemplado e não estiver assistindo a aula, 
-                vamos sortear outra pessoa.
+                vamos sortear outra pessoa. 
               </Form.Text>
             </Form.Group>
             <br />
