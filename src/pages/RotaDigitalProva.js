@@ -231,7 +231,7 @@ const RotaDigitalProva = () => {
       </div>
       {isAluno ? (
         <Jumbotron className="painel" style={{ background: '#1a1a1a' }}>
-          <h1 className="tituloUm">
+          {/* <h1 className="tituloUm">
             Participe da prova, <strong> acerte 80% ou 
             mais</strong> das questões relacionadas ao evento e concorra a um &nbsp;
             <span className="italicoSublinhado">
@@ -244,10 +244,10 @@ const RotaDigitalProva = () => {
           </h1>
           <h1 className="center tituloDois">
             Mas atenção, a prova pode ser feita somente uma vez! 
-          </h1>
+          </h1> */}
           <Form>
             <Form.Group className="mb-3 pergunta" controlId="formBasicEmail">
-              <Form.Label>Nome</Form.Label>
+              {/* <Form.Label>Nome</Form.Label>
               <Form.Control type="nome" placeholder="" onChange={gravarNome} />
               <br />
               <Form.Label>Email</Form.Label>
@@ -257,8 +257,11 @@ const RotaDigitalProva = () => {
               <Form.Control type="telefone" placeholder="" onChange={gravarTelefone} />
               <br />
               <Form.Label>CPF</Form.Label>
-              <Form.Control type="cpf" placeholder="" onChange={gravarCPF} />
+              <Form.Control type="cpf" placeholder="" onChange={gravarCPF} /> */}
               <br />
+              <Form.Text className="center">
+                <strong>PROVA ENCERRADA</strong>
+              </Form.Text>
               <Form.Text className="center">
                 O resultado do sorteio será na aula de hoje (05/12), às 22:30, e o 
                 link será liberado para quem estiver no grupo de WhatsApp. 
@@ -270,11 +273,11 @@ const RotaDigitalProva = () => {
               </Form.Text>
             </Form.Group>
             <br />
-            <div className="center">
+            {/* <div className="center">
               <Button variant="primary btnEnviarRespostasWhats" type="button" onClick={cadastrarParticipante}>
                 INICIAR PROVA
               </Button>
-            </div>
+            </div> */}
           </Form>
         </Jumbotron>
       ) : (
