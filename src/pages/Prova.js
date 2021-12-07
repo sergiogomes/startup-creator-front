@@ -188,7 +188,7 @@ const Dashboard = () => {
         <>
         {!isProvaRespondida ? (
           <>
-            <h1 className="nota center">A prova 8 estará disponível entre os dias 30 até 06 de dezembro, às 23H59.</h1>
+            <h1 className="nota center">A prova 9 estará disponível entre os dias 07 até 13 de dezembro, às 23H59.</h1>
           {perguntas.map((pergunta, i) => {
             return (
               <>
@@ -227,7 +227,7 @@ const Dashboard = () => {
             })}
             <Jumbotron className="painel" style={{ background: '#8c6531' }}>
               <Form style={{ background: '#8c6531' }} onSubmit={handleSubmit}>
-                <h1 className="pergunta">Insira o código da live informado no dia 30 de novembro de 2021:</h1>
+                <h1 className="pergunta">Insira o código da live informado no dia 07 de dezembro de 2021:</h1>
                 <fieldset className="alternativasRadius">
                   <Form.Group as={Row} className="mb-3">
                     <Form.Control

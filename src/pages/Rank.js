@@ -13,9 +13,9 @@ const Rank = () => {
         <img src={"img/CDR600x300.png"} alt="A Ciência da Riqueza" height="75"/>
       </div>
       <Jumbotron className="painel" style={{ background: '#8c6531' }}>
-        <div className="centerImg">
+        {/* <div className="centerImg">
           <img src={"img/top-10.png"} alt="A Ciência da Riqueza" height="75"/>
-        </div>
+        </div> */}
         <Table className="tableRank" style={{ color: '#fff' }} striped hover>
           <tbody>
             <tr>
