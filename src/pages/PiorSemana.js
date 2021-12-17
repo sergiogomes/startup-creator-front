@@ -239,12 +239,12 @@ const PiorSemana = () => {
         ) : (
           <Jumbotron className="painel" style={{ background: '#1a1a1a' }}>
             <div className="">
-              <h1 className="pergunta center tituloResultado">QUIZ CONCLUÍDO</h1>
+              <h1 className="pergunta center tituloResultado">TESTE CONCLUÍDO</h1>
               <br />
-              <h1 className="pergunta center">SEU PERFIL DIGITAL É: </h1>
+              <h1 className="pergunta center">VOCÊ ESTÁ NA FASE: </h1>
               <h1 className="pergunta center perfil">{`${perfilSelecionado}`}</h1>
 
-              {perfilSelecionado === 'ZUMBI' ? (
+              {/* {perfilSelecionado === 'ZUMBI' ? (
                 <Iframe url="http://www.youtube.com/embed/84iHW5laImM"
                   width="100%"
                   height="450px"
@@ -297,7 +297,7 @@ const PiorSemana = () => {
                 />
               ) : (
                 <></>
-              )}
+              )} */}
 
               <br />
               <br />
