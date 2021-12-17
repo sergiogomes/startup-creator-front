@@ -14,6 +14,7 @@ import Rank from '../pages/Rank';
 import RotaDigital from '../pages/RotaDigital';
 import RotaDigitalProva from '../pages/RotaDigitalProva';
 import ChristianBarbosa from '../pages/ChristianBarbosa';
+import PiorSemana from '../pages/PiorSemana';
 
 const Routes = () => (
   <Switch>
@@ -28,6 +29,7 @@ const Routes = () => (
     <Route path="/teste-rota-digital" component={RotaDigital} />
     <Route path="/teste-rota-digital-prova" component={RotaDigitalProva} />
     <Route path="/teste-christian-barbosa" component={ChristianBarbosa} />
+    <Route path="/pior-semana-da-sua-vida-quizz" component={PiorSemana} />
   </Switch>
 );
 
