@@ -51,20 +51,22 @@ const PiorSemana = () => {
       const opcao = event.target.getAttribute('opcao');
 
       if (opcao === 'A') {
-        setPontos(pontos + 5);
+        setPontos(pontos + 7);
       }
 
       if (opcao === 'B') {
-        setPontos(pontos + 9);
+        setPontos(pontos + 11);
       }
 
       if (opcao === 'C') {
-        setPontos(pontos + 14);
+        setPontos(pontos + 16);
       }
+
       exibirProximaPergunta();
-      setPerfilSelecionado(getPerfil());
     } catch (error) {
       console.log(error);
+    } finally {
+      setPerfilSelecionado(getPerfil());
     }
   };
 
@@ -107,26 +109,23 @@ const PiorSemana = () => {
   */
 
   const getPerfil = () => {
-    console.log(Math.max(...[expert, coprodutor, lancador]));
-    const maiorValor = Math.max(...[expert, coprodutor, lancador]);
-
     if (pontos <= 40) {
       return 'ZUMBI';
     }
 
-    if (pontos >= 41 || pontos <= 55) {
+    if (pontos >= 41 && pontos <= 55) {
       return 'ESCRAVO';
     }
 
-    if (pontos >= 56 || pontos <= 70) {
+    if (pontos >= 56 && pontos <= 70) {
       return 'ESCASSO';
     }
 
-    if (pontos >= 71 || pontos <= 85) {
+    if (pontos >= 71 && pontos <= 85) {
       return 'ABUNDANTE';
     }
 
-    if (pontos >= 86 || pontos <= 100) {
+    if (pontos >= 86) {
       return 'TRANSBORDANTE';
     }
 
@@ -245,7 +244,7 @@ const PiorSemana = () => {
               <h1 className="pergunta center">SEU PERFIL DIGITAL É: </h1>
               <h1 className="pergunta center perfil">{`${perfilSelecionado}`}</h1>
 
-              {perfilSelecionado === 'ESPECIALISTA' ? (
+              {perfilSelecionado === 'ZUMBI' ? (
                 <Iframe url="http://www.youtube.com/embed/84iHW5laImM"
                   width="100%"
                   height="450px"
@@ -253,12 +252,51 @@ const PiorSemana = () => {
                   position="relative"
                 />
               ) : (
-                <Iframe url="http://www.youtube.com/embed/EYmUMUPf0DA"
+                <></>
+              )}
+
+              {perfilSelecionado === 'ESCRAVO' ? (
+                <Iframe url="http://www.youtube.com/embed/84iHW5laImM"
                   width="100%"
                   height="450px"
                   display="initial"
                   position="relative"
                 />
+              ) : (
+                <></>
+              )}
+
+              {perfilSelecionado === 'ESCASSO' ? (
+                <Iframe url="http://www.youtube.com/embed/84iHW5laImM"
+                  width="100%"
+                  height="450px"
+                  display="initial"
+                  position="relative"
+                />
+              ) : (
+                <></>
+              )}
+
+              {perfilSelecionado === 'ABUNDANTE' ? (
+                <Iframe url="http://www.youtube.com/embed/84iHW5laImM"
+                  width="100%"
+                  height="450px"
+                  display="initial"
+                  position="relative"
+                />
+              ) : (
+                <></>
+              )}
+
+              {perfilSelecionado === 'TRANSBORDANTE' ? (
+                <Iframe url="http://www.youtube.com/embed/84iHW5laImM"
+                  width="100%"
+                  height="450px"
+                  display="initial"
+                  position="relative"
+                />
+              ) : (
+                <></>
               )}
 
               <br />
