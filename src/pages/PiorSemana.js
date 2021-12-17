@@ -326,8 +326,8 @@ const PiorSemana = () => {
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-455561195"></script>
         <script>
           {`
-            if (document.location.pathname.indexOf("/teste-rota-digital") == 0) {
-              console.log('teste-rota-digital');
+            if (document.location.pathname.indexOf("/pior-semana-da-sua-vida-quizz") == 0) {
+              console.log('pior-semana-da-sua-vida-quizz');
 
               !function(f,b,e,v,n,t,s)
               {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
