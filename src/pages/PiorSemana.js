@@ -245,7 +245,7 @@ const PiorSemana = () => {
               <h1 className="pergunta center perfil">{`${perfilSelecionado}`}</h1>
 
               {perfilSelecionado === 'ZUMBI' ? (
-                <Iframe url="https://www.youtube.com/watch?v=zcwPPenzuZM"
+                <Iframe url="https://www.youtube.com/embed/zcwPPenzuZM"
                   width="100%"
                   height="450px"
                   display="initial"
@@ -256,7 +256,7 @@ const PiorSemana = () => {
               )}
 
               {perfilSelecionado === 'ESCRAVO' ? (
-                <Iframe url="https://www.youtube.com/watch?v=gywYV1Iy9tc"
+                <Iframe url="https://www.youtube.com/embed/gywYV1Iy9tc"
                   width="100%"
                   height="450px"
                   display="initial"
@@ -267,7 +267,7 @@ const PiorSemana = () => {
               )}
 
               {perfilSelecionado === 'ESCASSO' ? (
-                <Iframe url="https://www.youtube.com/watch?v=6Z_rn_VsP0k"
+                <Iframe url="https://www.youtube.com/embed/6Z_rn_VsP0k"
                   width="100%"
                   height="450px"
                   display="initial"
@@ -278,7 +278,7 @@ const PiorSemana = () => {
               )}
 
               {perfilSelecionado === 'ABUNDANTE' ? (
-                <Iframe url="https://www.youtube.com/watch?v=XIThgxA7KAA"
+                <Iframe url="https://www.youtube.com/embed/XIThgxA7KAA"
                   width="100%"
                   height="450px"
                   display="initial"
@@ -289,7 +289,7 @@ const PiorSemana = () => {
               )}
 
               {perfilSelecionado === 'TRANSBORDANTE' ? (
-                <Iframe url="https://www.youtube.com/watch?v=u2GIna418S0"
+                <Iframe url="https://www.youtube.com/embed/u2GIna418S0"
                   width="100%"
                   height="450px"
                   display="initial"
