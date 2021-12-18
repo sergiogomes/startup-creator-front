@@ -305,7 +305,7 @@ const PiorSemana = () => {
                 <Form.Group as={Row} className="mb-3">
                   <Button className="btnEnviarRespostasWhats" onClick={abrirLink}>
                     <img className="logoBotaoWhats" src={"img/whatsapp-branco.png"} />
-                    &nbsp;QUERO RECEBER OS CONTEÚDOS
+                    &nbsp;QUERO ACESSAR O GRUPO
                   </Button>
                   <ToastContainer />
                 </Form.Group>
