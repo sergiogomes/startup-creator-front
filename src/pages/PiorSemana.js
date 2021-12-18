@@ -244,8 +244,8 @@ const PiorSemana = () => {
               <h1 className="pergunta center">VOCÊ ESTÁ NA FASE: </h1>
               <h1 className="pergunta center perfil">{`${perfilSelecionado}`}</h1>
 
-              {/* {perfilSelecionado === 'ZUMBI' ? (
-                <Iframe url="http://www.youtube.com/embed/84iHW5laImM"
+              {perfilSelecionado === 'ZUMBI' ? (
+                <Iframe url="https://www.youtube.com/watch?v=zcwPPenzuZM"
                   width="100%"
                   height="450px"
                   display="initial"
@@ -256,7 +256,7 @@ const PiorSemana = () => {
               )}
 
               {perfilSelecionado === 'ESCRAVO' ? (
-                <Iframe url="http://www.youtube.com/embed/84iHW5laImM"
+                <Iframe url="https://www.youtube.com/watch?v=gywYV1Iy9tc"
                   width="100%"
                   height="450px"
                   display="initial"
@@ -267,7 +267,7 @@ const PiorSemana = () => {
               )}
 
               {perfilSelecionado === 'ESCASSO' ? (
-                <Iframe url="http://www.youtube.com/embed/84iHW5laImM"
+                <Iframe url="https://www.youtube.com/watch?v=6Z_rn_VsP0k"
                   width="100%"
                   height="450px"
                   display="initial"
@@ -278,7 +278,7 @@ const PiorSemana = () => {
               )}
 
               {perfilSelecionado === 'ABUNDANTE' ? (
-                <Iframe url="http://www.youtube.com/embed/84iHW5laImM"
+                <Iframe url="https://www.youtube.com/watch?v=XIThgxA7KAA"
                   width="100%"
                   height="450px"
                   display="initial"
@@ -289,7 +289,7 @@ const PiorSemana = () => {
               )}
 
               {perfilSelecionado === 'TRANSBORDANTE' ? (
-                <Iframe url="http://www.youtube.com/embed/84iHW5laImM"
+                <Iframe url="https://www.youtube.com/watch?v=u2GIna418S0"
                   width="100%"
                   height="450px"
                   display="initial"
@@ -297,7 +297,7 @@ const PiorSemana = () => {
                 />
               ) : (
                 <></>
-              )} */}
+              )}
 
               <br />
               <br />
