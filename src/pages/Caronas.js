@@ -5,7 +5,6 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Dropdown from 'react-bootstrap/Dropdown';
 
 import Button from 'react-bootstrap/Button';
 import { Helmet } from "react-helmet";
@@ -14,6 +13,8 @@ import { ToastContainer } from 'react-toastify';
 import { notifyError } from '../utils/toasts';
 
 import api from '../services/api';
+
+import EstadosCidades from './cidades.json';
 
 import '../../src/RotaDigital.css';
 
@@ -27,8 +28,9 @@ const Caronas = () => {
   const [isProvaRespondida, setIsProvaRespondida] = useState(false);
   const [pontos, setPontos] = useState(0);
   const [perfilSelecionado, setPerfilSelecionado] = useState('Carregando...');
-  const [paginas, setPaginas] = useState([209, 210, 211, 212, 213, 214, 215]);
   const [perguntaAtual, setPerguntaAtual] = useState(209);
+  const [estado, setEstado] = useState('');
+  const [cidades, setCidades] = useState([]);
 
   const getProva = async () => {
     try {
@@ -98,14 +100,6 @@ const Caronas = () => {
     document.getElementById(`pergunta-${id}`).style.display = 'none';
   }
 
-  /*
-    - Zumbi 0-40
-    - Escravo 41-55
-    - Escasso 56 - 70
-    - Abundante 71 - 85
-    - Transbordante 86 - 100
-  */
-
   const getPerfil = () => {
     if (pontos <= 40) {
       return 'ZUMBI';
@@ -163,6 +157,28 @@ const Caronas = () => {
     }
   }
 
+  const informarEstado = (event) => {
+    const estadoSelecionado = event.target.value;
+    setEstado(estadoSelecionado);
+    exibirCidades(estadoSelecionado);
+  }
+
+  const informarCidade = (event) => {
+    const cidadeSelecionado = event.target.value;
+    console.log(cidadeSelecionado);
+    // setEstado(estadoSelecionado);
+    // exibirCidades(estadoSelecionado);
+  }
+
+  const exibirCidades = async (estadoSelecionado) => {
+    const { estados } = EstadosCidades;
+    estados.map((estado) => {
+      if (estado.sigla === estadoSelecionado) {
+        setCidades(estado.cidades);
+      }
+    })
+  }
+
   const abrirLink = () => {
     window.open("https://devzap.com.br/api-engennier/campanha/api/redirect/60888eb7001c7c0001c17933");
   }
@@ -199,24 +215,54 @@ const Caronas = () => {
                 <Form.Control 
                   className="inputEmail"
                   type=""
-                  placeholder="Custo R$"
+                  placeholder="Custo R$ por pessoa"
                 />
-                <Dropdown style={{ margin: '15px' }}>
-                  <Dropdown.Toggle variant="success" id="dropdown-basic">
-                    Selecionar Estado
-                  </Dropdown.Toggle>
+                <select id="estado" name="estado" className="estados" onChange={informarEstado}>
+                  <option value="">Selecionar estado</option>
+                  <option value="AC">Acre</option>
+                  <option value="AL">Alagoas</option>
+                  <option value="AP">Amapá</option>
+                  <option value="AM">Amazonas</option>
+                  <option value="BA">Bahia</option>
+                  <option value="CE">Ceará</option>
+                  <option value="DF">Distrito Federal</option>
+                  <option value="ES">Espírito Santo</option>
+                  <option value="GO">Goiás</option>
+                  <option value="MA">Maranhão</option>
+                  <option value="MT">Mato Grosso</option>
+                  <option value="MS">Mato Grosso do Sul</option>
+                  <option value="MG">Minas Gerais</option>
+                  <option value="PA">Pará</option>
+                  <option value="PB">Paraíba</option>
+                  <option value="PR">Paraná</option>
+                  <option value="PE">Pernambuco</option>
+                  <option value="PI">Piauí</option>
+                  <option value="RJ">Rio de Janeiro</option>
+                  <option value="RN">Rio Grande do Norte</option>
+                  <option value="RS">Rio Grande do Sul</option>
+                  <option value="RO">Rondônia</option>
+                  <option value="RR">Roraima</option>
+                  <option value="SC">Santa Catarina</option>
+                  <option value="SP">São Paulo</option>
+                  <option value="SE">Sergipe</option>
+                  <option value="TO">Tocantins</option>
+                  <option value="EX">Estrangeiro</option>
+              </select>
 
-                  <Dropdown.Menu>
-                    <Dropdown.Item eventKey="SP">São Paulo</Dropdown.Item>
-                    <Dropdown.Item eventKey="BH">Bahia</Dropdown.Item>
-                    <Dropdown.Item eventKey="RJ">Rio de Janeiro</Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-                {/* <Form.Control 
-                  className="inputEmail"
-                  type=""
-                  placeholder="Cidade"
-                /> */}
+              <select id="cidade" name="cidade" className="estados" onChange={informarCidade}>
+                  <option value="">Selecionar cidade</option>
+                  { cidades.length > 1 ? (
+                    <>
+                      {cidades.map((cidade) => {
+                        return (
+                          <>
+                            <option value={`${cidade}`}>{`${cidade}`}</option>
+                          </>
+                        )
+                      })}
+                    </>
+                  ) : ( <></> )}
+              </select>
               </Form.Group>
               <div className="center">
                   <Form.Group as={Row} className="mb-3">

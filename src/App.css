@@ -68,3 +68,10 @@
   margin: 15px;
   margin-left: 5px;
 }
+
+.estados {
+  width:  100%;
+  margin: 15px;
+  height: 40px;
+  color: #495057;
+}
