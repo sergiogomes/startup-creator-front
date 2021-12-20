@@ -16,6 +16,7 @@ import RotaDigitalProva from '../pages/RotaDigitalProva';
 import ChristianBarbosa from '../pages/ChristianBarbosa';
 import PiorSemana from '../pages/PiorSemana';
 import Caronas from '../pages/Caronas';
+import CaronasTanques from '../pages/CaronasTanques';
 
 const Routes = () => (
   <Switch>
@@ -32,6 +33,7 @@ const Routes = () => (
     <Route path="/teste-christian-barbosa" component={ChristianBarbosa} />
     <Route path="/pior-semana-da-sua-vida-quizz" component={PiorSemana} />
     <Route path="/caronas" component={Caronas} />
+    <Route path="/caronas-tanques" component={CaronasTanques} />
   </Switch>
 );
 
