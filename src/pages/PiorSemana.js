@@ -166,7 +166,7 @@ const PiorSemana = () => {
   }
 
   const abrirLink = () => {
-    window.open("https://devzap.com.br/api-engennier/campanha/api/redirect/60888eb7001c7c0001c17933");
+    window.open("https://devzap.com.br/api-engennier/campanha/api/redirect/61bde6523559500001a471a8");
   }
 
   const handleSubmit = (event) => {
