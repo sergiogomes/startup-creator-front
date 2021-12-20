@@ -86,40 +86,40 @@ const Caronas = () => {
       <div className="centerImg">
         <img src={"img/logo-caronas.png"} alt="O Chamado 2022" height="220"/>
       </div>
-      <Table striped bordered hover variant="dark">
+      <Table striped bordered hover responsive variant="dark">
         <thead>
-          <tr>
+          <tr className="linhas">
             <th>Estado</th>
             <th>Cidade</th>
-            <th>Custo R$</th>
+            <th>Custo&nbsp;R$</th>
             <th>Nome</th>
             <th>WhatsApp</th>
             <th>Observações</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr className="linhas">
             <td>SP</td>
-            <td>Santo André</td>
-            <td>R$ 210,00</td>
-            <td>Paulo Matos</td>
-            <td>(11) 9 8087-5544</td>
+            <td>Santo&nbsp;André</td>
+            <td>R$210,00</td>
+            <td>Paulo&nbsp;Matos</td>
+            <td>(11)98087-5544</td>
             <td>Vou dar apenas carona de ida</td>
           </tr>
           <tr>
             <td>SP</td>
             <td>Barueri</td>
-            <td>R$ 145,00</td>
-            <td>Paulo Matos</td>
-            <td>(11) 9 8087-5544</td>
+            <td>R$145,00</td>
+            <td>Paulo&nbsp;Matos</td>
+            <td>(11)98087-5544</td>
             <td>Vou sair as 4 da manhã</td>
           </tr>
           <tr>
             <td>SP</td>
             <td>Barueri</td>
-            <td>R$ 145,00</td>
-            <td>Paulo Matos</td>
-            <td>(11) 9 8087-5544</td>
+            <td>R$145,00</td>
+            <td>Paulo&nbsp;Matos</td>
+            <td>(11)98087-5544</td>
             <td>Não vou fazer paradas</td>
           </tr>
         </tbody>

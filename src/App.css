@@ -76,3 +76,7 @@
   color: #495057;
   border-radius: 5px;
 }
+
+.linhas {
+  white-space: nowrap;
+}
