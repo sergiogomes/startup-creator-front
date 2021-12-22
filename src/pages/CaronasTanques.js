@@ -25,43 +25,16 @@ const Caronas = () => {
   const [pontos, setPontos] = useState(0);
   const [perguntaAtual, setPerguntaAtual] = useState(209);
   const [vis, setVis] = useState(true);
+  const [caronas, setCaronas] = useState([]);
 
-  const getProva = async () => {
+  const getCaronas = async () => {
     try {
-      const { data } = await api.get(`/prova/15`);
-      const { perguntas, respostas, prova } = data.provaAtual;
-      setPerguntas(perguntas);
-      setRespostas(respostas);
-      setProva(prova);
-      exibirPergunta(209);
+      const { data } = await api.get(`/caronas`);
+      setCaronas(data);
+      console.log('getCaronas', data);
     } catch (error) {
       console.log(error);
-      notifyError('Neste momento não tem prova disponivel! Fique atendo nas lives de terça!');
-    }
-  };
-
-  const exibirPergunta = (id) => {
-    console.log('exibir pergunta', id);
-    document.getElementById(`pergunta-${id}`).style.display = 'block';
-  }
-
-  const esconderPergunta = (id) => {
-    console.log('esconder pergunta', id);
-    document.getElementById(`pergunta-${id}`).style.display = 'none';
-  }
-
-  const enviarResposta = async (event) => {
-    try {
-      if((perguntaAtual) <= 214) {
-        notifyError('Por favor responda todas as perguntas.');
-        return false;
-      }
-
-      setIsProvaRespondida(true);
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    } catch (error) {
-      console.log(error);
+      notifyError('Neste momento não tem pessoas que vão dar carona! Tente novamente mais tarde.');
     }
   };
 
@@ -78,7 +51,7 @@ const Caronas = () => {
   }
 
   useEffect(() => {
-    // getProva();
+    getCaronas();
   }, []);
 
   return (
@@ -98,46 +71,28 @@ const Caronas = () => {
             <th>Custo&nbsp;R$</th>
             <th>Nome</th>
             <th>WhatsApp</th>
-            <th>Observações</th>
           </tr>
         </thead>
         <tbody>
-          <tr className="linhas">
-            <td>SP</td>
-            <td>Santo&nbsp;André</td>
-            <td>R$210,00</td>
-            <td>Paulo&nbsp;Matos</td>
-            <td>(11)98087-5544</td>
-            <td>Vou dar apenas carona de ida</td>
-          </tr>
-          <tr>
-            <td>SP</td>
-            <td>Barueri</td>
-            <td>R$145,00</td>
-            <td>Paulo&nbsp;Matos</td>
-            <td>(11)98087-5544</td>
-            <td>Vou sair as 4 da manhã</td>
-          </tr>
-          <tr>
-            <td>SP</td>
-            <td>Barueri</td>
-            <td>R$145,00</td>
-            <td>Paulo&nbsp;Matos</td>
-            <td>(11)98087-5544</td>
-            <td>Não vou fazer paradas</td>
-          </tr>
+        {caronas.map((carona, i) => {
+          if (carona.whatsapp === '' || carona.estado === '') {
+            return;
+          }
+          return (
+            <>
+              <tr className="linhas">
+                <td>{`${carona.estado}`}</td>
+                <td>{`${carona.cidade}`}</td>
+                <td>{`${carona.custo}`}</td>
+                <td>{`${carona.nome}`}</td>
+                <td>{`${carona.whatsapp}`}</td>
+              </tr>
+            </>
+          )
+        })}
+          
         </tbody>
       </Table>
-      {/* <>
-        <Fab icon="🚗" >
-          <Action text="" style={{ background:'#000', textDecoration: 'underline' }} onClick={() => setLotado()}>
-            LOTADO
-          </Action>
-          <Action text="" style={{ background:'#000', textDecoration: 'underline' }} onClick={() => setTemVaga()}>
-            TEM VAGA
-          </Action>
-        </Fab>
-      </> */}
       <h1 className="pergunta center" style={{ fontWeight: 100, margin: '15px', fontSize: '15px' }}>
         Atenção: Essa página tem como objetivo facilitar o acesso de todos ao evento. 
         Não nos responsabilizamos por nada que for combinado entre os participantes.

@@ -81,6 +81,7 @@ const Caronas = () => {
 
     await api.post(`/caronas`, dados).then((res) => {
       console.log(res);
+      window.location.href = '/caronas-tanques';
     });
 
     console.log('cadastrarCarro', dados);
