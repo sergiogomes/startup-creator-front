@@ -381,6 +381,30 @@ const Caronas = () => {
       <div className="centerImg">
         <img className="logoRotaDigital" src={"img/pablo1.png"} alt="Pablo Marçal"/>
       </div>
+      <Helmet>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-413413781"></script>
+        <script>
+          {`
+            if (document.location.pathname.indexOf("/caronas") == 0) {
+              console.log('/caronas');
+        
+              !function(f,b,e,v,n,t,s)
+              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+              n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', '288603021812214');
+              fbq('track', 'PageView');
+            }
+          `}
+        </script>
+      </Helmet>
+      <noscript>
+        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=288603021812214&ev=PageView&noscript=1"/>
+      </noscript>
     </Container>
   );
 };
