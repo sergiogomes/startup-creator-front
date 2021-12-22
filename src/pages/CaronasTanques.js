@@ -3,28 +3,16 @@ import { React, useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Table from 'react-bootstrap/Table';
 
-import { Fab, Action } from 'react-tiny-fab';
 import 'react-tiny-fab/dist/styles.css';
 
-import { ToastContainer } from 'react-toastify';
 import { notifyError, notifySuccess } from '../utils/toasts';
 
 import api from '../services/api';
-
-import EstadosCidades from './cidades.json';
 
 import '../../src/RotaDigital.css';
 
 const Caronas = () => {
 
-  const [perguntas, setPerguntas] = useState([]);
-  const [respostas, setRespostas] = useState([]);
-  const [prova, setProva] = useState('');
-  const [aluno, setAluno] = useState({});
-  const [isProvaRespondida, setIsProvaRespondida] = useState(false);
-  const [pontos, setPontos] = useState(0);
-  const [perguntaAtual, setPerguntaAtual] = useState(209);
-  const [vis, setVis] = useState(true);
   const [caronas, setCaronas] = useState([]);
 
   const getCaronas = async () => {
@@ -37,18 +25,6 @@ const Caronas = () => {
       notifyError('Neste momento não tem pessoas que vão dar carona! Tente novamente mais tarde.');
     }
   };
-
-  const setLotado = () => {
-    notifyError('Carro lotado, seu nome foi retirado da lista.');
-  }
-
-  const setTemVaga = () => {
-    notifySuccess('Carro tem vaga, seu nome está na lista.');
-  }
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  }
 
   useEffect(() => {
     getCaronas();
@@ -68,7 +44,7 @@ const Caronas = () => {
           <tr className="linhas">
             <th>Estado</th>
             <th>Cidade</th>
-            <th>Custo&nbsp;R$</th>
+            <th>R$ Custo&nbsp;por&nbsp;pessoa</th>
             <th>Nome</th>
             <th>WhatsApp</th>
           </tr>

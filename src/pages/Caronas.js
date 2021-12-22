@@ -68,6 +68,7 @@ const Caronas = () => {
   }
 
   const cadastrarCarro = async (event) => {
+    event.preventDefault();
     const dados = {
       nome,
       whatsapp,
@@ -75,16 +76,42 @@ const Caronas = () => {
       estado,
       cidade,
       email
+    };
+
+    if (nome === '') {
+      notifyError('O nome é obrigatório.');
+      return;
     }
 
-    event.preventDefault();
+    if (whatsapp === '') {
+      notifyError('O whatsapp é obrigatório.');
+      return;
+    }
+
+    if (custo === '') {
+      notifyError('O custo é obrigatório.');
+      return;
+    }
+
+    if (estado === '') {
+      notifyError('O estado é obrigatório.');
+      return;
+    }
+
+    if (cidade === '') {
+      notifyError('O cidade é obrigatório.');
+      return;
+    }
+
+    if (email === '') {
+      notifyError('O email é obrigatório.');
+      return;
+    }
 
     await api.post(`/caronas`, dados).then((res) => {
       console.log(res);
       window.location.href = '/caronas-tanques';
     });
-
-    console.log('cadastrarCarro', dados);
   }
 
   const informarEstado = (event) => {
