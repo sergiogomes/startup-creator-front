@@ -183,6 +183,10 @@ const Caronas = () => {
     window.open("http://plataformagame.com.br/caronas-tanques");
   }
 
+  const abrirLinkCompra = () => {
+    window.open("https://www.eventx.com.br/ochamadoaconvocacaodosgenerais");
+  }
+
   const abrirCadastro = () => {
     setIsAluno(false);
   }
@@ -202,27 +206,34 @@ const Caronas = () => {
       </div>
       {!isAluno ? (
         <Jumbotron className="painel" style={{ background: '#1a1a1a' }}>
-          <h1 className="pergunta">Seu carro tem vaga para caroneiros? Deixei o seu cadastro.</h1>
+          <h1 className="perguntaGeneral">
+            Se seu carro tem vaga para alguns Generais
+            Preencha as informações abaixo.
+          </h1>
+          <br />
+          <h1 className="perguntaGeneral">
+            Os Generais disponíveis entrarão em contato com você.
+          </h1>
           <Form style={{ background: '#1a1a1a' }}>
             <fieldset>
               <Form.Group as={Row} className="mb-3">
                 <Form.Control 
                   className="inputEmail"
                   type=""
-                  placeholder="Nome"
+                  placeholder="Seu nome"
                 />
                 <Form.Control 
                   className="inputEmail"
                   type=""
-                  placeholder="WhatsApp"
+                  placeholder="Seu Whatsapp"
                 />
                 <Form.Control 
                   className="inputEmail"
                   type=""
-                  placeholder="Custo R$ por pessoa"
+                  placeholder="$$ Custo por cada General que vai com você"
                 />
                 <select id="estado" name="estado" className="estados" onChange={informarEstado}>
-                  <option value="">Selecionar estado</option>
+                  <option value="">Selecione seu estado</option>
                   <option value="AC">Acre</option>
                   <option value="AL">Alagoas</option>
                   <option value="AP">Amapá</option>
@@ -254,7 +265,7 @@ const Caronas = () => {
               </select>
 
               <select id="cidade" name="cidade" className="estados" onChange={informarCidade}>
-                  <option value="">Selecionar cidade</option>
+                  <option value="">Selecione sua cidade</option>
                   { cidades.length > 1 ? (
                     <>
                       {cidades.map((cidade) => {
@@ -343,8 +354,29 @@ const Caronas = () => {
               <ToastContainer />
             </Form.Group>
           </div>
+          <div className="center">
+            <Form.Group as={Row} className="mb-3" style={{ width: '100%', paddingTop: '8px' }}>
+              <Button
+                type="submit"
+                className="btnEnviarRespostas"
+                onClick={abrirLinkCompra}
+                style={{ 
+                  background: '#cd0000',
+                  borderColor: '#cd0000',
+                  width: '100%'
+                }}
+              >
+                NÃO TENHO INGRESSO, <br/>QUERO ADQUIRIR!
+              </Button>
+              <ToastContainer />
+            </Form.Group>
+          </div>
         </Jumbotron>
       )}
+      <h1 className="pergunta center" style={{ fontWeight: 100, margin: '15px', fontSize: '15px' }}>
+        Atenção: Essa página tem como objetivo facilitar o acesso de todos ao evento. 
+        Não nos responsabilizamos por nada que for combinado entre os participantes.
+      </h1>
       <div className="centerImg">
         <img className="logoRotaDigital" src={"img/pablo1.png"} alt="Pablo Marçal"/>
       </div>

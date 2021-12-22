@@ -86,6 +86,10 @@ const Caronas = () => {
       <div className="centerImg">
         <img src={"img/logo-caronas.png"} alt="O Chamado 2022" height="220"/>
       </div>
+      <h1 className="perguntaGeneral center" style={{ paddingBottom: '20px' }}>
+        Se você está procurando carona 
+        Veja a lista abaixo e entre em contato com o dono do veículo 
+      </h1>
       <Table striped bordered hover responsive variant="dark">
         <thead>
           <tr className="linhas">
@@ -134,6 +138,10 @@ const Caronas = () => {
           </Action>
         </Fab>
       </>
+      <h1 className="pergunta center" style={{ fontWeight: 100, margin: '15px', fontSize: '15px' }}>
+        Atenção: Essa página tem como objetivo facilitar o acesso de todos ao evento. 
+        Não nos responsabilizamos por nada que for combinado entre os participantes.
+      </h1>
       <div className="centerImg">
         <img className="logoRotaDigital" src={"img/pablo1.png"} alt="Pablo Marçal"/>
       </div>
