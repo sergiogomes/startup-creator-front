@@ -87,8 +87,8 @@ const Caronas = () => {
         <img src={"img/logo-caronas.png"} alt="O Chamado 2022" height="220"/>
       </div>
       <h1 className="perguntaGeneral center" style={{ paddingBottom: '20px' }}>
-        Se você está procurando carona 
-        Veja a lista abaixo e entre em contato com o dono do veículo 
+        Se você está procurando carona.
+        Veja a lista abaixo e entre em contato com o dono do veículo.
       </h1>
       <Table striped bordered hover responsive variant="dark">
         <thead>
