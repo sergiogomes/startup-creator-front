@@ -20,154 +20,77 @@ import '../../src/RotaDigital.css';
 
 const Caronas = () => {
 
-  const [perguntas, setPerguntas] = useState([]);
-  const [respostas, setRespostas] = useState([]);
   const [prova, setProva] = useState('');
   const [isAluno, setIsAluno] = useState(true);
   const [aluno, setAluno] = useState({});
-  const [isProvaRespondida, setIsProvaRespondida] = useState(false);
-  const [pontos, setPontos] = useState(0);
-  const [perfilSelecionado, setPerfilSelecionado] = useState('Carregando...');
-  const [perguntaAtual, setPerguntaAtual] = useState(209);
   const [estado, setEstado] = useState('');
   const [cidades, setCidades] = useState([]);
 
-  const getProva = async () => {
-    try {
-      const { data } = await api.get(`/prova/15`);
-      const { perguntas, respostas, prova } = data.provaAtual;
-      setPerguntas(perguntas);
-      setRespostas(respostas);
-      setProva(prova);
-      exibirPergunta(209);
-    } catch (error) {
-      console.log(error);
-      notifyError('Neste momento não tem prova disponivel! Fique atendo nas lives de terça!');
-    }
-  };
+  const [nome, setNome] = useState('');
+  const [email, setEmail] = useState('');
+  const [whatsapp, setWhatsapp] = useState('');
+  const [custo, setCusto] = useState('');
+  const [cidade, setCidade] = useState('');
 
-  const salvarResposta = async (event) => {
-    try {
-      const opcao = event.target.getAttribute('opcao');
+  const setDadosForm = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
 
-      if (opcao === 'A') {
-        setPontos(pontos + 7);
-      }
-
-      if (opcao === 'B') {
-        setPontos(pontos + 11);
-      }
-
-      if (opcao === 'C') {
-        setPontos(pontos + 16);
-      }
-
-      exibirProximaPergunta();
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setPerfilSelecionado(getPerfil());
-    }
-  };
-
-  const exibirProximaPergunta = () => {
-    if (perguntaAtual === 215) {
-      enviarResposta();
+    if (name === 'nome') {
+      setNome(value);
       return;
     }
 
-    if (perguntaAtual === 0) {
-      exibirPergunta(209);
-      setPerguntaAtual(209);
+    if (name === 'email') {
+      setEmail(value);
       return;
     }
 
-    if (perguntaAtual >= 209) {
-      exibirPergunta(perguntaAtual + 1);
-      setPerguntaAtual(perguntaAtual + 1);
-      esconderPergunta(perguntaAtual);
+    if (name === 'whatsapp') {  
+      setWhatsapp(value);
+      return;
+    }
+
+    if (name === 'custo') {
+      setCusto(value);
+      return;
+    }
+
+    if (name === 'estado') {
+      setEstado(value);
+      return;
+    }
+
+    if (name === 'cidade') {
+      setCidade(value);
       return;
     }
   }
 
-  const exibirPergunta = (id) => {
-    console.log('exibir pergunta', id);
-    document.getElementById(`pergunta-${id}`).style.display = 'block';
-  }
-
-  const esconderPergunta = (id) => {
-    console.log('esconder pergunta', id);
-    document.getElementById(`pergunta-${id}`).style.display = 'none';
-  }
-
-  const getPerfil = () => {
-    if (pontos <= 40) {
-      return 'ZUMBI';
+  const cadastrarCarro = async (event) => {
+    const dados = {
+      nome,
+      whatsapp,
+      custo,
+      estado,
+      cidade,
+      email
     }
 
-    if (pontos >= 41 && pontos <= 55) {
-      return 'ESCRAVO';
-    }
+    event.preventDefault();
 
-    if (pontos >= 56 && pontos <= 70) {
-      return 'ESCASSO';
-    }
+    await api.post(`/caronas`, dados).then((res) => {
+      console.log(res);
+    });
 
-    if (pontos >= 71 && pontos <= 85) {
-      return 'ABUNDANTE';
-    }
-
-    if (pontos >= 86) {
-      return 'TRANSBORDANTE';
-    }
-
-    return false;
-  }
-
-  const enviarResposta = async (event) => {
-    try {
-      if((perguntaAtual) <= 214) {
-        notifyError('Por favor responda todas as perguntas.');
-        return false;
-      }
-
-      // event.preventDefault();
-
-      setIsProvaRespondida(true);
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const gravarAlternativa = async (perguntaId, respostaId) => {
-    try {
-      const objeto = {
-        participantes_id : aluno.id,
-        participantes_competicoes_id : prova.competicoes_id,
-        respostas_id: respostaId,
-        perguntas_id: perguntaId,
-        provas_id: perguntas[0].provas_id
-      }
-
-      await api.post(`/participante/respostas`, objeto);
-    } catch (error) {
-      console.log(error);
-    }
+    console.log('cadastrarCarro', dados);
   }
 
   const informarEstado = (event) => {
     const estadoSelecionado = event.target.value;
     setEstado(estadoSelecionado);
     exibirCidades(estadoSelecionado);
-  }
-
-  const informarCidade = (event) => {
-    const cidadeSelecionado = event.target.value;
-    console.log(cidadeSelecionado);
-    // setEstado(estadoSelecionado);
-    // exibirCidades(estadoSelecionado);
+    setDadosForm(event);
   }
 
   const exibirCidades = async (estadoSelecionado) => {
@@ -221,16 +144,29 @@ const Caronas = () => {
                   className="inputEmail"
                   type=""
                   placeholder="Seu nome"
+                  name="nome"
+                  onChange={setDadosForm}
                 />
                 <Form.Control 
                   className="inputEmail"
                   type=""
-                  placeholder="Seu Whatsapp"
+                  placeholder="Seu email"
+                  name="email"
+                  onChange={setDadosForm}
                 />
                 <Form.Control 
                   className="inputEmail"
                   type=""
-                  placeholder="$$ Custo por cada General que vai com você"
+                  placeholder="Seu Whatsapp com DDD"
+                  name="whatsapp"
+                  onChange={setDadosForm}
+                />
+                <Form.Control 
+                  className="inputEmail"
+                  type=""
+                  placeholder="Quanto deseja cobrar por vaga?"
+                  name="custo"
+                  onChange={setDadosForm}
                 />
                 <select id="estado" name="estado" className="estados" onChange={informarEstado}>
                   <option value="">Selecione seu estado</option>
@@ -264,7 +200,7 @@ const Caronas = () => {
                   <option value="EX">Estrangeiro</option>
               </select>
 
-              <select id="cidade" name="cidade" className="estados" onChange={informarCidade}>
+              <select id="cidade" name="cidade" className="estados" onChange={setDadosForm}>
                   <option value="">Selecione sua cidade</option>
                   { cidades.length > 1 ? (
                     <>
@@ -288,6 +224,7 @@ const Caronas = () => {
                         background: '#76793F',
                         borderColor: '#76793F'
                       }}
+                      onClick={cadastrarCarro}
                     >
                       OFERECER&nbsp;CARONA
                     </Button>

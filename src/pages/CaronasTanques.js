@@ -128,7 +128,7 @@ const Caronas = () => {
           </tr>
         </tbody>
       </Table>
-      <>
+      {/* <>
         <Fab icon="🚗" >
           <Action text="" style={{ background:'#000', textDecoration: 'underline' }} onClick={() => setLotado()}>
             LOTADO
@@ -137,7 +137,7 @@ const Caronas = () => {
             TEM VAGA
           </Action>
         </Fab>
-      </>
+      </> */}
       <h1 className="pergunta center" style={{ fontWeight: 100, margin: '15px', fontSize: '15px' }}>
         Atenção: Essa página tem como objetivo facilitar o acesso de todos ao evento. 
         Não nos responsabilizamos por nada que for combinado entre os participantes.
