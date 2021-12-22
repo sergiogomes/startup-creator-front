@@ -191,7 +191,7 @@ const Caronas = () => {
                 />
                 <Form.Control 
                   className="inputEmail"
-                  type=""
+                  type="number"
                   placeholder="Quanto deseja cobrar por vaga?"
                   name="custo"
                   onChange={setDadosForm}

@@ -3,6 +3,8 @@ import { React, useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Table from 'react-bootstrap/Table';
 
+import { unformat, format } from 'currency-formatter';
+
 import 'react-tiny-fab/dist/styles.css';
 
 import { notifyError, notifySuccess } from '../utils/toasts';
@@ -54,12 +56,13 @@ const Caronas = () => {
           if (carona.whatsapp === '' || carona.estado === '') {
             return;
           }
+          const custoFormatado = format(carona.custo, { code: 'BRA' });
           return (
             <>
               <tr className="linhas">
                 <td>{`${carona.estado}`}</td>
                 <td>{`${carona.cidade}`}</td>
-                <td>{`${carona.custo}`}</td>
+                <td>{`R$ ${custoFormatado}`}</td>
                 <td>{`${carona.nome}`}</td>
                 <td>{`${carona.whatsapp}`}</td>
               </tr>
