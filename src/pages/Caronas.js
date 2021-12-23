@@ -130,7 +130,7 @@ const Caronas = () => {
   }
 
   const abrirLink = () => {
-    window.location.replace("http://plataformagame.com.br/caronas-tanques");
+    window.location.replace("https://plataformagame.com.br/caronas-tanques");
   }
 
   const abrirLinkCompra = () => {
