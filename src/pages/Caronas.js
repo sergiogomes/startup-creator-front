@@ -130,11 +130,11 @@ const Caronas = () => {
   }
 
   const abrirLink = () => {
-    window.open("http://plataformagame.com.br/caronas-tanques");
+    window.location.replace("http://plataformagame.com.br/caronas-tanques");
   }
 
   const abrirLinkCompra = () => {
-    window.open("https://www.eventx.com.br/ochamadoaconvocacaodosgenerais");
+    window.location.replace("https://www.eventx.com.br/ochamadoaconvocacaodosgenerais");
   }
 
   const abrirCadastro = () => {
