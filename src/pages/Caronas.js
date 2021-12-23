@@ -109,8 +109,7 @@ const Caronas = () => {
     }
 
     await api.post(`/caronas`, dados).then((res) => {
-      console.log(res);
-      window.location.href = '/caronas-tanques';
+      window.location.replace("/caronas-tanques");
     });
   }
 
