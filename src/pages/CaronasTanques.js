@@ -47,8 +47,8 @@ const Caronas = () => {
             <th>Estado</th>
             <th>Cidade</th>
             <th>R$ Custo&nbsp;por&nbsp;pessoa</th>
-            <th>Nome</th>
             <th>WhatsApp</th>
+            <th>Nome</th>
           </tr>
         </thead>
         <tbody>
@@ -63,8 +63,8 @@ const Caronas = () => {
                 <td>{`${carona.estado}`}</td>
                 <td>{`${carona.cidade}`}</td>
                 <td>{`R$ ${custoFormatado}`}</td>
-                <td>{`${carona.nome}`}</td>
                 <td>{`${carona.whatsapp}`}</td>
+                <td>{`${carona.nome}`}</td>
               </tr>
             </>
           )

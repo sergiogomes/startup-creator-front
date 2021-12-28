@@ -20,9 +20,7 @@ import '../../src/RotaDigital.css';
 
 const Caronas = () => {
 
-  const [prova, setProva] = useState('');
   const [isAluno, setIsAluno] = useState(true);
-  const [aluno, setAluno] = useState({});
   const [estado, setEstado] = useState('');
   const [cidades, setCidades] = useState([]);
 
