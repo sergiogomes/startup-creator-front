@@ -164,8 +164,8 @@ const Dashboard = () => {
       </div>
       {!isAluno ? (
         <Jumbotron className="painel" style={{ background: '#8c6531' }}>
-          <h1 className="pergunta">Informe o email cadastrado no curso:</h1>
-          <Form style={{ background: '#8c6531' }}>
+          <h1 className="pergunta center">Provas encerradas!</h1>
+          {/* <Form style={{ background: '#8c6531' }}>
             <fieldset>
               <Form.Group as={Row} className="mb-3">
                 <Form.Control 
@@ -182,7 +182,7 @@ const Dashboard = () => {
                   </Form.Group>
                 </div>
             </fieldset>
-          </Form>
+          </Form> */}
         </Jumbotron>
       ) : (
         <>

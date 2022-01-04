@@ -10,13 +10,13 @@ import TurmaIp from '../pages/TurmaIp';
 import Comex from '../pages/Comex';
 import ComexRank from '../pages/ComexRank';
 import Prova from '../pages/Prova';
-import Rank from '../pages/Rank';
-import RotaDigital from '../pages/RotaDigital';
-import RotaDigitalProva from '../pages/RotaDigitalProva';
+// import Rank from '../pages/Rank';
+// import RotaDigital from '../pages/RotaDigital';
+// import RotaDigitalProva from '../pages/RotaDigitalProva';
 import ChristianBarbosa from '../pages/ChristianBarbosa';
 import PiorSemana from '../pages/PiorSemana';
-import Caronas from '../pages/Caronas';
-import CaronasTanques from '../pages/CaronasTanques';
+// import Caronas from '../pages/Caronas';
+// import CaronasTanques from '../pages/CaronasTanques';
 
 const Routes = () => (
   <Switch>
@@ -27,13 +27,13 @@ const Routes = () => (
     <Route path="/ip-128" component={TurmaIp} />
     <Route path="/comex" component={Comex} />
     <Route path="/comex-rank" component={ComexRank} />
-    <Route path="/rank" component={Rank} />
-    <Route path="/teste-rota-digital" component={RotaDigital} />
-    <Route path="/teste-rota-digital-prova" component={RotaDigitalProva} />
+    {/* <Route path="/rank" component={Rank} /> */}
+    {/* <Route path="/teste-rota-digital" component={RotaDigital} />
+    <Route path="/teste-rota-digital-prova" component={RotaDigitalProva} /> */}
     <Route path="/teste-christian-barbosa" component={ChristianBarbosa} />
     <Route path="/pior-semana-da-sua-vida-quizz" component={PiorSemana} />
-    <Route path="/caronas" component={Caronas} />
-    <Route path="/caronas-tanques" component={CaronasTanques} />
+    {/* <Route path="/caronas" component={Caronas} />
+    <Route path="/caronas-tanques" component={CaronasTanques} /> */}
   </Switch>
 );
 
