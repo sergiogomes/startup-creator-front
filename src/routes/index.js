@@ -11,8 +11,9 @@ import Comex from '../pages/Comex';
 import ComexRank from '../pages/ComexRank';
 import Prova from '../pages/Prova';
 // import Rank from '../pages/Rank';
-// import RotaDigital from '../pages/RotaDigital';
-// import RotaDigitalProva from '../pages/RotaDigitalProva';
+import RotaDigital from '../pages/RotaDigital';
+import RotaDigitalProva from '../pages/RotaDigitalProva';
+import Tribos from '../pages/Tribos';
 import ChristianBarbosa from '../pages/ChristianBarbosa';
 import PiorSemana from '../pages/PiorSemana';
 // import Caronas from '../pages/Caronas';
@@ -28,8 +29,9 @@ const Routes = () => (
     <Route path="/comex" component={Comex} />
     <Route path="/comex-rank" component={ComexRank} />
     {/* <Route path="/rank" component={Rank} /> */}
-    {/* <Route path="/teste-rota-digital" component={RotaDigital} />
-    <Route path="/teste-rota-digital-prova" component={RotaDigitalProva} /> */}
+    <Route path="/teste-rota-digital" component={RotaDigital} />
+    <Route path="/teste-12-tribos" component={Tribos} />
+    <Route path="/teste-rota-digital-prova" component={RotaDigitalProva} />
     <Route path="/teste-christian-barbosa" component={ChristianBarbosa} />
     <Route path="/pior-semana-da-sua-vida-quizz" component={PiorSemana} />
     {/* <Route path="/caronas" component={Caronas} />
