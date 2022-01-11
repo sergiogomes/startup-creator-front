@@ -295,7 +295,7 @@ const Dashboard = () => {
               </>
               )
             })}
-            <h1 className="nota center">Descubra o caminho ideal para o seu sucesso na internet.</h1>
+            {/* <h1 className="nota center">Descubra o caminho ideal para o seu sucesso na internet.</h1> */}
             <h1 className="nota center"></h1>
 
           </>
