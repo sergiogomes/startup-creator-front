@@ -303,10 +303,13 @@ const Dashboard = () => {
           <Jumbotron className="painel" style={{ background: '#1a1a1a' }}>
             <div className="">
               <h1 className="pergunta center tituloResultado">SUA TRIBO É: </h1>
-              <h1 className="pergunta center perfil">{`${perfilSelecionado}`}</h1>
+              {/* <h1 className="pergunta center perfil">{`${perfilSelecionado}`}</h1> */}
 
               {perfilSelecionado === 'RÚBEN' ? (
                 <>
+                  <div className="centerImg">
+                    <img className="logoTribo" src={"img/tribos/ruben.png"} alt="Tribo Rúben"/>
+                  </div>
                   <h1 className="nota center">Símbolo: Sol e Água</h1>
                   <h1 className="nota center">Função: Pecuária – tribo responsável pela criação de animais, pastoreio etc.</h1>
                 </>
@@ -316,6 +319,9 @@ const Dashboard = () => {
 
               {perfilSelecionado === 'SIMEÃO' ? (
                 <>
+                  <div className="centerImg">
+                    <img className="logoTribo" src={"img/tribos/simeao.png"} alt="Tribo Simeão"/>
+                  </div>
                   <h1 className="nota center">Símbolo: Fortaleza e Torre</h1>
                   <h1 className="nota center">Função: Militar – tribo responsável pela segurança das tribos, formada por soldados de guerra.</h1>
                 </>
@@ -325,6 +331,9 @@ const Dashboard = () => {
 
               {perfilSelecionado === 'LEVI' ? (
                 <>
+                  <div className="centerImg">
+                    <img className="logoTribo" src={"img/tribos/levi.png"} alt="Tribo Levi"/>
+                  </div>
                   <h1 className="nota center">Símbolo: Peitoral das vestes do sumo sacerdote</h1>
                   <h1 className="nota center">Função: espiritual – Tribo formada por líderes espirituais, responsáveis em ensinar e receber os sacrifícios e ofertas do povo.</h1>
                 </>
@@ -334,6 +343,9 @@ const Dashboard = () => {
 
               {perfilSelecionado === 'JUDÁ' ? (
                 <>
+                  <div className="centerImg">
+                    <img className="logoTribo" src={"img/tribos/juda.png"} alt="Tribo Judá"/>
+                  </div>
                   <h1 className="nota center">Símbolo: Leão</h1>
                   <h1 className="nota center">Função: Governar e promover o bem estar do povo – tribo responsável pela saúde do povo, formada por médicos, enfermeiros, terapeutas e também por líderes políticos. Pertencem à tribo Judá o Rei Davi e o Senhor Jesus.</h1>
                 </>
@@ -343,6 +355,9 @@ const Dashboard = () => {
 
               {perfilSelecionado === 'DÃ' ? (
                 <>
+                  <div className="centerImg">
+                    <img className="logoTribo" src={"img/tribos/da.png"} alt="Tribo Dã"/>
+                  </div>
                   <h1 className="nota center">Símbolo: Serpente</h1>
                   <h1 className="nota center">Função: Direito – tribo formada por juízes que decidiam as causas de todo o povo.</h1>
                 </>
@@ -352,6 +367,9 @@ const Dashboard = () => {
 
               {perfilSelecionado === 'NAFTALI' ? (
                 <>
+                  <div className="centerImg">
+                    <img className="logoTribo" src={"img/tribos/naftali.png"} alt="Tribo Naftali"/>
+                  </div>
                   <h1 className="nota center">Símbolo: Gazela</h1>
                   <h1 className="nota center">Função: Comunicador e responsável pelo meio ambiente – eram eloquentes, escritores e porta-vozes do povo, além de cuidarem da natureza.</h1>
                 </>
@@ -361,6 +379,9 @@ const Dashboard = () => {
 
               {perfilSelecionado === 'GADE' ? (
                 <>
+                  <div className="centerImg">
+                    <img className="logoTribo" src={"img/tribos/gade.png"} alt="Tribo Gade"/>
+                  </div>
                   <h1 className="nota center">Símbolo: Tenda</h1>
                   <h1 className="nota center">Função: Responsáveis pelo acampamento – tribo encarregada de montar e desmontar o acampamento a cada mudança.</h1>
                 </>
@@ -370,6 +391,9 @@ const Dashboard = () => {
 
               {perfilSelecionado === 'ASER' ? (
                 <>
+                  <div className="centerImg">
+                    <img className="logoTribo" src={"img/tribos/aser.png"} alt="Tribo Aser"/>
+                  </div>
                   <h1 className="nota center">Símbolo: Árvore Frutífera</h1>
                   <h1 className="nota center">Função: Abastecimento – responsável pelo armazenamento de alimentos para todas as tribos.</h1>
                 </>
@@ -379,6 +403,9 @@ const Dashboard = () => {
 
               {perfilSelecionado === 'ISSACAR' ? (
                 <>
+                  <div className="centerImg">
+                    <img className="logoTribo" src={"img/tribos/issacar.png"} alt="Tribo Issacar"/>
+                  </div>
                   <h1 className="nota center">Símbolo: Jumento</h1>
                   <h1 className="nota center">Função: Transporte – responsáveis pela travessia dos bens das tribos em suas peregrinações. Criavam jumentos, animais fortes e resistentes que atravessavam até desertos com grandes cargas.</h1>
                 </>
@@ -388,6 +415,9 @@ const Dashboard = () => {
 
               {perfilSelecionado === 'ZEBULOM' ? (
                 <>
+                  <div className="centerImg">
+                    <img className="logoTribo" src={"img/tribos/zebulom.png"} alt="Tribo Zebulom"/>
+                  </div>
                   <h1 className="nota center">Símbolo: Navio</h1>
                   <h1 className="nota center">Função: Comércio marítimo – negociação de mercadorias com outras nações. O princípio do comércio exterior de Israel.</h1>
                 </>
@@ -397,6 +427,9 @@ const Dashboard = () => {
 
               {perfilSelecionado === 'JOSÉ' ? (
                 <>
+                  <div className="centerImg">
+                    <img className="logoTribo" src={"img/tribos/jose.png"} alt="Tribo José"/>
+                  </div>
                   <h1 className="nota center">Símbolo: Trigo</h1>
                   <h1 className="nota center">Função: Liderança e negociação – a tribo de José foi dividida em duas: Manassés e Efraim, seus filhos. José foi próspero na terra de suas aflições e garantiu a sobrevivência de seu povo.</h1>
                 </>
@@ -406,6 +439,9 @@ const Dashboard = () => {
 
               {perfilSelecionado === 'BENJAMIM' ? (
                 <>
+                  <div className="centerImg">
+                    <img className="logoTribo" src={"img/tribos/benjamim.png"} alt="Tribo Benjamim"/>
+                  </div>
                   <h1 className="nota center">Símbolo: Lobo</h1>
                   <h1 className="nota center">Função: Caça – tribo responsável pela caça, composta de homens valentes que também eram grandes soldados de guerra.</h1>
                 </>
