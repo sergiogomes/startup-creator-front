@@ -448,13 +448,18 @@ const Dashboard = () => {
               ) : (
                 <></>
               )}
-
+              
               <br />
+              <p className="nota center">
+                  <strong style={{ fontSize: '14px' }}>
+                    Entre no grupo do Whatsapp para descobrir como encontrar a sua tribo.
+                  </strong>
+              </p>
               <div className="center">
                 <Form.Group as={Row} className="mb-3">
                   <Button className="btnEnviarRespostasWhats" onClick={abrirLink}>
                     <img className="logoBotaoWhats" src={"img/whatsapp-branco.png"} />
-                    &nbsp;QUERO RECEBER OS CONTEÚDOS
+                    &nbsp;QUERO ENCONTRAR MINHA TRIBO
                   </Button>
                   <ToastContainer />
                 </Form.Group>
