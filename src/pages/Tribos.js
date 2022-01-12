@@ -233,7 +233,7 @@ const Dashboard = () => {
   };
 
   const abrirLink = () => {
-    window.open("https://pablomarcal.com.br/12-tribos-quiz/");
+    window.open("https://devzap.com.br/api-engennier/campanha/api/redirectlink/61de1ab28441500001467bd9");
   }
 
   const handleSubmit = (event) => {
@@ -453,8 +453,8 @@ const Dashboard = () => {
               <div className="center">
                 <Form.Group as={Row} className="mb-3">
                   <Button className="btnEnviarRespostasWhats" onClick={abrirLink}>
-                    {/* <img className="logoBotaoWhats" src={"img/whatsapp-branco.png"} /> */}
-                    &nbsp;PRÓXIMO PASSO
+                    <img className="logoBotaoWhats" src={"img/whatsapp-branco.png"} />
+                    &nbsp;QUERO RECEBER OS CONTEÚDOS
                   </Button>
                   <ToastContainer />
                 </Form.Group>
@@ -470,6 +470,30 @@ const Dashboard = () => {
       <div className="centerImg">
         <img className="logoPablo" src={"img/pablo1.png"} alt="Pablo Marçal"/>
       </div>
+      <Helmet>
+        <script>
+          {`
+            if (document.location.pathname.indexOf("/teste-12-tribos") == 0) {
+              !function(f,b,e,v,n,t,s)
+              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+              n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', '608209829624734');
+              fbq('track', 'PageView');
+              fbq('track', 'Lead');
+            }
+          `}
+        </script>
+      </Helmet>
+      <noscript>
+        <img height="1" width="1" style="display:none"
+          src="https://www.facebook.com/tr?id=608209829624734&ev=PageView&noscript=1"
+        />
+      </noscript>
     </Container>
   );
 };
