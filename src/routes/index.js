@@ -18,10 +18,12 @@ import ChristianBarbosa from '../pages/ChristianBarbosa';
 import PiorSemana from '../pages/PiorSemana';
 // import Caronas from '../pages/Caronas';
 // import CaronasTanques from '../pages/CaronasTanques';
+import VeloyCard from '../pages/VeloyCard';
 
 const Routes = () => (
   <Switch>
     <Route path="/" exact component={Prova} />
+    <Route path="/veloycard" exact component={VeloyCard} />
     <Route path="/eutonalive" component={EuToNaLive} />
     <Route path="/executivos" component={Executivos} />
     <Route path="/ip" component={Ip} />

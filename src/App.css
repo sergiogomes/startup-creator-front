@@ -114,3 +114,15 @@
   color: #76793F !important;
   text-align: center;
 }
+
+.font-size-15 {
+  font-size: 15px;
+}
+
+.font-size-10 {
+  font-size: 10px;
+}
+
+.espacoCartao {
+  margin-bottom: 10px;
+}
