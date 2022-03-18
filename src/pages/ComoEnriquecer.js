@@ -229,7 +229,7 @@ const ComoEnriquecer = () => {
           </h1>
           <br />
           <h1 className="center" style={{ color: '#FFFF' }}>
-              <strong style={{ color: '#FFD37D' }}>200 MIL REAIS</strong>&nbsp; em prêmio!
+              <span style={{ color: '#FFD37D' }}>200 MIL REAIS</span>&nbsp; em prêmios!
           </h1>
           <br />
           <h1 className="center tituloDois">
