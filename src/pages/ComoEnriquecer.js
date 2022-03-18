@@ -334,8 +334,8 @@ const ComoEnriquecer = () => {
               <div className="center">
                 <Form.Group as={Row} className="mb-3">
                   <Button className="btnEnviarRespostasTelegram" onClick={abrirLink}>
-                    <img className="logoBotaoWhats" src={"img/whatsapp-branco.png"} />
-                    &nbsp;&nbsp;Toque aqui para entrar no grupo
+                    {/* <img className="logoBotaoWhats" src={"img/whatsapp-branco.png"} /> */}
+                    Toque aqui para entrar no grupo
                   </Button>
                   <ToastContainer />
                 </Form.Group>

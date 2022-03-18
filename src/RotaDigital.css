@@ -70,6 +70,7 @@
 .btnEnviarRespostasTelegram {
   background: #FFD37D;
   border-color: #FFD37D;
+  color: #1a1a1a;
   font-weight: bold;
   border-radius: 12px;
   height: 60px;
