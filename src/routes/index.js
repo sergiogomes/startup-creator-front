@@ -17,13 +17,13 @@ import Tribos from '../pages/Tribos';
 import ChristianBarbosa from '../pages/ChristianBarbosa';
 import PiorSemana from '../pages/PiorSemana';
 import ComoEnriquecer from '../pages/ComoEnriquecer';
-// import Caronas from '../pages/Caronas';
-// import CaronasTanques from '../pages/CaronasTanques';
+import Caronas from '../pages/Caronas';
+import CaronasTanques from '../pages/CaronasTanques';
 import VeloyCard from '../pages/VeloyCard';
 
 const Routes = () => (
   <Switch>
-    <Route path="/" exact component={ComoEnriquecer} />
+    <Route path="/" exact component={Caronas} />
     <Route path="/veloycard" exact component={VeloyCard} />
     <Route path="/eutonalive" component={EuToNaLive} />
     <Route path="/executivos" component={Executivos} />
@@ -39,8 +39,8 @@ const Routes = () => (
     
     <Route path="/teste-christian-barbosa" component={ChristianBarbosa} />
     <Route path="/pior-semana-da-sua-vida-quizz" component={PiorSemana} />
-    {/* <Route path="/caronas" component={Caronas} />
-    <Route path="/caronas-tanques" component={CaronasTanques} /> */}
+    <Route path="/caronas" component={Caronas} />
+    <Route path="/caronas-tanques" component={CaronasTanques} />
   </Switch>
 );
 
