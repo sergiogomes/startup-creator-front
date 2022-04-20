@@ -35,7 +35,7 @@ const Caronas = () => {
   return (
     <Container className="p-3" style={{ background: '#000' }}>
       <div className="centerImg">
-        <img src={"img/logo-caronas.png"} alt="O Chamado 2022" height="220"/>
+        <img src={"img/logo_trabalhadores.png"} alt="O Chamado 2022" height="220"/>
       </div>
       <h1 className="perguntaGeneral center" style={{ paddingBottom: '20px' }}>
         Se você está procurando carona.

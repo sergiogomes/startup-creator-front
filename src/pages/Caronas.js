@@ -132,7 +132,7 @@ const Caronas = () => {
   }
 
   const abrirLinkCompra = () => {
-    window.location.replace("https://www.eventx.com.br/ochamadoaconvocacaodosgenerais");
+    window.location.replace("https://www.eventx.com.br/trabalhadoresdaultimahora");
   }
 
   const abrirCadastro = () => {
@@ -183,7 +183,7 @@ const Caronas = () => {
   return (
     <Container className="p-3" style={{ background: '#000' }}>
       <div className="centerImg">
-        <img src={"img/logo-caronas.png"} alt="O Chamado 2022" height="130"/>
+        <img src={"img/logo_trabalhadores.png"} alt="Trabalhadores da última hora" height="130"/>
       </div>
       {!isAluno ? (
         <Jumbotron className="painel" style={{ background: '#1a1a1a' }}>
@@ -282,8 +282,8 @@ const Caronas = () => {
                       type="submit"
                       className="btnEnviarRespostas"
                       style={{ 
-                        background: '#76793F',
-                        borderColor: '#76793F'
+                        background: '#00c354',
+                        borderColor: '#00c354'
                       }}
                       onClick={cadastrarCarro}
                     >
@@ -302,8 +302,8 @@ const Caronas = () => {
           </h1>
           <br/>
           <h1 className="perguntaGeneral center">
-            Encontre sua carona para “O Chamado”
-            29 de dezembro - Goiânia
+            Encontre sua carona para “Os trabalhadores da última hora”
+            01 de maio - São Paulo
           </h1>
           <br/>
           <h1 className="perguntaGeneral center" style={{ fontWeight: 100 }}>
@@ -322,8 +322,8 @@ const Caronas = () => {
                 className="btnEnviarRespostas"
                 onClick={abrirCadastro}
                 style={{ 
-                  background: '#76793F',
-                  borderColor: '#76793F',
+                  background: '#00c354',
+                  borderColor: '#00c354',
                   width: '100%'
                 }}
               >
@@ -342,8 +342,8 @@ const Caronas = () => {
                 className="btnEnviarRespostas"
                 onClick={abrirLink}
                 style={{ 
-                  background: '#76793F',
-                  borderColor: '#76793F',
+                  background: '#00c354',
+                  borderColor: '#00c354',
                   width: '100%'
                 }}
               >
