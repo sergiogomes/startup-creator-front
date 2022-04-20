@@ -132,7 +132,7 @@ const Caronas = () => {
   }
 
   const abrirLinkCompra = () => {
-    window.location.replace("https://www.eventx.com.br/trabalhadoresdaultimahora");
+    window.location.replace("https://pablomarcal.com.br/trabalhadores-ultima-hora");
   }
 
   const abrirCadastro = () => {
