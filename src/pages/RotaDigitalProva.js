@@ -31,8 +31,8 @@ const RotaDigitalProva = () => {
   const [coprodutor, setCoprodutor] = useState(0);
   const [lancador, setLancador] = useState(0);
   const [perfilSelecionado, setPerfilSelecionado] = useState('Carregando...');
-  const [paginas, setPaginas] = useState([169, 170, 172, 173, 174, 175, 176, 177, 178]);
-  const [perguntaAtual, setPerguntaAtual] = useState(169);
+  const [paginas, setPaginas] = useState([247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274]);
+  const [perguntaAtual, setPerguntaAtual] = useState(247);
 
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
@@ -41,12 +41,12 @@ const RotaDigitalProva = () => {
 
   const getProva = async () => {
     try {
-      const { data } = await api.get(`/prova/12`);
+      const { data } = await api.get(`/prova/19`);
       const { perguntas, respostas, prova } = data.provaAtual;
       setPerguntas(perguntas);
       setRespostas(respostas);
       setProva(prova);
-      exibirPergunta(169);
+      exibirPergunta(247);
     } catch (error) {
       console.log(error);
       notifyError('Neste momento não tem prova disponivel! Fique atendo nas lives de terça!');
@@ -70,14 +70,14 @@ const RotaDigitalProva = () => {
   };
 
   const exibirProximaPergunta = () => {
-    if (perguntaAtual === 178) {
+    if (perguntaAtual === 274) {
       enviarResposta();
       return;
     }
 
     if (perguntaAtual === 0) {
-      exibirPergunta(169);
-      setPerguntaAtual(169);
+      exibirPergunta(247);
+      setPerguntaAtual(247);
       return;
     }
 
@@ -88,7 +88,7 @@ const RotaDigitalProva = () => {
       return;
     }
 
-    if (perguntaAtual >= 169) {
+    if (perguntaAtual >= 247) {
       exibirPergunta(perguntaAtual + 1);
       setPerguntaAtual(perguntaAtual + 1);
       esconderPergunta(perguntaAtual);
@@ -225,9 +225,9 @@ const RotaDigitalProva = () => {
   }, []);
 
   return (
-    <Container className="p-3" style={{ background: '#000' }}>
+    <Container className="p-3">
       <div className="centerImg">
-        <img src={"img/rota-digital-branco.png"} alt="Rota Digital" height="80"/>
+        <img src={"img/RD_Logotipo.png"} alt="Renda Digital" height="160" style={{ paddingRight: '64px' }}/>
       </div>
       {isAluno ? (
         <Jumbotron className="painel" style={{ background: '#1a1a1a' }}>
@@ -237,17 +237,17 @@ const RotaDigitalProva = () => {
             <span className="italicoSublinhado">
               Macbook, um IPhone e uma vaga no LX Club.
             </span>
-          </h1>
-          <br />
+          </h1> */}
+          {/* <br /> */}
           <h1 className="center tituloDois">
             Preencha as informações abaixo e participe.
           </h1>
           <h1 className="center tituloDois">
             Mas atenção, a prova pode ser feita somente uma vez! 
-          </h1> */}
+          </h1>
           <Form>
             <Form.Group className="mb-3 pergunta" controlId="formBasicEmail">
-              {/* <Form.Label>Nome</Form.Label>
+              <Form.Label>Nome</Form.Label>
               <Form.Control type="nome" placeholder="" onChange={gravarNome} />
               <br />
               <Form.Label>Email</Form.Label>
@@ -257,9 +257,9 @@ const RotaDigitalProva = () => {
               <Form.Control type="telefone" placeholder="" onChange={gravarTelefone} />
               <br />
               <Form.Label>CPF</Form.Label>
-              <Form.Control type="cpf" placeholder="" onChange={gravarCPF} /> */}
+              <Form.Control type="cpf" placeholder="" onChange={gravarCPF} />
               <br />
-              <Form.Text className="center">
+              {/* <Form.Text className="center">
                 <strong>PROVA ENCERRADA</strong>
               </Form.Text>
               <Form.Text className="center">
@@ -270,21 +270,21 @@ const RotaDigitalProva = () => {
               <Form.Text className="center">
                 É imprescindível que você esteja presente. Se você for contemplado e não estiver assistindo a aula, 
                 vamos sortear outra pessoa. 
-              </Form.Text>
+              </Form.Text> */}
             </Form.Group>
             <br />
-            {/* <div className="center">
+            <div className="center">
               <Button variant="primary btnEnviarRespostasWhats" type="button" onClick={cadastrarParticipante}>
                 INICIAR PROVA
               </Button>
-            </div> */}
+            </div>
           </Form>
         </Jumbotron>
       ) : (
         <>
         {!isProvaRespondida ? (
           <>
-            <h1 className="nota center">PROVA ELIMINATÓRIA PARA O SORTEIO</h1>
+            {/* <h1 className="nota center">QUIZ</h1> */}
           {perguntas.map((pergunta, i) => {
             return (
               <>
@@ -328,9 +328,9 @@ const RotaDigitalProva = () => {
         ) : (
           <Jumbotron className="painel" style={{ background: '#1a1a1a' }}>
             <div className="">
-              <h1 className="pergunta center tituloResultado">PARABÉNS, PROVA CONCLUÍDA!</h1>
+              <h1 className="pergunta center tituloResultado">PARABÉNS, QUIZ CONCLUÍDO!</h1>
               <br />
-              <h1 className="pergunta center">O sorteio será efetuado na Aula de Hoje, às 22:30, o link da live será enviado no canal do Telegram, fique de olho!</h1>
+              <h1 className="pergunta center">Veja quais são ás 3 profissões que mais você se encaixa!</h1>
               {/* <br /> */}
               {/* <h1 className="pergunta center">
                 Se você não está no grupo entre agora 

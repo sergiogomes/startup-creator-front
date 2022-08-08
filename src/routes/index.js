@@ -21,9 +21,11 @@ import Caronas from '../pages/Caronas';
 import CaronasTanques from '../pages/CaronasTanques';
 import VeloyCard from '../pages/VeloyCard';
 
+import Cardapio from '../pages/Cardapio';
+
 const Routes = () => (
   <Switch>
-    <Route path="/" exact component={Caronas} />
+    <Route path="/" exact component={RotaDigitalProva} />
     <Route path="/veloycard" exact component={VeloyCard} />
     <Route path="/eutonalive" component={EuToNaLive} />
     <Route path="/executivos" component={Executivos} />
@@ -41,6 +43,8 @@ const Routes = () => (
     <Route path="/pior-semana-da-sua-vida-quizz" component={PiorSemana} />
     <Route path="/caronas" component={Caronas} />
     <Route path="/caronas-tanques" component={CaronasTanques} />
+
+    <Route path="/cardapio" component={Cardapio} />
   </Switch>
 );
 
