@@ -512,7 +512,6 @@ fbq('track', 'CompleteRegistration');
               </div>
               ) :  (
                 <>
-                  <h1 className="pergunta center perfil">Afiliado</h1>
                 </>
               )}
               <div style={{bordeRadius: 10}} className="nota center">
@@ -535,7 +534,6 @@ fbq('track', 'CompleteRegistration');
                </div>
                  ) :  (
                   <>
-                    <h1 className="pergunta center perfil">Copywriter</h1>
                   </>
                )}
                <div style={{bordeRadius: 10}} className="nota center">
@@ -556,7 +554,6 @@ fbq('track', 'CompleteRegistration');
               </div>
                 ) :  (
                   <>
-                    <h1 className="pergunta center perfil">E-commerce</h1>
                   </>
                 )}
               <div style={{bordeRadius: 10}} className="nota center">
@@ -579,7 +576,6 @@ fbq('track', 'CompleteRegistration');
               </div>
               ) : (
                 <>
-                  <h1 className="pergunta center perfil">Especialista</h1>
                 </>
                 )}
               <div style={{bordeRadius: 10}} className="nota center">
@@ -598,7 +594,6 @@ fbq('track', 'CompleteRegistration');
               </div>
                ) : (
                 <>
-                 <h1 className="pergunta center perfil">Gestor de Redes Sociais</h1>
                 </>
                )}
               <div style={{bordeRadius: 10}} className="nota center">
@@ -620,7 +615,6 @@ fbq('track', 'CompleteRegistration');
              </div>
               ) : (
               <>
-                <h1 className="pergunta center perfil">Gestor de Tráfego</h1>
               </>
                 )}
              <div style={{bordeRadius: 10}} className="nota center">
@@ -645,7 +639,6 @@ fbq('track', 'CompleteRegistration');
                 </div>
                 ) : (
                   <>
-                  <h1 className="pergunta center perfil">Lançador ou Estrategista</h1>
                  </>
                  )}
               <div style={{bordeRadius: 10}} className="nota center">
@@ -671,7 +664,6 @@ fbq('track', 'CompleteRegistration');
               </div>
                ) : (
                 <>
-                <h1 className="pergunta center perfil">Designer ou Videomaker</h1>
                </>
               )}
               <div style={{bordeRadius: 10}} className="nota center">
@@ -693,7 +685,6 @@ fbq('track', 'CompleteRegistration');
                 </div>
                  ) : (
                   <>
-                  <h1 className="pergunta center perfil">Webdesigner</h1>
                  </>
                 )}
                 <div style={{bordeRadius: 10}} className="nota center">
@@ -720,7 +711,6 @@ fbq('track', 'CompleteRegistration');
               </div>
               ) :  (
                 <>
-                  <h1 className="pergunta center perfil">Afiliado</h1>
                 </>
               )}
               <div style={{bordeRadius: 10}} className="nota center">
@@ -743,7 +733,6 @@ fbq('track', 'CompleteRegistration');
                </div>
                  ) :  (
                   <>
-                    <h1 className="pergunta center perfil">Copywriter</h1>
                   </>
                )}
                <div style={{bordeRadius: 10}} className="nota center">
@@ -764,7 +753,6 @@ fbq('track', 'CompleteRegistration');
               </div>
                 ) :  (
                   <>
-                    <h1 className="pergunta center perfil">E-commerce</h1>
                   </>
                 )}
               <div style={{bordeRadius: 10}} className="nota center">
@@ -787,7 +775,6 @@ fbq('track', 'CompleteRegistration');
               </div>
               ) : (
                 <>
-                  <h1 className="pergunta center perfil">Especialista</h1>
                 </>
                 )}
               <div style={{bordeRadius: 10}} className="nota center">
@@ -806,7 +793,6 @@ fbq('track', 'CompleteRegistration');
               </div>
                ) : (
                 <>
-                 <h1 className="pergunta center perfil">Gestor de Redes Sociais</h1>
                 </>
                )}
               <div style={{bordeRadius: 10}} className="nota center">
@@ -828,7 +814,6 @@ fbq('track', 'CompleteRegistration');
              </div>
               ) : (
               <>
-                <h1 className="pergunta center perfil">Gestor de Tráfego</h1>
               </>
                 )}
              <div style={{bordeRadius: 10}} className="nota center">
@@ -853,7 +838,6 @@ fbq('track', 'CompleteRegistration');
                 </div>
                 ) : (
                   <>
-                  <h1 className="pergunta center perfil">Lançador ou Estrategista</h1>
                  </>
                  )}
               <div style={{bordeRadius: 10}} className="nota center">
@@ -879,7 +863,6 @@ fbq('track', 'CompleteRegistration');
               </div>
                ) : (
                 <>
-                <h1 className="pergunta center perfil">Designer ou Videomaker</h1>
                </>
               )}
               <div style={{bordeRadius: 10}} className="nota center">
@@ -901,7 +884,7 @@ fbq('track', 'CompleteRegistration');
                 </div>
                  ) : (
                   <>
-                  <h1 className="pergunta center perfil">Webdesigner</h1>
+                  
                  </>
                 )}
                 <div style={{bordeRadius: 10}} className="nota center">
