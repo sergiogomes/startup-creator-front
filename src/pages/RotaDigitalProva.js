@@ -1,12 +1,12 @@
 import { React, useEffect, useState } from 'react';
 import { Row, Col, Card, CardBody, Button, Badge, Modal, ModalHeader, ModalBody, ModalFooter, Label, Input } from "reactstrap";
-
+import {Helmet} from "react-helmet";
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Iframe from 'react-iframe';
 import * as EmailValidator from 'email-validator';
-import { Helmet } from "react-helmet";
+
 
 import { ToastContainer } from 'react-toastify';
 import { notifyError } from '../utils/toasts';
@@ -16,6 +16,7 @@ import api from '../services/api';
 import '../../src/RotaDigital.css';
 
 import { validate } from 'gerador-validador-cpf';
+import { Script } from 'react-inline-script';
 
 const RotaDigitalProva = () => {
 
@@ -317,7 +318,9 @@ const RotaDigitalProva = () => {
         ) : (
           <Jumbotron className="painel" style={{ background: '#1a1a1a' }}> 
 
-<script>
+
+<Script>
+  {`
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -328,10 +331,9 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '1154748838448553');
 fbq('track', 'CompleteRegistration');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1154748838448553&ev=PageView&noscript=1"
-/></noscript>
+`}
+</Script>
+
 
             <h1 className="pergunta center tituloResultado">TESTE CONCLUÍDO</h1>
             <h1 className="nota center">
