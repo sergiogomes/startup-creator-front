@@ -322,17 +322,26 @@ const RotaDigitalProva = () => {
                 Parabéns! Analisei os dados do seu perfil e aqui abaixo estão as <br />
                 profissões digitais que mais combinam com você.
             </h1>
+
             <br />
+
             <h1 className="pergunta center">PROFISSÃO PRIMÁRIA: </h1>
             <h1 className="pergunta center perfil">{`${perfilSelecionado}`}</h1>
+
+            <br />
+
             <h1 className="pergunta center">PROFISSÃO SECUNDÁRIA: </h1>
             <h1 className="pergunta center perfil">{`${perfilSelecionado2}`}</h1>
+
+            <br />
+
             <h1 className="pergunta center">PROFISSÃO TERCIÁRIO: </h1>
             <h1 className="pergunta center perfil">{`${perfilSelecionado3}`}</h1>
             <br />
 
             {perfilSelecionado === 'Afiliado' || perfilSelecionado2 === 'Afiliado' || perfilSelecionado3 === 'Afiliado' ? (
               <>
+               {perfilSelecionado === 'Afiliado' ? (
                <div  className="nota center">
                 <Iframe id="panda-57a69341-0c85-4304-91e3-527d203d28c2"
                   src="https://player-vz-c0e328be-02b.tv.pandavideo.com.br/embed/?v=57a69341-0c85-4304-91e3-527d203d28c2" 
@@ -342,6 +351,11 @@ const RotaDigitalProva = () => {
                   height="360">
                 </Iframe>
               </div>
+              ) :  (
+                <>
+                  <h1 className="pergunta center perfil">Afiliado</h1>
+                </>
+              )}
               <div style={{bordeRadius: 10}} className="nota center">
                   <p>
                     O afiliado é alguém que divulga produtos e serviços de outras pessoas na internet e, em troca dessa
@@ -356,6 +370,7 @@ const RotaDigitalProva = () => {
             )}
             {perfilSelecionado === 'Copywriter' || perfilSelecionado2 === 'Copywriter' || perfilSelecionado3 === 'Copywriter' ? (
               <>
+               {perfilSelecionado === 'Copywriter' ? (
               <div  className="nota center">
                   <Iframe id="panda-43d200e3-2143-428d-8d2a-9b5e43e5d1ce" 
                     src="https://player-vz-c0e328be-02b.tv.pandavideo.com.br/embed/?v=43d200e3-2143-428d-8d2a-9b5e43e5d1ce" 
@@ -365,6 +380,11 @@ const RotaDigitalProva = () => {
                     height="360">
                  </Iframe>
                </div>
+                 ) :  (
+                  <>
+                    <h1 className="pergunta center perfil">Copywriter</h1>
+                  </>
+               )}
                <div style={{bordeRadius: 10}} className="nota center">
                   <p>Copywriter é a pessoa que escreve textos persuasivos com o objetivo de despertar no leitor a tomada de uma ação, seja ela uma curtida, um email ou a própria venda. </p>
                 </div>
@@ -374,38 +394,24 @@ const RotaDigitalProva = () => {
               <>
               </>
             )}
-            {/* {perfilSelecionado === 'Afiliado' ||  ? (
-              <>
-               <div  className="nota center">
-                <Iframe id="panda-34726d5a-7417-4013-a7e7-ef793ae89719" 
-                  src="https://player-vz-c0e328be-02b.tv.pandavideo.com.br/embed/?v=34726d5a-7417-4013-a7e7-ef793ae89719"
-                  style="border:none;position:absolute;top:0;left:0;" 
-                  allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" 
-                
-                  width="720" 
-                  height="360">
-                </Iframe>
-              </div>
-                <div style={{bordeRadius: 10}} className="nota center">
-                  <p>Copywriter é a pessoa que escreve textos persuasivos com o objetivo de despertar no leitor a tomada de uma ação, seja ela uma curtida, um email ou a própria venda. </p>
-                </div>
-              </>
-             
-              ) : (
-              <>
-              </>
-             )} */}
+           
            {perfilSelecionado === ' e-commerce' || perfilSelecionado2 === ' e-commerce' || perfilSelecionado3 === ' e-commerce' ? (
             <>
+            {perfilSelecionado === ' e-commerce' ? (
              <div  className="nota center">
                 <Iframe id="panda-57a69341-0c85-4304-91e3-527d203d28c2"
-                  src="https://player-vz-c0e328be-02b.tv.pandavideo.com.br/embed/?v=57a69341-0c85-4304-91e3-527d203d28c2" 
-                  style="border:none;position:absolute;top:0;left:0;" 
-                  allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
-                  width="720" 
-                  height="360">
+                src="https://player-vz-c0e328be-02b.tv.pandavideo.com.br/embed/?v=57a69341-0c85-4304-91e3-527d203d28c2" 
+                style="border:none;position:absolute;top:0;left:0;" 
+                allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
+                width="720" 
+                height="360">
                 </Iframe>
               </div>
+                ) :  (
+                  <>
+                    <h1 className="pergunta center perfil">E-commerce</h1>
+                  </>
+                )}
               <div style={{bordeRadius: 10}} className="nota center">
                   <p>
                     O gestor / dono de e-Commerce é aquele perfil profissional responsável por um 
@@ -420,6 +426,7 @@ const RotaDigitalProva = () => {
             )}
             {perfilSelecionado === 'Especialista' || perfilSelecionado2 === 'Especialista' || perfilSelecionado3 === 'Especialista'? (
               <>
+               {perfilSelecionado === 'Especialista' ? (
                <div  className="nota center">
                 <Iframe id="panda-1341cd87-db0d-4951-a1d3-74dd2b8b3fe3" 
                   src="https://player-vz-c0e328be-02b.tv.pandavideo.com.br/embed/?v=1341cd87-db0d-4951-a1d3-74dd2b8b3fe3" 
@@ -429,17 +436,22 @@ const RotaDigitalProva = () => {
                   height="360">
                 </Iframe>
               </div>
+              ) : (
+                <>
+                  <h1 className="pergunta center perfil">Especialista</h1>
+                </>
+                )}
               <div style={{bordeRadius: 10}} className="nota center">
                 <p>Especialista é a pessoa que possui um vasto conhecimento e experiência em um determinado assunto, empacota todo esse conhecimento e transforma em um infoproduto, mentoria ou consultoria. E, com isso, busca impactar pessoas com seu conhecimento.</p>
               </div>
               </>
-              
               ) : (
               <>
               </>
              )}
            {perfilSelecionado === 'Gestor de Redes Sociais' || perfilSelecionado2 === 'Gestor de Redes Sociais' || perfilSelecionado3 === 'Gestor de Redes Sociais' ? (
             <>
+            {perfilSelecionado === 'Gestor de Redes Sociais' ? (
              <div  className="nota center">
                 <Iframe id="panda-3fe00a47-525b-44ea-bc32-79269e05a897" 
                   src="https://player-vz-c0e328be-02b.tv.pandavideo.com.br/embed/?v=3fe00a47-525b-44ea-bc32-79269e05a897" 
@@ -449,8 +461,15 @@ const RotaDigitalProva = () => {
                   height="360">
                 </Iframe>
               </div>
+               ) : (
+                <>
+                 <h1 className="pergunta center perfil">Gestor de Redes Sociais</h1>
+                </>
+               )}
               <div style={{bordeRadius: 10}} className="nota center">
-                <p>Copywriter é a pessoa que escreve textos persuasivos com o objetivo de despertar no leitor a tomada de uma ação, seja ela uma curtida, um email ou a própria venda. </p>
+                <p>
+                O gestor de conteúdo, ou social media, é a pessoa responsável pela gestão das redes sociais de uma determinada pessoa. Quem atua nessa área costuma estar sempre antenado(a) em blogs e perfis de digitais influencers e acessa com frequência as redes sociais. 
+                </p>
               </div>
             </>
             
@@ -460,6 +479,7 @@ const RotaDigitalProva = () => {
               )}
             {perfilSelecionado === 'Gestor de Tráfego' || perfilSelecionado2 === 'Gestor de Tráfego' || perfilSelecionado3 === 'Gestor de Tráfego'? (
               <>
+               {perfilSelecionado === 'Gestor de Tráfego' ? (
                <div  className="nota center">
                 <Iframe id="panda-e472e9a7-bf3b-475f-9b30-01e64f1324d6" 
                   src="https://player-vz-c0e328be-02b.tv.pandavideo.com.br/embed/?v=e472e9a7-bf3b-475f-9b30-01e64f1324d6" 
@@ -469,6 +489,11 @@ const RotaDigitalProva = () => {
                   height="360">
               </Iframe>
              </div>
+              ) : (
+              <>
+                <h1 className="pergunta center perfil">Gestor de Tráfego</h1>
+              </>
+                )}
              <div style={{bordeRadius: 10}} className="nota center">
                 <p>
                   O gestor de tráfego tem o objetivo de levar o maior número de pessoas (potenciais clientes) para uma oferta,
@@ -485,15 +510,21 @@ const RotaDigitalProva = () => {
 
             {perfilSelecionado === 'Lançador ou Estrategista' || perfilSelecionado2 === 'Lançador ou Estrategista'|| perfilSelecionado3 === 'Lançador ou Estrategista' ? (
               <>
-               <div className='nota center'>
-                <Iframe id="panda-e2e992d3-f85b-4d2d-bf1a-66f949f24693" 
-                  src="https://player-vz-c0e328be-02b.tv.pandavideo.com.br/embed/?v=e2e992d3-f85b-4d2d-bf1a-66f949f24693" 
-                  style="border:none;position:absolute;top:0;left:0;" 
-                  allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
-                  width="720" 
-                  height="360">
-                </Iframe>
-              </div>
+               {perfilSelecionado === 'Lançador ou Estrategista' ? (
+                <div className='nota center'>
+                  <Iframe id="panda-e2e992d3-f85b-4d2d-bf1a-66f949f24693" 
+                    src="https://player-vz-c0e328be-02b.tv.pandavideo.com.br/embed/?v=e2e992d3-f85b-4d2d-bf1a-66f949f24693" 
+                    style="border:none;position:absolute;top:0;left:0;" 
+                    allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
+                    width="720" 
+                    height="360">
+                  </Iframe>
+                </div>
+                ) : (
+                  <>
+                  <h1 className="pergunta center perfil">Lançador ou Estrategista</h1>
+                 </>
+                 )}
               <div style={{bordeRadius: 10}} className="nota center">
                 <p>
                 O lançador ou estrategista, é a pessoa responsável por toda a parte
@@ -508,33 +539,10 @@ const RotaDigitalProva = () => {
               </>
             )}
 
-            {perfilSelecionado === 'Gestor de Redes Sociais' || perfilSelecionado2 === 'Gestor de Redes Sociais' || perfilSelecionado3 === 'Gestor de Redes Sociais' ? (
-            <>
-            <div  className="nota center">
-                <Iframe id="panda-3fe00a47-525b-44ea-bc32-79269e05a897" 
-                  src="https://player-vz-c0e328be-02b.tv.pandavideo.com.br/embed/?v=3fe00a47-525b-44ea-bc32-79269e05a897" 
-                  style="border:none;position:absolute;top:0;left:0;" 
-                  allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" 
-                  width="720" 
-                  height="360">
-                </Iframe>
-              </div>
-              <div style={{bordeRadius: 10}} className="nota center">
-                <p>
-                  O gestor de conteúdo, ou social media, é a pessoa responsável pela gestão das 
-                  redes sociais de uma determinada pessoa. Quem atua nessa área costuma estar 
-                  sempre antenado(a) em blogs e perfis de digitais influencers e acessa com frequência as redes socia
-                </p>
-              </div>
-            </>
-               
-                ) : (
-                <>
-                </>
-              )}
-
             {perfilSelecionado === 'Designer ou Videomaker' || perfilSelecionado2 === 'Designer ou Videomaker' || perfilSelecionado3 === 'Designer ou Videomaker' ? (
-              <>
+             
+             <>
+              {perfilSelecionado === 'Designer ou Videomaker' ? (
               <div  className="nota center">
                 <Iframe id="panda-5ed04bb4-fac6-43f5-a2bc-3e5af9ac82fb" 
                   src="https://player-vz-c0e328be-02b.tv.pandavideo.com.br/embed/?v=5ed04bb4-fac6-43f5-a2bc-3e5af9ac82fb" 
@@ -544,6 +552,11 @@ const RotaDigitalProva = () => {
                   height="360">
                 </Iframe>
               </div>
+               ) : (
+                <>
+                <h1 className="pergunta center perfil">Designer ou Videomaker</h1>
+               </>
+              )}
               <div style={{bordeRadius: 10}} className="nota center">
                 <p>Criação é a área em que designers e pessoas que trabalham com a parte de audiovisual atuam. Quem trabalha 
                   nessa área, geralmente, são pessoas que gostam ou tem interesse em captação e edição de fotos e vídeos.
@@ -557,6 +570,7 @@ const RotaDigitalProva = () => {
 
             {perfilSelecionado === 'Webdesigner' || perfilSelecionado2 === 'Webdesigner' || perfilSelecionado3 === 'Webdesigner' ? (
               <>
+              {perfilSelecionado === 'Webdesigner' ? (
                 <div  className="nota center">
                   <Iframe id="panda-0fe47caa-b9fc-4816-ae91-c6f9495f994e" 
                     src="https://player-vz-c0e328be-02b.tv.pandavideo.com.br/embed/?v=0fe47caa-b9fc-4816-ae91-c6f9495f994e" 
@@ -566,12 +580,17 @@ const RotaDigitalProva = () => {
                     height="360">
                   </Iframe>
                 </div>
+                 ) : (
+                  <>
+                  <h1 className="pergunta center perfil">Webdesigner</h1>
+                 </>
+                )}
                 <div style={{bordeRadius: 10}} className="nota center">
                 <p>
                   O web designer é o profissional responsável pela criação e estruturação de sites. É um profissional com uma visão
                   criativa que busca as melhores soluções para deixar uma página, um blog, muito mais atrativo.   
                 </p>
-              </div>
+               </div>
               </>
               
               ) : (
