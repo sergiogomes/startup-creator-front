@@ -37,6 +37,9 @@ const Routes = () => (
     <Route path="/teste-rota-digital" component={RotaDigital} />
     <Route path="/teste-12-tribos" component={Tribos} />
     <Route path="/teste-rota-digital-prova" component={RotaDigitalProva} />
+
+    <Route path="/resultado-rotadigital" component={RotaDigitalProva} />
+
     <Route path="/quiz-como-enriquecer" component={ComoEnriquecer} />
     
     <Route path="/teste-christian-barbosa" component={ChristianBarbosa} />

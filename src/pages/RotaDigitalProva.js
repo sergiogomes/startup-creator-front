@@ -1,11 +1,10 @@
 import { React, useEffect, useState } from 'react';
+import { Row, Col, Card, CardBody, Button, Badge, Modal, ModalHeader, ModalBody, ModalFooter, Label, Input } from "reactstrap";
 
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
+import Iframe from 'react-iframe';
 import * as EmailValidator from 'email-validator';
 import { Helmet } from "react-helmet";
 
@@ -31,13 +30,16 @@ const RotaDigitalProva = () => {
   const [coprodutor, setCoprodutor] = useState(0);
   const [lancador, setLancador] = useState(0);
   const [perfilSelecionado, setPerfilSelecionado] = useState('Carregando...');
-  const [paginas, setPaginas] = useState([247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274]);
+  const [paginas, setPaginas] = useState([247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273]);
   const [perguntaAtual, setPerguntaAtual] = useState(247);
+  const [resultado, setResultado] = useState({});
 
-  const [nome, setNome] = useState('');
-  const [email, setEmail] = useState('');
-  const [telefone, setTelefone] = useState('');
-  const [cpf, setCpf] = useState('');
+  
+
+  const [nome, setNome] = useState('teste');
+  const [email, setEmail] = useState('teste@gmail.com');
+  const [telefone, setTelefone] = useState('11923456781');
+  const [cpf, setCpf] = useState('482.089.280-03');
 
   const getProva = async () => {
     try {
@@ -48,8 +50,6 @@ const RotaDigitalProva = () => {
       setProva(prova);
       exibirPergunta(247);
     } catch (error) {
-      console.log(error);
-      notifyError('Neste momento não tem prova disponivel! Fique atendo nas lives de terça!');
     }
   };
 
@@ -70,7 +70,7 @@ const RotaDigitalProva = () => {
   };
 
   const exibirProximaPergunta = () => {
-    if (perguntaAtual === 274) {
+    if (perguntaAtual === 273) {
       enviarResposta();
       return;
     }
@@ -114,10 +114,12 @@ const RotaDigitalProva = () => {
       // }
 
       // event.preventDefault();
-
       setIsProvaRespondida(true);
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
+     const retorno = await api.get(`/resultado/rotadigital/${aluno.id}`, );
+     setResultado(retorno);
+     setPerfilSelecionado(retorno.data[(0)].categoria)
     } catch (error) {
       console.log(error);
     }
@@ -142,7 +144,7 @@ const RotaDigitalProva = () => {
   }
 
   const abrirLink = () => {
-    window.open("https://devzap.com.br/api-engennier/campanha/api/redirectlink/61980a40ccda18000126b49e");
+    window.open("https://chat.whatsapp.com/Hh2RuCqYokf1JfpTQV13ce");
   }
 
   const gravarNome = async (event) => {
@@ -221,7 +223,9 @@ const RotaDigitalProva = () => {
   }
 
   useEffect(() => {
-    // getProva();
+    cadastrarParticipante();
+    getProva();
+    setIsAluno(false);
   }, []);
 
   return (
@@ -230,7 +234,7 @@ const RotaDigitalProva = () => {
         <img src={"img/RD_Logotipo.png"} alt="Renda Digital" height="160" style={{ paddingRight: '64px' }}/>
       </div>
       {isAluno ? (
-        <Jumbotron className="painel" style={{ background: '#1a1a1a' }}>
+        <Jumbotron display="none" style={{ background: '#1a1a1a' }}>
           {/* <h1 className="tituloUm">
             Participe da prova, <strong> acerte 80% ou 
             mais</strong> das questões relacionadas ao evento e concorra a um &nbsp;
@@ -239,46 +243,28 @@ const RotaDigitalProva = () => {
             </span>
           </h1> */}
           {/* <br /> */}
-          <h1 className="center tituloDois">
-            Preencha as informações abaixo e participe.
+          {/* <h1 className="center tituloUm">
+           Está perdido e não sabe como construir uma Renda Digital? 
           </h1>
+          <br />
           <h1 className="center tituloDois">
-            Mas atenção, a prova pode ser feita somente uma vez! 
+             Deixe seus dados abaixo, faça o Quiz gratuitamente e <br /> descubra 
+             qual o melhor caminho para ter sucesso na internet. 
           </h1>
           <Form>
             <Form.Group className="mb-3 pergunta" controlId="formBasicEmail">
-              <Form.Label>Nome</Form.Label>
-              <Form.Control type="nome" placeholder="" onChange={gravarNome} />
               <br />
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" placeholder="" onChange={gravarEmail} />
-              <br />
-              <Form.Label>Telefone</Form.Label>
-              <Form.Control type="telefone" placeholder="" onChange={gravarTelefone} />
-              <br />
-              <Form.Label>CPF</Form.Label>
-              <Form.Control type="cpf" placeholder="" onChange={gravarCPF} />
-              <br />
-              {/* <Form.Text className="center">
-                <strong>PROVA ENCERRADA</strong>
-              </Form.Text>
-              <Form.Text className="center">
-                O resultado do sorteio será na aula de hoje (05/12), às 22:30, e o 
-                link será liberado para quem estiver no grupo de WhatsApp. 
-              </Form.Text>
-              <br />
-              <Form.Text className="center">
-                É imprescindível que você esteja presente. Se você for contemplado e não estiver assistindo a aula, 
-                vamos sortear outra pessoa. 
-              </Form.Text> */}
+              <Form.Label>DEIXE SEU MELHOR EMAIL</Form.Label>
+              <Form.Control className="w-50" type="email" placeholder="" onChange={gravarEmail} />
+
             </Form.Group>
             <br />
             <div className="center">
               <Button variant="primary btnEnviarRespostasWhats" type="button" onClick={cadastrarParticipante}>
-                INICIAR PROVA
+              QUERO DESCOBRIR MINHA PROFISSÃO DIGITAL
               </Button>
             </div>
-          </Form>
+          </Form> */}
         </Jumbotron>
       ) : (
         <>
@@ -323,38 +309,288 @@ const RotaDigitalProva = () => {
               )
             })}
             <h1 className="nota center">Descubra o caminho ideal para o seu sucesso na internet.</h1>
-            <h1 className="nota center"></h1>
           </>
         ) : (
-          <Jumbotron className="painel" style={{ background: '#1a1a1a' }}>
-            <div className="">
-              <h1 className="pergunta center tituloResultado">PARABÉNS, QUIZ CONCLUÍDO!</h1>
-              <br />
-              <h1 className="pergunta center">Veja quais são ás 3 profissões que mais você se encaixa!</h1>
-              {/* <br /> */}
-              {/* <h1 className="pergunta center">
-                Se você não está no grupo entre agora 
-                mesmo para acompanhar as informações.
-              </h1>
-              <br />
-              <div className="center">
-                <Form.Group as={Row} className="mb-3">
-                  <Button className="btnEnviarRespostasTelegram" onClick={abrirLink}>
-                    <img className="logoBotaoWhats" src={"img/whatsapp-branco.png"} />
-                    &nbsp;&nbsp;Toque aqui para entrar no grupo
-                  </Button>
-                  <ToastContainer />
-                </Form.Group>
-              </div> */}
-            </div>
+          <Jumbotron className="painel" style={{ background: '#1a1a1a' }}> 
 
+            <h1 className="pergunta center tituloResultado">TESTE CONCLUÍDO</h1>
+            <h1 className="nota center">
+            Parabéns! Analisei os dados do seu perfil e aqui abaixo estão as <br />
+                profissões digitais que mais combinam com você.
+            </h1>
+            <br />
+            <h1 className="pergunta center">PROFISSÃO PRIMÁRIA: </h1>
+            <h1 className="pergunta center perfil">{`${perfilSelecionado}`}</h1>
+            <br />
+
+            {perfilSelecionado === 'Afiliado' ? (
+              <>
+               <div  className="nota center">
+                <Iframe id="panda-57a69341-0c85-4304-91e3-527d203d28c2"
+                  src="https://player-vz-c0e328be-02b.tv.pandavideo.com.br/embed/?v=57a69341-0c85-4304-91e3-527d203d28c2" 
+                  style="border:none;position:absolute;top:0;left:0;" 
+                  allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
+                  width="720" 
+                  height="360">
+                </Iframe>
+              </div>
+              <div style={{bordeRadius: 10}} className="nota center">
+                  <p>
+                    O afiliado é alguém que divulga produtos e serviços de outras pessoas na internet e, em troca dessa
+                    indicação para outras pessoas, o afiliado recebe uma comissão por cada venda realizada.
+                  </p>
+                </div>
+              </>
+             
+              ) : (
+                <>
+                </>
+            )}
+            {perfilSelecionado === 'Copywriter' ? (
+              <>
+              <div  className="nota center">
+                  <Iframe id="panda-43d200e3-2143-428d-8d2a-9b5e43e5d1ce" 
+                    src="https://player-vz-c0e328be-02b.tv.pandavideo.com.br/embed/?v=43d200e3-2143-428d-8d2a-9b5e43e5d1ce" 
+                    style="border:none;position:absolute;top:0;left:0;" 
+                    allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" 
+                    width="720" 
+                    height="360">
+                 </Iframe>
+               </div>
+               <div style={{bordeRadius: 10}} className="nota center">
+                  <p>Copywriter é a pessoa que escreve textos persuasivos com o objetivo de despertar no leitor a tomada de uma ação, seja ela uma curtida, um email ou a própria venda. </p>
+                </div>
+              </>
+               
+              ) : (
+              <>
+              </>
+            )}
+            {perfilSelecionado === 'Afiliado' ? (
+              <>
+               <div  className="nota center">
+                <Iframe id="panda-34726d5a-7417-4013-a7e7-ef793ae89719" 
+                  src="https://player-vz-c0e328be-02b.tv.pandavideo.com.br/embed/?v=34726d5a-7417-4013-a7e7-ef793ae89719"
+                  style="border:none;position:absolute;top:0;left:0;" 
+                  allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" 
+                
+                  width="720" 
+                  height="360">
+                </Iframe>
+              </div>
+                <div style={{bordeRadius: 10}} className="nota center">
+                  <p>Copywriter é a pessoa que escreve textos persuasivos com o objetivo de despertar no leitor a tomada de uma ação, seja ela uma curtida, um email ou a própria venda. </p>
+                </div>
+              </>
+             
+              ) : (
+              <>
+              </>
+             )}
+           {perfilSelecionado === ' e-commerce' ? (
+            <>
+             <div  className="nota center">
+                <Iframe id="panda-57a69341-0c85-4304-91e3-527d203d28c2"
+                  src="https://player-vz-c0e328be-02b.tv.pandavideo.com.br/embed/?v=57a69341-0c85-4304-91e3-527d203d28c2" 
+                  style="border:none;position:absolute;top:0;left:0;" 
+                  allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
+                  width="720" 
+                  height="360">
+                </Iframe>
+              </div>
+              <div style={{bordeRadius: 10}} className="nota center">
+                  <p>
+                    O gestor / dono de e-Commerce é aquele perfil profissional responsável por um 
+                    comércio eletrônico ou loja online de uma empresa, até mesmo sua própria. 
+                    Essa pessoa teria como objetivo do e-Commerce elaborar estratégias de criação e de vendas para lojas online.
+                  </p>
+                </div>
+            </>
+              ) : (
+              <>
+              </>
+            )}
+            {perfilSelecionado === 'Especialista' ? (
+              <>
+               <div  className="nota center">
+                <Iframe id="panda-1341cd87-db0d-4951-a1d3-74dd2b8b3fe3" 
+                  src="https://player-vz-c0e328be-02b.tv.pandavideo.com.br/embed/?v=1341cd87-db0d-4951-a1d3-74dd2b8b3fe3" 
+                  style="border:none;position:absolute;top:0;left:0;" 
+                  allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
+                  width="720" 
+                  height="360">
+                </Iframe>
+              </div>
+              <div style={{bordeRadius: 10}} className="nota center">
+                <p>Especialista é a pessoa que possui um vasto conhecimento e experiência em um determinado assunto, empacota todo esse conhecimento e transforma em um infoproduto, mentoria ou consultoria. E, com isso, busca impactar pessoas com seu conhecimento.</p>
+              </div>
+              </>
+              
+              ) : (
+              <>
+              </>
+             )}
+           {perfilSelecionado === 'Gestor de Redes Sociais' ? (
+            <>
+             <div  className="nota center">
+                <Iframe id="panda-3fe00a47-525b-44ea-bc32-79269e05a897" 
+                  src="https://player-vz-c0e328be-02b.tv.pandavideo.com.br/embed/?v=3fe00a47-525b-44ea-bc32-79269e05a897" 
+                  style="border:none;position:absolute;top:0;left:0;" 
+                  allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" 
+                  width="720" 
+                  height="360">
+                </Iframe>
+              </div>
+              <div style={{bordeRadius: 10}} className="nota center">
+                <p>Copywriter é a pessoa que escreve textos persuasivos com o objetivo de despertar no leitor a tomada de uma ação, seja ela uma curtida, um email ou a própria venda. </p>
+              </div>
+            </>
+            
+              ) : (
+              <>
+              </>
+              )}
+            {perfilSelecionado === 'Gestor de Tráfego' ? (
+              <>
+               <div  className="nota center">
+                <Iframe id="panda-e472e9a7-bf3b-475f-9b30-01e64f1324d6" 
+                  src="https://player-vz-c0e328be-02b.tv.pandavideo.com.br/embed/?v=e472e9a7-bf3b-475f-9b30-01e64f1324d6" 
+                  style="border:none;position:absolute;top:0;left:0;" 
+                  allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
+                  width="720" 
+                  height="360">
+              </Iframe>
+             </div>
+             <div style={{bordeRadius: 10}} className="nota center">
+                <p>
+                  O gestor de tráfego tem o objetivo de levar o maior número de pessoas (potenciais clientes) para uma oferta,
+                  site, loja. Através de anúncios e campanhas que, geralmente,  são veiculados nas redes sociais. Quem atua nessa 
+                  área costuma ser bom na análise de dados. 
+                </p>
+              </div>
+              </>
+             
+              ) : (
+              <>
+              </>
+            )}
+
+            {perfilSelecionado === 'Lançador ou Estrategista' ? (
+              <>
+               <div className='nota center'>
+                <Iframe id="panda-e2e992d3-f85b-4d2d-bf1a-66f949f24693" 
+                  src="https://player-vz-c0e328be-02b.tv.pandavideo.com.br/embed/?v=e2e992d3-f85b-4d2d-bf1a-66f949f24693" 
+                  style="border:none;position:absolute;top:0;left:0;" 
+                  allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
+                  width="720" 
+                  height="360">
+                </Iframe>
+              </div>
+              <div style={{bordeRadius: 10}} className="nota center">
+                <p>
+                O lançador ou estrategista, é a pessoa responsável por toda a parte
+                 estratégica no lançamento de um infoproduto. Quem atua nessa área, 
+                 costuma ser bom em gestão de pessoas e projetos, além de ter facilidade 
+                 em criar processos e em resolver problemas. 
+                 </p>
+              </div>
+              </>
+              ) : (
+              <>
+              </>
+            )}
+
+            {perfilSelecionado === 'Gestor de Redes Sociais' ? (
+            <>
+            <div  className="nota center">
+                <Iframe id="panda-3fe00a47-525b-44ea-bc32-79269e05a897" 
+                  src="https://player-vz-c0e328be-02b.tv.pandavideo.com.br/embed/?v=3fe00a47-525b-44ea-bc32-79269e05a897" 
+                  style="border:none;position:absolute;top:0;left:0;" 
+                  allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" 
+                  width="720" 
+                  height="360">
+                </Iframe>
+              </div>
+              <div style={{bordeRadius: 10}} className="nota center">
+                <p>
+                  O gestor de conteúdo, ou social media, é a pessoa responsável pela gestão das 
+                  redes sociais de uma determinada pessoa. Quem atua nessa área costuma estar 
+                  sempre antenado(a) em blogs e perfis de digitais influencers e acessa com frequência as redes socia
+                </p>
+              </div>
+            </>
+               
+                ) : (
+                <>
+                </>
+              )}
+
+            {perfilSelecionado === 'Designer ou Videomaker' ? (
+              <>
+              <div  className="nota center">
+                <Iframe id="panda-5ed04bb4-fac6-43f5-a2bc-3e5af9ac82fb" 
+                  src="https://player-vz-c0e328be-02b.tv.pandavideo.com.br/embed/?v=5ed04bb4-fac6-43f5-a2bc-3e5af9ac82fb" 
+                  style="border:none;position:absolute;top:0;left:0;" 
+                  allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
+                  width="720" 
+                  height="360">
+                </Iframe>
+              </div>
+              <div style={{bordeRadius: 10}} className="nota center">
+                <p>Criação é a área em que designers e pessoas que trabalham com a parte de audiovisual atuam. Quem trabalha 
+                  nessa área, geralmente, são pessoas que gostam ou tem interesse em captação e edição de fotos e vídeos.
+                </p>
+              </div>
+              </>
+              ) : (
+              <>
+              </>
+             )}
+
+            {perfilSelecionado === 'Webdesigner' ? (
+              <>
+                <div  className="nota center">
+                  <Iframe id="panda-0fe47caa-b9fc-4816-ae91-c6f9495f994e" 
+                    src="https://player-vz-c0e328be-02b.tv.pandavideo.com.br/embed/?v=0fe47caa-b9fc-4816-ae91-c6f9495f994e" 
+                    style="border:none;position:absolute;top:0;left:0;" 
+                    allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
+                    width="720" 
+                    height="360">
+                  </Iframe>
+                </div>
+                <div style={{bordeRadius: 10}} className="nota center">
+                <p>
+                  O web designer é o profissional responsável pela criação e estruturação de sites. É um profissional com uma visão
+                  criativa que busca as melhores soluções para deixar uma página, um blog, muito mais atrativo.   
+                </p>
+              </div>
+              </>
+              
+              ) : (
+              <>
+              </>
+            )}
+
+            <br />
+            <h1 className="nota center">Toque no botão abaixo e entre no meu Grupo Vip, lá você vai aprender a desenvolver essa habilidade digital para, assim, começar a faturar R$ 10.000 por mês trabalhando pela internet. </h1>
+                        
+            <br />
+            <div className="center">
+              <Form.Group as={Row} className="mb-3">
+                <Button className="btnEnviarRespostasWhats" onClick={abrirLink}>
+                  <img className="logoBotaoWhats" src={"img/whatsapp-branco.png"} />
+                  &nbsp;QUERO ENTRAR NO GRUPO VIP
+                </Button>
+                <ToastContainer />
+              </Form.Group>
+            </div>
           </Jumbotron>
+          )}
+          </>
         )}
-        </>
-      )}
-      <div className="centerImg">
-        <img className="logoRotaDigital" src={"img/mp-branco.png"} alt="Rota Digital" />
-      </div>
+        <div className="centerImg">
+          <img className="logoRotaDigital" src={"img/mp-branco.png"} alt="Rota Digital" />
+        </div>
 
       <Helmet>
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-455561195"></script>

@@ -10,7 +10,8 @@
 }
 
 .nota {
-  color: #fff;
+  color: rgb(255, 255, 255);
+  font-family: Poppins;
   font-style: normal !important;
   font-size: 25px;
   text-align: center;
@@ -18,12 +19,14 @@
 }
 
 .pergunta {
+  font-family: Poppins;
   color: #fff;
   font-style: bold;
   font-size: 20px;
 }
 
 .center {
+  font-family: Poppins;
   align-items: center;
   display: flex;
   justify-content: center;
@@ -41,6 +44,7 @@
 }
 
 .alternativa {
+  font-family: Poppins;
   border-radius: 25px;
   border: 1px solid #fff;
   padding: 10px;
@@ -48,6 +52,7 @@
 }
 
 .alternativasRadius {
+  font-family: Poppins;
   padding-left: 10px;
 }
 
@@ -87,16 +92,22 @@
 
 .tituloResultado {
   font-size: 30px;
+  font-family: Poppins;
+
 }
 
 .perfil {
   font-size: 30px;
   font-weight: bold;
-  color: #2751e5;
+  color: #e60000;
+  font-family: Poppins;
+
 }
 
 .descricaoResultado {
   font-size: 16px;
+  font-family: Poppins;
+
 }
 
 .logoBotaoWhats {
@@ -110,10 +121,13 @@
 
 .tituloUm {
   color: #ffffff;
-  font-size: 20px;
+  font-size: 30px;
+  font-family: Poppins;
+
 }
 
 .tituloDois {
   color: #ffffff;
-  font-size: 13px;
+  font-size: 20px;
+  font-family: Poppins;
 }

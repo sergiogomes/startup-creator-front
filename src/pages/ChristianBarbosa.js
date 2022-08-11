@@ -42,7 +42,6 @@ const ChristianBarbosa = () => {
       exibirPergunta(149);
     } catch (error) {
       console.log(error);
-      notifyError('Neste momento não tem prova disponivel! Fique atendo nas lives de terça!');
     }
   };
 
