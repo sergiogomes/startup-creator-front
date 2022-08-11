@@ -504,12 +504,7 @@ fbq('track', 'CompleteRegistration');
             <h1 className="pergunta center perfil">{`${perfilSelecionado2}`}</h1>
 
             <br />
-
-            <h1 className="pergunta center">PROFISSÃO TERCIÁRIO: </h1>
-            <h1 className="pergunta center perfil">{`${perfilSelecionado3}`}</h1>
-            <br />
-
-            { perfilSelecionado2 === 'Afiliado' || perfilSelecionado3 === 'Afiliado' ? (
+            { perfilSelecionado2 === 'Afiliado'  ? (
               <>
                {perfilSelecionado === 'Afiliado' ? (
                <div  className="nota center">
@@ -532,7 +527,7 @@ fbq('track', 'CompleteRegistration');
                 <>
                 </>
             )}
-            { perfilSelecionado2 === 'Copywriter' || perfilSelecionado3 === 'Copywriter' ? (
+            { perfilSelecionado2 === 'Copywriter'  ? (
               <>
                {perfilSelecionado === 'Copywriter' ? (
               <div  className="nota center">
@@ -553,7 +548,7 @@ fbq('track', 'CompleteRegistration');
               </>
             )}
            
-           {perfilSelecionado2 === ' e-commerce' || perfilSelecionado3 === ' e-commerce' ? (
+           {perfilSelecionado2 === ' e-commerce'  ? (
             <>
             {perfilSelecionado === ' e-commerce' ? (
              <div  className="nota center">
@@ -576,7 +571,7 @@ fbq('track', 'CompleteRegistration');
               <>
               </>
             )}
-            { perfilSelecionado2 === 'Especialista' || perfilSelecionado3 === 'Especialista'? (
+            { perfilSelecionado2 === 'Especialista' ? (
               <>
                {perfilSelecionado === 'Especialista' ? (
                <div  className="nota center">
@@ -595,7 +590,7 @@ fbq('track', 'CompleteRegistration');
               <>
               </>
              )}
-           { perfilSelecionado2 === 'Gestor de Redes Sociais' || perfilSelecionado3 === 'Gestor de Redes Sociais' ? (
+           { perfilSelecionado2 === 'Gestor de Redes Sociais'  ? (
             <>
             {perfilSelecionado === 'Gestor de Redes Sociais' ? (
              <div  className="nota center">
@@ -617,7 +612,7 @@ fbq('track', 'CompleteRegistration');
               <>
               </>
               )}
-            { perfilSelecionado2 === 'Gestor de Tráfego' || perfilSelecionado3 === 'Gestor de Tráfego'? (
+            { perfilSelecionado2 === 'Gestor de Tráfego' ? (
               <>
                {perfilSelecionado === 'Gestor de Tráfego' ? (
                <div  className="nota center">
@@ -642,7 +637,7 @@ fbq('track', 'CompleteRegistration');
               </>
             )}
 
-            { perfilSelecionado2 === 'Lançador ou Estrategista'|| perfilSelecionado3 === 'Lançador ou Estrategista' ? (
+            { perfilSelecionado2 === 'Lançador ou Estrategista' ? (
               <>
                {perfilSelecionado === 'Lançador ou Estrategista' ? (
                 <div className='nota center'>
@@ -667,7 +662,7 @@ fbq('track', 'CompleteRegistration');
               </>
             )}
 
-            { perfilSelecionado2 === 'Designer ou Videomaker' || perfilSelecionado3 === 'Designer ou Videomaker' ? (
+            { perfilSelecionado2 === 'Designer ou Videomaker'  ? (
              
              <>
               {perfilSelecionado === 'Designer ou Videomaker' ? (
@@ -690,7 +685,7 @@ fbq('track', 'CompleteRegistration');
               </>
              )}
 
-            { perfilSelecionado2 === 'Webdesigner' || perfilSelecionado3 === 'Webdesigner' ? (
+            { perfilSelecionado2 === 'Webdesigner'  ? (
               <>
               {perfilSelecionado === 'Webdesigner' ? (
                 <div  className="nota center">
@@ -713,6 +708,216 @@ fbq('track', 'CompleteRegistration');
               <>
               </>
             )}
+
+            <h1 className="pergunta center">PROFISSÃO TERCIÁRIO: </h1>
+            <h1 className="pergunta center perfil">{`${perfilSelecionado3}`}</h1>
+            <br />
+            {  perfilSelecionado3 === 'Afiliado' ? (
+              <>
+               {perfilSelecionado === 'Afiliado' ? (
+               <div  className="nota center">
+                
+              </div>
+              ) :  (
+                <>
+                  <h1 className="pergunta center perfil">Afiliado</h1>
+                </>
+              )}
+              <div style={{bordeRadius: 10}} className="nota center">
+                  <p>
+                    O afiliado é alguém que divulga produtos e serviços de outras pessoas na internet e, em troca dessa
+                    indicação para outras pessoas, o afiliado recebe uma comissão por cada venda realizada.
+                  </p>
+                </div>
+              </>
+             
+              ) : (
+                <>
+                </>
+            )}
+            {  perfilSelecionado3 === 'Copywriter' ? (
+              <>
+               {perfilSelecionado === 'Copywriter' ? (
+              <div  className="nota center">
+                  
+               </div>
+                 ) :  (
+                  <>
+                    <h1 className="pergunta center perfil">Copywriter</h1>
+                  </>
+               )}
+               <div style={{bordeRadius: 10}} className="nota center">
+                  <p>Copywriter é a pessoa que escreve textos persuasivos com o objetivo de despertar no leitor a tomada de uma ação, seja ela uma curtida, um email ou a própria venda. </p>
+                </div>
+              </>
+               
+              ) : (
+              <>
+              </>
+            )}
+           
+           { perfilSelecionado3 === ' e-commerce' ? (
+            <>
+            {perfilSelecionado === ' e-commerce' ? (
+             <div  className="nota center">
+            
+              </div>
+                ) :  (
+                  <>
+                    <h1 className="pergunta center perfil">E-commerce</h1>
+                  </>
+                )}
+              <div style={{bordeRadius: 10}} className="nota center">
+                  <p>
+                    O gestor / dono de e-Commerce é aquele perfil profissional responsável por um 
+                    comércio eletrônico ou loja online de uma empresa, até mesmo sua própria. 
+                    Essa pessoa teria como objetivo do e-Commerce elaborar estratégias de criação e de vendas para lojas online.
+                  </p>
+                </div>
+            </>
+              ) : (
+              <>
+              </>
+            )}
+            {  perfilSelecionado3 === 'Especialista'? (
+              <>
+               {perfilSelecionado === 'Especialista' ? (
+               <div  className="nota center">
+                
+              </div>
+              ) : (
+                <>
+                  <h1 className="pergunta center perfil">Especialista</h1>
+                </>
+                )}
+              <div style={{bordeRadius: 10}} className="nota center">
+                <p>Especialista é a pessoa que possui um vasto conhecimento e experiência em um determinado assunto, empacota todo esse conhecimento e transforma em um infoproduto, mentoria ou consultoria. E, com isso, busca impactar pessoas com seu conhecimento.</p>
+              </div>
+              </>
+              ) : (
+              <>
+              </>
+             )}
+           {  perfilSelecionado3 === 'Gestor de Redes Sociais' ? (
+            <>
+            {perfilSelecionado === 'Gestor de Redes Sociais' ? (
+             <div  className="nota center">
+                
+              </div>
+               ) : (
+                <>
+                 <h1 className="pergunta center perfil">Gestor de Redes Sociais</h1>
+                </>
+               )}
+              <div style={{bordeRadius: 10}} className="nota center">
+                <p>
+                O gestor de conteúdo, ou social media, é a pessoa responsável pela gestão das redes sociais de uma determinada pessoa. Quem atua nessa área costuma estar sempre antenado(a) em blogs e perfis de digitais influencers e acessa com frequência as redes sociais. 
+                </p>
+              </div>
+            </>
+            
+              ) : (
+              <>
+              </>
+              )}
+            {  perfilSelecionado3 === 'Gestor de Tráfego'? (
+              <>
+               {perfilSelecionado === 'Gestor de Tráfego' ? (
+               <div  className="nota center">
+                
+             </div>
+              ) : (
+              <>
+                <h1 className="pergunta center perfil">Gestor de Tráfego</h1>
+              </>
+                )}
+             <div style={{bordeRadius: 10}} className="nota center">
+                <p>
+                  O gestor de tráfego tem o objetivo de levar o maior número de pessoas (potenciais clientes) para uma oferta,
+                  site, loja. Através de anúncios e campanhas que, geralmente,  são veiculados nas redes sociais. Quem atua nessa 
+                  área costuma ser bom na análise de dados. 
+                </p>
+              </div>
+              </>
+             
+              ) : (
+              <>
+              </>
+            )}
+
+            {  perfilSelecionado3 === 'Lançador ou Estrategista' ? (
+              <>
+               {perfilSelecionado === 'Lançador ou Estrategista' ? (
+                <div className='nota center'>
+                 
+                </div>
+                ) : (
+                  <>
+                  <h1 className="pergunta center perfil">Lançador ou Estrategista</h1>
+                 </>
+                 )}
+              <div style={{bordeRadius: 10}} className="nota center">
+                <p>
+                O lançador ou estrategista, é a pessoa responsável por toda a parte
+                 estratégica no lançamento de um infoproduto. Quem atua nessa área, 
+                 costuma ser bom em gestão de pessoas e projetos, além de ter facilidade 
+                 em criar processos e em resolver problemas. 
+                 </p>
+              </div>
+              </>
+              ) : (
+              <>
+              </>
+            )}
+
+            {  perfilSelecionado3 === 'Designer ou Videomaker' ? (
+             
+             <>
+              {perfilSelecionado === 'Designer ou Videomaker' ? (
+              <div  className="nota center">
+                
+              </div>
+               ) : (
+                <>
+                <h1 className="pergunta center perfil">Designer ou Videomaker</h1>
+               </>
+              )}
+              <div style={{bordeRadius: 10}} className="nota center">
+                <p>Criação é a área em que designers e pessoas que trabalham com a parte de audiovisual atuam. Quem trabalha 
+                  nessa área, geralmente, são pessoas que gostam ou tem interesse em captação e edição de fotos e vídeos.
+                </p>
+              </div>
+              </>
+              ) : (
+              <>
+              </>
+             )}
+
+            {  perfilSelecionado3 === 'Webdesigner' ? (
+              <>
+              {perfilSelecionado === 'Webdesigner' ? (
+                <div  className="nota center">
+                  
+                </div>
+                 ) : (
+                  <>
+                  <h1 className="pergunta center perfil">Webdesigner</h1>
+                 </>
+                )}
+                <div style={{bordeRadius: 10}} className="nota center">
+                <p>
+                  O web designer é o profissional responsável pela criação e estruturação de sites. É um profissional com uma visão
+                  criativa que busca as melhores soluções para deixar uma página, um blog, muito mais atrativo.   
+                </p>
+               </div>
+              </>
+              
+              ) : (
+              <>
+              </>
+            )}
+
+            
 
             
           </Jumbotron>
