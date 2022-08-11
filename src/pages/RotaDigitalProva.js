@@ -377,7 +377,7 @@ fbq('track', 'CompleteRegistration');
                     
                   </>
                )}
-               {perfilSelecionado === ' e-commerce' ? (
+               {perfilSelecionado === 'e-commerce' ? (
              <div  className="nota center">
                 <Iframe id="panda-57a69341-0c85-4304-91e3-527d203d28c2"
                 src="https://player-vz-c0e328be-02b.tv.pandavideo.com.br/embed/?v=57a69341-0c85-4304-91e3-527d203d28c2" 
@@ -546,9 +546,9 @@ fbq('track', 'CompleteRegistration');
               </>
             )}
            
-           {perfilSelecionado2 === ' e-commerce'  ? (
+           {perfilSelecionado2 === 'e-commerce'  ? (
             <>
-            {perfilSelecionado === ' e-commerce' ? (
+            {perfilSelecionado === 'e-commerce' ? (
              <div  className="nota center">
             
               </div>
@@ -745,9 +745,9 @@ fbq('track', 'CompleteRegistration');
               </>
             )}
            
-           { perfilSelecionado3 === ' e-commerce' ? (
+           { perfilSelecionado3 === 'e-commerce' ? (
             <>
-            {perfilSelecionado === ' e-commerce' ? (
+            {perfilSelecionado === 'e-commerce' ? (
              <div  className="nota center">
             
               </div>
