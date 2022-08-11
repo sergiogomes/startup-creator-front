@@ -419,7 +419,7 @@ fbq('track', 'CompleteRegistration');
               </div>
                ) : (
                 <>
-                 <h1 className="pergunta center perfil">Gestor de Redes Sociais</h1>
+               
                 </>
                )}
                {perfilSelecionado === 'Gestor de Tráfego' ? (
@@ -434,7 +434,7 @@ fbq('track', 'CompleteRegistration');
              </div>
               ) : (
               <>
-                <h1 className="pergunta center perfil">Gestor de Tráfego</h1>
+               
               </>
                 )}
 
@@ -450,7 +450,7 @@ fbq('track', 'CompleteRegistration');
                 </div>
                 ) : (
                   <>
-                  <h1 className="pergunta center perfil">Lançador ou Estrategista</h1>
+                
                  </>
                  )}
                  {perfilSelecionado === 'Designer ou Videomaker' ? (
@@ -465,7 +465,7 @@ fbq('track', 'CompleteRegistration');
               </div>
                ) : (
                 <>
-                <h1 className="pergunta center perfil">Designer ou Videomaker</h1>
+               
                </>
               )}
               {perfilSelecionado === 'Webdesigner' ? (
@@ -480,7 +480,7 @@ fbq('track', 'CompleteRegistration');
                 </div>
                  ) : (
                   <>
-                  <h1 className="pergunta center perfil">Webdesigner</h1>
+                  
                  </>
                 )}
 
