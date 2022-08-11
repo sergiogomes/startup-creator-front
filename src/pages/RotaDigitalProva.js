@@ -29,7 +29,9 @@ const RotaDigitalProva = () => {
   const [expert, setExpert] = useState(0);
   const [coprodutor, setCoprodutor] = useState(0);
   const [lancador, setLancador] = useState(0);
-  const [perfilSelecionado, setPerfilSelecionado] = useState('Carregando...');
+  const [perfilSelecionado, setPerfilSelecionado] = useState();
+  const [perfilSelecionado2, setPerfilSelecionado2] = useState();
+  const [perfilSelecionado3, setPerfilSelecionado3] = useState();
   const [paginas, setPaginas] = useState([247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273]);
   const [perguntaAtual, setPerguntaAtual] = useState(247);
   const [resultado, setResultado] = useState({});
@@ -119,7 +121,9 @@ const RotaDigitalProva = () => {
       document.documentElement.scrollTop = 0;
      const retorno = await api.get(`/resultado/rotadigital/${aluno.id}`, );
      setResultado(retorno);
-     setPerfilSelecionado(retorno.data[(0)].categoria)
+     setPerfilSelecionado(retorno.data[0].categoria)
+     setPerfilSelecionado2(retorno.data[1].categoria)
+     setPerfilSelecionado3(retorno.data[2].categoria)
     } catch (error) {
       console.log(error);
     }
@@ -315,15 +319,19 @@ const RotaDigitalProva = () => {
 
             <h1 className="pergunta center tituloResultado">TESTE CONCLUÍDO</h1>
             <h1 className="nota center">
-            Parabéns! Analisei os dados do seu perfil e aqui abaixo estão as <br />
+                Parabéns! Analisei os dados do seu perfil e aqui abaixo estão as <br />
                 profissões digitais que mais combinam com você.
             </h1>
             <br />
             <h1 className="pergunta center">PROFISSÃO PRIMÁRIA: </h1>
             <h1 className="pergunta center perfil">{`${perfilSelecionado}`}</h1>
+            <h1 className="pergunta center">PROFISSÃO SECUNDÁRIA: </h1>
+            <h1 className="pergunta center perfil">{`${perfilSelecionado2}`}</h1>
+            <h1 className="pergunta center">PROFISSÃO TERCIÁRIO: </h1>
+            <h1 className="pergunta center perfil">{`${perfilSelecionado3}`}</h1>
             <br />
 
-            {perfilSelecionado === 'Afiliado' ? (
+            {perfilSelecionado === 'Afiliado' || perfilSelecionado2 === 'Afiliado' || perfilSelecionado3 === 'Afiliado' ? (
               <>
                <div  className="nota center">
                 <Iframe id="panda-57a69341-0c85-4304-91e3-527d203d28c2"
@@ -346,7 +354,7 @@ const RotaDigitalProva = () => {
                 <>
                 </>
             )}
-            {perfilSelecionado === 'Copywriter' ? (
+            {perfilSelecionado === 'Copywriter' || perfilSelecionado2 === 'Copywriter' || perfilSelecionado3 === 'Copywriter' ? (
               <>
               <div  className="nota center">
                   <Iframe id="panda-43d200e3-2143-428d-8d2a-9b5e43e5d1ce" 
@@ -366,7 +374,7 @@ const RotaDigitalProva = () => {
               <>
               </>
             )}
-            {perfilSelecionado === 'Afiliado' ? (
+            {/* {perfilSelecionado === 'Afiliado' ||  ? (
               <>
                <div  className="nota center">
                 <Iframe id="panda-34726d5a-7417-4013-a7e7-ef793ae89719" 
@@ -386,8 +394,8 @@ const RotaDigitalProva = () => {
               ) : (
               <>
               </>
-             )}
-           {perfilSelecionado === ' e-commerce' ? (
+             )} */}
+           {perfilSelecionado === ' e-commerce' || perfilSelecionado2 === ' e-commerce' || perfilSelecionado3 === ' e-commerce' ? (
             <>
              <div  className="nota center">
                 <Iframe id="panda-57a69341-0c85-4304-91e3-527d203d28c2"
@@ -410,7 +418,7 @@ const RotaDigitalProva = () => {
               <>
               </>
             )}
-            {perfilSelecionado === 'Especialista' ? (
+            {perfilSelecionado === 'Especialista' || perfilSelecionado2 === 'Especialista' || perfilSelecionado3 === 'Especialista'? (
               <>
                <div  className="nota center">
                 <Iframe id="panda-1341cd87-db0d-4951-a1d3-74dd2b8b3fe3" 
@@ -430,7 +438,7 @@ const RotaDigitalProva = () => {
               <>
               </>
              )}
-           {perfilSelecionado === 'Gestor de Redes Sociais' ? (
+           {perfilSelecionado === 'Gestor de Redes Sociais' || perfilSelecionado2 === 'Gestor de Redes Sociais' || perfilSelecionado3 === 'Gestor de Redes Sociais' ? (
             <>
              <div  className="nota center">
                 <Iframe id="panda-3fe00a47-525b-44ea-bc32-79269e05a897" 
@@ -450,7 +458,7 @@ const RotaDigitalProva = () => {
               <>
               </>
               )}
-            {perfilSelecionado === 'Gestor de Tráfego' ? (
+            {perfilSelecionado === 'Gestor de Tráfego' || perfilSelecionado2 === 'Gestor de Tráfego' || perfilSelecionado3 === 'Gestor de Tráfego'? (
               <>
                <div  className="nota center">
                 <Iframe id="panda-e472e9a7-bf3b-475f-9b30-01e64f1324d6" 
@@ -475,7 +483,7 @@ const RotaDigitalProva = () => {
               </>
             )}
 
-            {perfilSelecionado === 'Lançador ou Estrategista' ? (
+            {perfilSelecionado === 'Lançador ou Estrategista' || perfilSelecionado2 === 'Lançador ou Estrategista'|| perfilSelecionado3 === 'Lançador ou Estrategista' ? (
               <>
                <div className='nota center'>
                 <Iframe id="panda-e2e992d3-f85b-4d2d-bf1a-66f949f24693" 
@@ -500,7 +508,7 @@ const RotaDigitalProva = () => {
               </>
             )}
 
-            {perfilSelecionado === 'Gestor de Redes Sociais' ? (
+            {perfilSelecionado === 'Gestor de Redes Sociais' || perfilSelecionado2 === 'Gestor de Redes Sociais' || perfilSelecionado3 === 'Gestor de Redes Sociais' ? (
             <>
             <div  className="nota center">
                 <Iframe id="panda-3fe00a47-525b-44ea-bc32-79269e05a897" 
@@ -525,7 +533,7 @@ const RotaDigitalProva = () => {
                 </>
               )}
 
-            {perfilSelecionado === 'Designer ou Videomaker' ? (
+            {perfilSelecionado === 'Designer ou Videomaker' || perfilSelecionado2 === 'Designer ou Videomaker' || perfilSelecionado3 === 'Designer ou Videomaker' ? (
               <>
               <div  className="nota center">
                 <Iframe id="panda-5ed04bb4-fac6-43f5-a2bc-3e5af9ac82fb" 
@@ -547,7 +555,7 @@ const RotaDigitalProva = () => {
               </>
              )}
 
-            {perfilSelecionado === 'Webdesigner' ? (
+            {perfilSelecionado === 'Webdesigner' || perfilSelecionado2 === 'Webdesigner' || perfilSelecionado3 === 'Webdesigner' ? (
               <>
                 <div  className="nota center">
                   <Iframe id="panda-0fe47caa-b9fc-4816-ae91-c6f9495f994e" 
