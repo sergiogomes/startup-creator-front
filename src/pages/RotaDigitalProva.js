@@ -344,7 +344,7 @@ fbq('track', 'CompleteRegistration');
             <br />
 
             <h1 className="pergunta center profissao">PROFISSÃO PRIMÁRIA: </h1>
-            <h1 className="pergunta center perfil">{`${perfilSelecionado}`}</h1>
+            <h1 className="pergunta center perfil"style={{whiteSpace: 'nowrap'}}>{`${perfilSelecionado}`}</h1>
 
             <br />
             {perfilSelecionado === 'Afiliado' ? (
@@ -484,7 +484,7 @@ fbq('track', 'CompleteRegistration');
                  </>
                 )}
 
-<br />
+            <br />
             <h1 className="nota center">Toque no botão abaixo e entre no meu Grupo Vip, lá você vai aprender a desenvolver essa habilidade digital para, assim, começar a faturar R$ 10.000 por mês trabalhando pela internet. </h1>
                         
             <br />
@@ -499,7 +499,8 @@ fbq('track', 'CompleteRegistration');
             </div>
             <br />
             <h1 className="pergunta center profissao">PROFISSÃO SECUNDÁRIA: </h1>
-            <h1 className="pergunta center perfil">{`${perfilSelecionado2}`}</h1>
+            <h1 className="pergunta center perfil"style={{whiteSpace: 'nowrap'}}>{`${perfilSelecionado2}`}</h1>
+            <div  className="nota center">
             { perfilSelecionado2 === 'Afiliado'  ? (
               <>
                {perfilSelecionado === 'Afiliado' ? (
@@ -522,6 +523,7 @@ fbq('track', 'CompleteRegistration');
                 <>
                 </>
             )}
+            </div>
             { perfilSelecionado2 === 'Copywriter'  ? (
               <>
                {perfilSelecionado === 'Copywriter' ? (
@@ -553,11 +555,15 @@ fbq('track', 'CompleteRegistration');
                   </>
                 )}
               <div style={{bordeRadius: 10}} className="nota center">
+                <h5>
                   <p>
                     O gestor / dono de e-Commerce é aquele perfil profissional responsável por um 
                     comércio eletrônico ou loja online de uma empresa, até mesmo sua própria. 
                     Essa pessoa teria como objetivo do e-Commerce elaborar estratégias de criação e de vendas para lojas online.
                   </p>
+                </h5>
+                
+                  
                 </div>
             </>
               ) : (
@@ -575,7 +581,15 @@ fbq('track', 'CompleteRegistration');
                 </>
                 )}
               <div style={{bordeRadius: 10}} className="nota center">
-                <p>Especialista é a pessoa que possui um vasto conhecimento e experiência em um determinado assunto, empacota todo esse conhecimento e transforma em um infoproduto, mentoria ou consultoria. E, com isso, busca impactar pessoas com seu conhecimento.</p>
+                <h5>
+                <p>
+                  Especialista é a pessoa que possui um vasto conhecimento e 
+                  experiência em um determinado assunto, empacota todo esse 
+                  conhecimento e transforma em um infoproduto, mentoria ou consultoria. 
+                  E, com isso, busca impactar pessoas com seu conhecimento.
+                  </p>
+                </h5>
+                
               </div>
               </>
               ) : (
@@ -593,9 +607,14 @@ fbq('track', 'CompleteRegistration');
                 </>
                )}
               <div style={{bordeRadius: 10}} className="nota center">
-                <p>
-                O gestor de conteúdo, ou social media, é a pessoa responsável pela gestão das redes sociais de uma determinada pessoa. Quem atua nessa área costuma estar sempre antenado(a) em blogs e perfis de digitais influencers e acessa com frequência as redes sociais. 
-                </p>
+                <h5>
+                  <p>
+                  O gestor de conteúdo, ou social media, é a pessoa responsável pela 
+                  gestão das redes sociais de uma determinada pessoa. Quem atua nessa 
+                  área costuma estar sempre antenado(a) em blogs e perfis de digitais 
+                  influencers e acessa com frequência as redes sociais. 
+                  </p>
+                </h5>
               </div>
             </>
             
@@ -614,11 +633,14 @@ fbq('track', 'CompleteRegistration');
               </>
                 )}
              <div style={{bordeRadius: 10}} className="nota center">
+              <h5>
                 <p>
                   O gestor de tráfego tem o objetivo de levar o maior número de pessoas (potenciais clientes) para uma oferta,
                   site, loja. Através de anúncios e campanhas que, geralmente,  são veiculados nas redes sociais. Quem atua nessa 
                   área costuma ser bom na análise de dados. 
-                </p>
+                 </p>
+              </h5>
+                
               </div>
               </>
              
@@ -638,19 +660,22 @@ fbq('track', 'CompleteRegistration');
                  </>
                  )}
               <div style={{bordeRadius: 10}} className="nota center">
-                <p>
-                O lançador ou estrategista, é a pessoa responsável por toda a parte
-                 estratégica no lançamento de um infoproduto. Quem atua nessa área, 
-                 costuma ser bom em gestão de pessoas e projetos, além de ter facilidade 
-                 em criar processos e em resolver problemas. 
-                 </p>
+                <h5>
+                  <p>
+                    O lançador ou estrategista, é a pessoa responsável por toda a parte
+                    estratégica no lançamento de um infoproduto. Quem atua nessa área, 
+                    costuma ser bom em gestão de pessoas e projetos, além de ter facilidade 
+                    em criar processos e em resolver problemas. 
+                  </p>
+                </h5>
+                
               </div>
               </>
               ) : (
               <>
               </>
             )}
-
+<div  className="nota center">
             { perfilSelecionado2 === 'Designer ou Videomaker'  ? (
              
              <>
@@ -658,20 +683,27 @@ fbq('track', 'CompleteRegistration');
               <div  className="nota center">
                 
               </div>
+             
                ) : (
                 <>
                </>
               )}
               <div style={{bordeRadius: 10}} className="nota center">
-                <p>Criação é a área em que designers e pessoas que trabalham com a parte de audiovisual atuam. Quem trabalha 
-                  nessa área, geralmente, são pessoas que gostam ou tem interesse em captação e edição de fotos e vídeos.
-                </p>
+                <h5>
+                  <p>
+                    Criação é a área em que designers e pessoas que trabalham 
+                    com a parte de audiovisual atuam. Quem trabalha 
+                    nessa área, geralmente, são pessoas que gostam ou tem interesse 
+                    em captação e edição de fotos e vídeos.
+                  </p>
+                </h5>
               </div>
               </>
               ) : (
               <>
               </>
              )}
+              </div>
 
             { perfilSelecionado2 === 'Webdesigner'  ? (
               <>
@@ -684,10 +716,13 @@ fbq('track', 'CompleteRegistration');
                  </>
                 )}
                 <div style={{bordeRadius: 10}} className="nota center">
-                <p>
-                  O web designer é o profissional responsável pela criação e estruturação de sites. É um profissional com uma visão
-                  criativa que busca as melhores soluções para deixar uma página, um blog, muito mais atrativo.   
-                </p>
+                  <h5>
+                    <p>
+                      O web designer é o profissional responsável pela criação e estruturação de sites. É um profissional com uma visão
+                      criativa que busca as melhores soluções para deixar uma página, um blog, muito mais atrativo.   
+                    </p>
+                  </h5>
+                  
                </div>
               </>
               
@@ -697,7 +732,7 @@ fbq('track', 'CompleteRegistration');
             )}
 <br/>
             <h1 className="pergunta center profissao">PROFISSÃO TERCIÁRIO: </h1>
-            <h1 className="pergunta center perfil">{`${perfilSelecionado3}`}</h1>
+            <h1 className="pergunta center perfil " style={{whiteSpace: 'nowrap'}}>{`${perfilSelecionado3}`}</h1>
             
             {  perfilSelecionado3 === 'Afiliado' ? (
               <>
@@ -710,10 +745,12 @@ fbq('track', 'CompleteRegistration');
                 </>
               )}
               <div style={{bordeRadius: 10}} className="nota center">
+                <h5>
                   <p>
                     O afiliado é alguém que divulga produtos e serviços de outras pessoas na internet e, em troca dessa
                     indicação para outras pessoas, o afiliado recebe uma comissão por cada venda realizada.
                   </p>
+                </h5>
                 </div>
               </>
              
@@ -732,7 +769,14 @@ fbq('track', 'CompleteRegistration');
                   </>
                )}
                <div style={{bordeRadius: 10}} className="nota center">
-                  <p>Copywriter é a pessoa que escreve textos persuasivos com o objetivo de despertar no leitor a tomada de uma ação, seja ela uma curtida, um email ou a própria venda. </p>
+                <h5>
+                <p>
+                    Copywriter é a pessoa que escreve textos persuasivos com o objetivo 
+                    de despertar no leitor a tomada de uma ação, seja ela uma curtida, 
+                    um email ou a própria venda. 
+                  </p>
+                </h5>
+                  
                 </div>
               </>
                
@@ -752,11 +796,14 @@ fbq('track', 'CompleteRegistration');
                   </>
                 )}
               <div style={{bordeRadius: 10}} className="nota center">
-                  <p>
+                <h5>
+                <p>
                     O gestor / dono de e-Commerce é aquele perfil profissional responsável por um 
                     comércio eletrônico ou loja online de uma empresa, até mesmo sua própria. 
                     Essa pessoa teria como objetivo do e-Commerce elaborar estratégias de criação e de vendas para lojas online.
                   </p>
+                </h5>
+                  
                 </div>
             </>
               ) : (
@@ -774,7 +821,15 @@ fbq('track', 'CompleteRegistration');
                 </>
                 )}
               <div style={{bordeRadius: 10}} className="nota center">
-                <p>Especialista é a pessoa que possui um vasto conhecimento e experiência em um determinado assunto, empacota todo esse conhecimento e transforma em um infoproduto, mentoria ou consultoria. E, com isso, busca impactar pessoas com seu conhecimento.</p>
+                <h5>
+                <p>
+                  Especialista é a pessoa que possui um vasto conhecimento e 
+                  experiência em um determinado assunto, empacota todo esse conhecimento e 
+                  transforma em um infoproduto, mentoria ou consultoria. E, com isso, busca 
+                  impactar pessoas com seu conhecimento.
+                </p>
+                </h5>
+               
               </div>
               </>
               ) : (
@@ -792,9 +847,16 @@ fbq('track', 'CompleteRegistration');
                 </>
                )}
               <div style={{bordeRadius: 10}} className="nota center">
+                <h5>
                 <p>
-                O gestor de conteúdo, ou social media, é a pessoa responsável pela gestão das redes sociais de uma determinada pessoa. Quem atua nessa área costuma estar sempre antenado(a) em blogs e perfis de digitais influencers e acessa com frequência as redes sociais. 
+                O gestor de conteúdo, ou social media, é a pessoa responsável pela 
+                gestão das redes sociais de uma determinada pessoa. Quem atua nessa 
+                área costuma estar sempre antenado(a) em blogs e perfis de digitais 
+                influencers e acessa com frequência as redes sociais. 
                 </p>
+                </h5>
+
+                
               </div>
             </>
             
@@ -813,11 +875,14 @@ fbq('track', 'CompleteRegistration');
               </>
                 )}
              <div style={{bordeRadius: 10}} className="nota center">
-                <p>
+              <h5>
+              <p>
                   O gestor de tráfego tem o objetivo de levar o maior número de pessoas (potenciais clientes) para uma oferta,
                   site, loja. Através de anúncios e campanhas que, geralmente,  são veiculados nas redes sociais. Quem atua nessa 
                   área costuma ser bom na análise de dados. 
                 </p>
+              </h5>
+                
               </div>
               </>
              
@@ -837,12 +902,15 @@ fbq('track', 'CompleteRegistration');
                  </>
                  )}
               <div style={{bordeRadius: 10}} className="nota center">
+                <h5>
                 <p>
                 O lançador ou estrategista, é a pessoa responsável por toda a parte
                  estratégica no lançamento de um infoproduto. Quem atua nessa área, 
                  costuma ser bom em gestão de pessoas e projetos, além de ter facilidade 
                  em criar processos e em resolver problemas. 
                  </p>
+                </h5>
+               
               </div>
               </>
               ) : (
@@ -862,10 +930,13 @@ fbq('track', 'CompleteRegistration');
                </>
               )}
               <div style={{bordeRadius: 10}} className="nota center">
-                <p>Criação é a área em que designers e pessoas que trabalham com a parte de audiovisual atuam. Quem trabalha 
-                  nessa área, geralmente, são pessoas que gostam ou tem interesse em captação e edição de fotos e vídeos.
-                </p>
+                <h5>
+                  <p>Criação é a área em que designers e pessoas que trabalham com a parte de audiovisual atuam. Quem trabalha 
+                    nessa área, geralmente, são pessoas que gostam ou tem interesse em captação e edição de fotos e vídeos.
+                  </p>
+                </h5>
               </div>
+                
               </>
               ) : (
               <>
@@ -884,10 +955,13 @@ fbq('track', 'CompleteRegistration');
                  </>
                 )}
                 <div style={{bordeRadius: 10}} className="nota center">
-                <p>
-                  O web designer é o profissional responsável pela criação e estruturação de sites. É um profissional com uma visão
-                  criativa que busca as melhores soluções para deixar uma página, um blog, muito mais atrativo.   
-                </p>
+                  <h5>
+                    <p>
+                      O web designer é o profissional responsável pela criação e estruturação de sites. É um profissional com uma visão
+                      criativa que busca as melhores soluções para deixar uma página, um blog, muito mais atrativo.   
+                    </p>
+                  </h5>
+                
                </div>
               </>
               
