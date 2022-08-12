@@ -316,7 +316,7 @@ const RotaDigitalProva = () => {
             <h1 className="nota center">Descubra o caminho ideal para o seu sucesso na internet.</h1>
           </>
         ) : (
-          <Jumbotron className="painel" style={{ background: '#1a1a1a' }}> 
+          <Jumbotron className="painel painelresultado" style={{ background: '#1a1a1a' }}> 
 
 
 <Script>
@@ -343,7 +343,7 @@ fbq('track', 'CompleteRegistration');
 
             <br />
 
-            <h1 className="pergunta center">PROFISSÃO PRIMÁRIA: </h1>
+            <h1 className="pergunta center profissao">PROFISSÃO PRIMÁRIA: </h1>
             <h1 className="pergunta center perfil">{`${perfilSelecionado}`}</h1>
 
             <br />
@@ -500,7 +500,7 @@ fbq('track', 'CompleteRegistration');
             <br />
             <br />
 
-            <h1 className="pergunta center">PROFISSÃO SECUNDÁRIA: </h1>
+            <h1 className="pergunta center profissao">PROFISSÃO SECUNDÁRIA: </h1>
             <h1 className="pergunta center perfil">{`${perfilSelecionado2}`}</h1>
 
             <br />
@@ -700,7 +700,7 @@ fbq('track', 'CompleteRegistration');
               </>
             )}
 
-            <h1 className="pergunta center">PROFISSÃO TERCIÁRIO: </h1>
+            <h1 className="pergunta center profissao">PROFISSÃO TERCIÁRIO: </h1>
             <h1 className="pergunta center perfil">{`${perfilSelecionado3}`}</h1>
             <br />
             {  perfilSelecionado3 === 'Afiliado' ? (

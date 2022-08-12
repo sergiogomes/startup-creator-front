@@ -13,7 +13,7 @@
   color: rgb(255, 255, 255);
   font-family: Poppins;
   font-style: normal !important;
-  font-size: 25px;
+  font-size: 20px;
   text-align: center;
   padding: 5px;
 }
@@ -41,6 +41,12 @@
 
 .painel {
   border-radius: 25px;
+}
+.painelresultado {
+  padding-top: 10px;
+}
+.profissao {
+  font-size: 35px;
 }
 
 .alternativa {
