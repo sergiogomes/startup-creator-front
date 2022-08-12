@@ -151,7 +151,7 @@ const RotaDigitalProva = () => {
   }
 
   const abrirLink = () => {
-    window.open("https://chat.whatsapp.com/Hh2RuCqYokf1JfpTQV13ce");
+    window.open("https://devzapp.com.br/api-engennier/campanha/api/redirectlink/62e0240f38cabb0001954334");
   }
 
   const gravarNome = async (event) => {
