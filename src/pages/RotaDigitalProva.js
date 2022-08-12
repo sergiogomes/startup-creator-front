@@ -498,12 +498,8 @@ fbq('track', 'CompleteRegistration');
               </Form.Group>
             </div>
             <br />
-            <br />
-
             <h1 className="pergunta center profissao">PROFISSÃO SECUNDÁRIA: </h1>
             <h1 className="pergunta center perfil">{`${perfilSelecionado2}`}</h1>
-
-            <br />
             { perfilSelecionado2 === 'Afiliado'  ? (
               <>
                {perfilSelecionado === 'Afiliado' ? (
@@ -699,10 +695,10 @@ fbq('track', 'CompleteRegistration');
               <>
               </>
             )}
-
+<br/>
             <h1 className="pergunta center profissao">PROFISSÃO TERCIÁRIO: </h1>
             <h1 className="pergunta center perfil">{`${perfilSelecionado3}`}</h1>
-            <br />
+            
             {  perfilSelecionado3 === 'Afiliado' ? (
               <>
                {perfilSelecionado === 'Afiliado' ? (
