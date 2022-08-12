@@ -344,7 +344,7 @@ fbq('track', 'CompleteRegistration');
             <br />
 
             <h1 className="pergunta center profissao">PROFISSÃO PRIMÁRIA: </h1>
-            <h1 className="pergunta center perfil"style={{whiteSpace: 'nowrap'}}>{`${perfilSelecionado}`}</h1>
+            <h1 className="pergunta center perfil">{`${perfilSelecionado}`}</h1>
 
             <br />
             {perfilSelecionado === 'Afiliado' ? (
@@ -499,7 +499,7 @@ fbq('track', 'CompleteRegistration');
             </div>
             <br />
             <h1 className="pergunta center profissao">PROFISSÃO SECUNDÁRIA: </h1>
-            <h1 className="pergunta center perfil"style={{whiteSpace: 'nowrap'}}>{`${perfilSelecionado2}`}</h1>
+            <h1 className="pergunta center perfil">{`${perfilSelecionado2}`}</h1>
             <div  className="nota center">
             { perfilSelecionado2 === 'Afiliado'  ? (
               <>
@@ -732,7 +732,7 @@ fbq('track', 'CompleteRegistration');
             )}
 <br/>
             <h1 className="pergunta center profissao">PROFISSÃO TERCIÁRIO: </h1>
-            <h1 className="pergunta center perfil " style={{whiteSpace: 'nowrap'}}>{`${perfilSelecionado3}`}</h1>
+            <h1 className="pergunta center perfil " >{`${perfilSelecionado3}`}</h1>
             
             {  perfilSelecionado3 === 'Afiliado' ? (
               <>

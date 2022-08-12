@@ -23,6 +23,10 @@
   color: #fff;
   font-style: bold;
   font-size: 20px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+
 }
 
 .center {
@@ -47,6 +51,9 @@
 }
 .profissao {
   font-size: 35px;
+  justify-content: center;
+  align-items: center;
+
 }
 
 .alternativa {
