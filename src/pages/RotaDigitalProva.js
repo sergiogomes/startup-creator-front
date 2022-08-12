@@ -320,8 +320,7 @@ const RotaDigitalProva = () => {
         ) : (
           <Jumbotron className="painel painelresultado" style={{ background: '#1a1a1a' }}> 
 
-<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1154748838448553&ev=CompleteRegistration&noscript=1"/>
-
+<img height="1" width="1" src="https://www.facebook.com/tr?id=1154748838448553&ev=CompleteRegistration&noscript=1"/>
 
 
             <h1 className="pergunta center tituloResultado">TESTE CONCLUÍDO</h1>
@@ -968,6 +967,8 @@ const RotaDigitalProva = () => {
         )}
         <div className="centerImg">
           <img className="logoRotaDigital" src={"img/mp-branco.png"} alt="Rota Digital" />
+          
+
         </div>
 
       
