@@ -981,42 +981,9 @@ fbq('track', 'CompleteRegistration');
           <img className="logoRotaDigital" src={"img/mp-branco.png"} alt="Rota Digital" />
         </div>
 
-      <Helmet>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-455561195"></script>
-        <script>
-          {`
-            if (document.location.pathname.indexOf("/teste-rota-digital") == 0) {
-              console.log('teste-rota-digital');
+      
 
-              !function(f,b,e,v,n,t,s)
-              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-              n.queue=[];t=b.createElement(e);t.async=!0;
-              t.src=v;s=b.getElementsByTagName(e)[0];
-              s.parentNode.insertBefore(t,s)}(window, document,'script',
-              'https://connect.facebook.net/en_US/fbevents.js');
-              fbq('init', '146287563581051');
-              fbq('track', 'PageView');
-              fbq('track', 'Lead');
-
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-
-              gtag('config', 'AW-455561195');
-
-              gtag('event', 'conversion', {'send_to': 'AW-455561195/NWLjCPmR_4ADEOufndkB'});
-            }
-          `}
-        </script>
-      </Helmet>
-
-      <noscript>
-        <img height="1" width="1" style="display:none"
-          src="https://www.facebook.com/tr?id=146287563581051&ev=PageView&noscript=1"
-        />
-      </noscript>
+     
     </Container>
   );
 };
