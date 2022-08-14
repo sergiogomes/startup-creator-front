@@ -125,8 +125,14 @@ const RotaDigitalProva = () => {
      setPerfilSelecionado(retorno.data[0].categoria)
      setPerfilSelecionado2(retorno.data[1].categoria)
      setPerfilSelecionado3(retorno.data[2].categoria)
-     
-     
+     var novaImg = document.createElement('img');
+     novaImg.setAttribute(
+      'src',
+      'https://www.facebook.com/tr?id=1154748838448553&ev=Profissao&cd[primaria]='+retorno.data[0].categoria+'&cd[secundaria]='+retorno.data[1].categoria+'&cd[terciaria]='+retorno.data[2].categoria+'&noscript=1',
+    );
+    novaImg.setAttribute('height', 1); 
+    novaImg.setAttribute('width', 1); 
+    document.body.appendChild(novaImg);
     } catch (error) {
       console.log(error);
     }
@@ -333,6 +339,7 @@ const RotaDigitalProva = () => {
 
             <h1 className="pergunta center profissao">PROFISSÃO PRIMÁRIA: </h1>
             <h1 className="pergunta center perfil">{`${perfilSelecionado}`}</h1>
+            
 
             <br />
             {perfilSelecionado === 'Afiliado' ? (
@@ -488,6 +495,8 @@ const RotaDigitalProva = () => {
             <br />
             <h1 className="pergunta center profissao">PROFISSÃO SECUNDÁRIA: </h1>
             <h1 className="pergunta center perfil">{`${perfilSelecionado2}`}</h1>
+            
+
             <div  className="nota center">
             { perfilSelecionado2 === 'Afiliado'  ? (
               <>
