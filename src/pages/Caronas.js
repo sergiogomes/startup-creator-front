@@ -16,7 +16,7 @@ import api from '../services/api';
 
 import EstadosCidades from './cidades.json';
 
-import '../../src/RotaDigital.css';
+import '../../src/CaronasBrasil.css';
 
 const Caronas = () => {
 
@@ -181,21 +181,20 @@ const Caronas = () => {
   }, []);
 
   return (
-    <Container className="p-3" style={{ background: '#000' }}>
+    <Container className="p-3">
       <div className="centerImg">
-        <img src={"img/logo_trabalhadores.png"} alt="Trabalhadores da última hora" height="130"/>
+        <img src={"img/carona-brasil.png"} alt="Caronas Brasil" height="130"/>
       </div>
       {!isAluno ? (
-        <Jumbotron className="painel" style={{ background: '#1a1a1a' }}>
+        <Jumbotron className="painel" style={{ background: '#002247' }}>
           <h1 className="perguntaGeneral">
-            Se seu carro tem vaga para alguns Generais
-            Preencha as informações abaixo.
+            Se seu carro tem vaga para alguns brasileiros votarem preencha as informações abaixo.
           </h1>
           <br />
           <h1 className="perguntaGeneral">
-            Os Generais disponíveis entrarão em contato com você.
+            Os eleitores entrarão em contato com você.
           </h1>
-          <Form style={{ background: '#1a1a1a' }}>
+          <Form style={{ background: '#002247' }}>
             <fieldset>
               <Form.Group as={Row} className="mb-3">
                 <Form.Control 
@@ -296,23 +295,42 @@ const Caronas = () => {
           </Form>
         </Jumbotron>
       ) : (
-        <Jumbotron className="painel" style={{ background: '#1a1a1a' }}>
+        <Jumbotron className="painel" style={{ background: '#002247' }}>
           <h1 className="pergunta center tituloGenerais">
-            Convocação dos Generais 
+            VAMOS SALVAR O BRASIL JUNTOS? 
           </h1>
           <br/>
           <h1 className="perguntaGeneral center">
-            Encontre sua carona para “Os trabalhadores da última hora”
-            01 de maio - São Paulo
+            Agora é a hora, o seu voto não vai ficar para trás…
           </h1>
           <br/>
           <h1 className="perguntaGeneral center" style={{ fontWeight: 100 }}>
-            Abaixo você tem duas opções: Dar carona para algum general,
-            ou encontrar um batalhão que possa te levar ao evento. 
+            O Carona Brasil conecta quem se dispõe a transbordar dando carona a quem precisa de carona para realizar seu voto!
           </h1>
           <br/>
           <h1 className="perguntaGeneral center">
-            Clique no botão abaixo e bora tocar o terror!
+            Não podemos perder os nossos princípios e valores cristãos para o inimigo de 9 dedos.
+          </h1>
+          <br/>
+          <br/>
+          <h1 className="pergunta center tituloGenerais">
+            O QUE É O CARONA BRASIL?
+          </h1>
+          <br/>
+          <h1 className="perguntaGeneral center">
+            O Movimento Carona Brasil é um transbordo que você pode fazer e/ou receber em prol da nação.
+          </h1>
+          <br/>
+          <h1 className="perguntaGeneral center" style={{ fontWeight: 100 }}>
+            Estamos na reta final e o seu voto é a melhor arma para lutar pela sua família, por isso, nós não podemos deixar a energia baixar agora.
+          </h1>
+          <br/>
+          <h1 className="perguntaGeneral center">
+            O voto é uma questão de sobrevivência para o próximo turno.
+          </h1>
+          <br/>
+          <h1 className="perguntaGeneral center" style={{ fontWeight: 100 }}>
+            Por saber que algumas pessoas não vão ter condições financeiras ou de locomoção, nós criamos isso para facilitar a ida dessas pessoas para suas respectivas cidades votarem.
           </h1>
           <br/>
           <div className="center">
@@ -352,56 +370,12 @@ const Caronas = () => {
               <ToastContainer />
             </Form.Group>
           </div>
-          <div className="center">
-            <Form.Group as={Row} className="mb-3" style={{ width: '100%', paddingTop: '8px' }}>
-              <Button
-                type="submit"
-                className="btnEnviarRespostas"
-                onClick={abrirLinkCompra}
-                style={{ 
-                  background: '#cd0000',
-                  borderColor: '#cd0000',
-                  width: '100%'
-                }}
-              >
-                NÃO TENHO INGRESSO, <br/>QUERO ADQUIRIR!
-              </Button>
-              <ToastContainer />
-            </Form.Group>
-          </div>
         </Jumbotron>
       )}
       <h1 className="pergunta center" style={{ fontWeight: 100, margin: '15px', fontSize: '15px' }}>
-        Atenção: Essa página tem como objetivo facilitar o acesso de todos ao evento. 
+        Atenção: Essa página tem como objetivo facilitar o acesso aos locais de votação. 
         Não nos responsabilizamos por nada que for combinado entre os participantes.
       </h1>
-      <div className="centerImg">
-        <img className="logoRotaDigital" src={"img/pablo1.png"} alt="Pablo Marçal"/>
-      </div>
-      <Helmet>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-413413781"></script>
-        <script>
-          {`
-            if (document.location.pathname.indexOf("/caronas") == 0) {
-              console.log('/caronas');
-        
-              !function(f,b,e,v,n,t,s)
-              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-              n.queue=[];t=b.createElement(e);t.async=!0;
-              t.src=v;s=b.getElementsByTagName(e)[0];
-              s.parentNode.insertBefore(t,s)}(window, document,'script',
-              'https://connect.facebook.net/en_US/fbevents.js');
-              fbq('init', '288603021812214');
-              fbq('track', 'PageView');
-            }
-          `}
-        </script>
-      </Helmet>
-      <noscript>
-        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=288603021812214&ev=PageView&noscript=1"/>
-      </noscript>
     </Container>
   );
 };

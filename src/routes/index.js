@@ -9,11 +9,11 @@ import Ip from '../pages/Ip';
 import TurmaIp from '../pages/TurmaIp';
 import Comex from '../pages/Comex';
 import ComexRank from '../pages/ComexRank';
-import Prova from '../pages/Prova';
+// import Prova from '../pages/Prova';
 // import Rank from '../pages/Rank';
 import RotaDigital from '../pages/RotaDigital';
-import RotaDigitalProva from '../pages/RotaDigitalProva';
-import Tribos from '../pages/Tribos';
+// import RotaDigitalProva from '../pages/RotaDigitalProva';
+// import Tribos from '../pages/Tribos';
 import ChristianBarbosa from '../pages/ChristianBarbosa';
 import PiorSemana from '../pages/PiorSemana';
 import ComoEnriquecer from '../pages/ComoEnriquecer';
@@ -25,7 +25,7 @@ import Cardapio from '../pages/Cardapio';
 
 const Routes = () => (
   <Switch>
-    <Route path="/" exact component={RotaDigitalProva} />
+    <Route path="/" exact component={Caronas} />
     <Route path="/veloycard" exact component={VeloyCard} />
     <Route path="/eutonalive" component={EuToNaLive} />
     <Route path="/executivos" component={Executivos} />
@@ -35,10 +35,10 @@ const Routes = () => (
     <Route path="/comex-rank" component={ComexRank} />
     {/* <Route path="/rank" component={Rank} /> */}
     <Route path="/teste-rota-digital" component={RotaDigital} />
-    <Route path="/teste-12-tribos" component={Tribos} />
-    <Route path="/teste-rota-digital-prova" component={RotaDigitalProva} />
+    {/* <Route path="/teste-12-tribos" component={Tribos} /> */}
+    {/* <Route path="/teste-rota-digital-prova" component={RotaDigitalProva} />
 
-    <Route path="/resultado-rotadigital" component={RotaDigitalProva} />
+    <Route path="/resultado-rotadigital" component={RotaDigitalProva} /> */}
 
     <Route path="/quiz-como-enriquecer" component={ComoEnriquecer} />
     

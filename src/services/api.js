@@ -16,7 +16,7 @@ const shouldRetry = error => {
 axiosRetry(api, { 
   retries: 4 ,
   retryDelay: (retryCount) => {
-    return 1000;
+    return 500;
   },
   retryCondition: shouldRetry
 });

@@ -13,7 +13,7 @@
     "@react-br-forms/cpf-cnpj-mask": "^1.0.6",
     "analytics": "^0.7.15",
     "axios": "^0.22.0",
-    "axios-retry": "^3.2.5",
+    "axios-retry": "^3.3.1",
     "currency-formatter": "^1.5.9",
     "email-validator": "^2.0.4",
     "emotion": "^11.0.0",
@@ -24,6 +24,7 @@
     "react-avatar": "^4.0.0",
     "react-bootstrap": "^1.5.2",
     "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
     "react-iframe": "^1.8.0",
     "react-inline-script": "^1.2.0",
     "react-lottie": "^1.2.3",
@@ -32,8 +33,7 @@
     "react-tiny-fab": "^4.0.4",
     "react-toastify": "^8.0.3",
     "react-web-vector-icons": "^1.0.2",
-    "reactstrap": "^9.0.1",
-    "react-helmet": "^6.1.0"
+    "reactstrap": "^9.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
