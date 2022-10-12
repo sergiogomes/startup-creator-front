@@ -1,5 +1,7 @@
 import { React, useEffect, useState } from 'react';
 
+import { Link } from 'react-router-dom';
+
 import Container from 'react-bootstrap/Container';
 import Table from 'react-bootstrap/Table';
 
@@ -35,43 +37,51 @@ const Caronas = () => {
   return (
     <Container className="p-3">
       <div className="centerImg">
-        <img src={"img/carona-brasil.png"} alt="Caronas Brasil" height="220"/>
+        <Link to="/">
+          <img src={"img/carona-brasil.png"} alt="Caronas Brasil" width="220"/>
+        </Link>
       </div>
       <h1 className="perguntaGeneral center" style={{ paddingBottom: '20px' }}>
         Se você está procurando carona.
         Veja a lista abaixo e entre em contato com o dono do veículo.
       </h1>
-      <Table striped bordered hover responsive variant="dark">
-        <thead>
-          <tr className="linhas">
-            <th>Estado</th>
-            <th>Cidade</th>
-            <th>R$ Custo&nbsp;por&nbsp;pessoa</th>
-            <th>WhatsApp</th>
-            <th>Nome</th>
-          </tr>
-        </thead>
-        <tbody>
-        {caronas.map((carona, i) => {
-          if (carona.whatsapp === '' || carona.estado === '') {
-            return;
-          }
-          const custoFormatado = format(carona.custo, { code: 'BRA' });
-          return (
-            <>
+      { caronas.length > 0 ? 
+        <>
+          <Table striped bordered hover responsive variant="dark">
+            <thead>
               <tr className="linhas">
-                <td>{`${carona.estado}`}</td>
-                <td>{`${carona.cidade}`}</td>
-                <td>{`R$ ${custoFormatado}`}</td>
-                <td>{`${carona.whatsapp}`}</td>
-                <td>{`${carona.nome}`}</td>
+                <th>Partida</th>
+                <th>Votação</th>
+                <th>WhatsApp</th>
+                <th>R$ Custo</th>
+                <th>Nome</th>
               </tr>
-            </>
-          )
-        })}
-          
-        </tbody>
-      </Table>
+            </thead>
+            <tbody>
+            {caronas.map((carona, i) => {
+              if (carona.whatsapp === '' || carona.estado === '') {
+                return;
+              }
+              const custoFormatado = format(carona.custo, { code: 'BRA' });
+              return (
+                <>
+                  <tr className="linhas">
+                    <td>{`${carona.estado} - ${carona.cidade}`}</td>
+                    <td>{`${carona.estado2} - ${carona.cidade2}`}</td>
+                    <td>{`${carona.whatsapp}`}</td>
+                    <td>{`R$ ${custoFormatado}`}</td>
+                    <td>{`${carona.nome}`}</td>
+                  </tr>
+                </>
+              )
+            })}
+              
+            </tbody>
+          </Table>
+        </> : <>
+          <img src={'img/loading.gif'} alt="Caronas Brasil" height="220" style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }}/>
+        </> }
+      
       <h1 className="pergunta center" style={{ fontWeight: 100, margin: '15px', fontSize: '15px' }}>
         Atenção: Essa página tem como objetivo facilitar o acesso aos locais de votação. 
         Não nos responsabilizamos por nada que for combinado entre os participantes.

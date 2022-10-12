@@ -1,13 +1,13 @@
 import { React, useEffect, useState } from 'react';
 
+import { Link } from 'react-router-dom';
+
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 
 import Button from 'react-bootstrap/Button';
-import { Helmet } from "react-helmet";
 
 import { ToastContainer } from 'react-toastify';
 import { notifyError } from '../utils/toasts';
@@ -22,13 +22,16 @@ const Caronas = () => {
 
   const [isAluno, setIsAluno] = useState(true);
   const [estado, setEstado] = useState('');
+  const [estado2, setEstado2] = useState('');
   const [cidades, setCidades] = useState([]);
+  const [cidades2, setCidades2] = useState([]);
 
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [whatsapp, setWhatsapp] = useState('');
   const [custo, setCusto] = useState('');
   const [cidade, setCidade] = useState('');
+  const [cidade2, setCidade2] = useState('');
 
   const setDadosForm = (event) => {
     const name = event.target.name;
@@ -63,6 +66,16 @@ const Caronas = () => {
       setCidade(value);
       return;
     }
+
+    if (name === 'estado2') {
+      setEstado2(value);
+      return;
+    }
+
+    if (name === 'cidade2') {
+      setCidade2(value);
+      return;
+    }
   }
 
   const cadastrarCarro = async (event) => {
@@ -73,6 +86,8 @@ const Caronas = () => {
       custo,
       estado,
       cidade,
+      estado2,
+      cidade2,
       email
     };
 
@@ -98,6 +113,16 @@ const Caronas = () => {
 
     if (cidade === '') {
       notifyError('O cidade é obrigatório.');
+      return;
+    }
+
+    if (estado2 === '') {
+      notifyError('O estado aonde vai votar é obrigatório.');
+      return;
+    }
+
+    if (cidade2 === '') {
+      notifyError('O cidade aonde vai votar é obrigatório.');
       return;
     }
 
@@ -127,13 +152,22 @@ const Caronas = () => {
     })
   }
 
-  const abrirLink = () => {
-    window.location.replace("https://plataformagame.com.br/caronas-tanques");
+  const informarEstado2 = (event) => {
+    const estadoSelecionado = event.target.value;
+    setEstado2(estadoSelecionado);
+    exibirCidades2(estadoSelecionado);
+    setDadosForm(event);
   }
 
-  const abrirLinkCompra = () => {
-    window.location.replace("https://pablomarcal.com.br/trabalhadores-ultima-hora");
+  const exibirCidades2 = async (estadoSelecionado) => {
+    const { estados } = EstadosCidades;
+    estados.map((estado) => {
+      if (estado.sigla === estadoSelecionado) {
+        setCidades2(estado.cidades);
+      }
+    })
   }
+
 
   const abrirCadastro = () => {
     setIsAluno(false);
@@ -183,7 +217,9 @@ const Caronas = () => {
   return (
     <Container className="p-3">
       <div className="centerImg">
-        <img src={"img/carona-brasil.png"} alt="Caronas Brasil" height="130"/>
+        <Link to="/" onClick={() => setIsAluno(true)}>
+          <img src={"img/carona-brasil.png"} alt="Caronas Brasil" width="220"/>
+        </Link>
       </div>
       {!isAluno ? (
         <Jumbotron className="painel" style={{ background: '#002247' }}>
@@ -228,58 +264,109 @@ const Caronas = () => {
                   name="custo"
                   onChange={setDadosForm}
                 />
-                <select id="estado" name="estado" className="estados" onChange={informarEstado}>
-                  <option value="">Selecione seu estado</option>
-                  <option value="AC">Acre</option>
-                  <option value="AL">Alagoas</option>
-                  <option value="AP">Amapá</option>
-                  <option value="AM">Amazonas</option>
-                  <option value="BA">Bahia</option>
-                  <option value="CE">Ceará</option>
-                  <option value="DF">Distrito Federal</option>
-                  <option value="ES">Espírito Santo</option>
-                  <option value="GO">Goiás</option>
-                  <option value="MA">Maranhão</option>
-                  <option value="MT">Mato Grosso</option>
-                  <option value="MS">Mato Grosso do Sul</option>
-                  <option value="MG">Minas Gerais</option>
-                  <option value="PA">Pará</option>
-                  <option value="PB">Paraíba</option>
-                  <option value="PR">Paraná</option>
-                  <option value="PE">Pernambuco</option>
-                  <option value="PI">Piauí</option>
-                  <option value="RJ">Rio de Janeiro</option>
-                  <option value="RN">Rio Grande do Norte</option>
-                  <option value="RS">Rio Grande do Sul</option>
-                  <option value="RO">Rondônia</option>
-                  <option value="RR">Roraima</option>
-                  <option value="SC">Santa Catarina</option>
-                  <option value="SP">São Paulo</option>
-                  <option value="SE">Sergipe</option>
-                  <option value="TO">Tocantins</option>
-                  <option value="EX">Estrangeiro</option>
-              </select>
 
-              <select id="cidade" name="cidade" className="estados" onChange={setDadosForm}>
-                  <option value="">Selecione sua cidade</option>
-                  { cidades.length > 1 ? (
-                    <>
-                      {cidades.map((cidade) => {
-                        return (
-                          <>
-                            <option value={`${cidade}`}>{`${cidade}`}</option>
-                          </>
-                        )
-                      })}
-                    </>
-                  ) : ( <></> )}
-              </select>
+                <Form.Label className="perguntaGeneral" style={{ paddingLeft: '15px' }}>Minha localização</Form.Label>
+                <select id="estado" name="estado" className="estados" onChange={informarEstado}>
+                    <option value="">Selecione seu estado</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                    <option value="EX">Estrangeiro</option>
+                </select>
+
+                <select id="cidade" name="cidade" className="estados" onChange={setDadosForm}>
+                    <option value="">Selecione sua cidade</option>
+                    { cidades.length > 1 ? (
+                      <>
+                        {cidades.map((cidade) => {
+                          return (
+                            <>
+                              <option value={`${cidade}`}>{`${cidade}`}</option>
+                            </>
+                          )
+                        })}
+                      </>
+                    ) : ( <></> )}
+                </select>
+
+                <Form.Label className="perguntaGeneral" style={{ paddingLeft: '15px' }}>Aonde vou votar</Form.Label>
+                <select id="estado2" name="estado2" className="estados" onChange={informarEstado2}>
+                    <option value="">Selecione seu estado</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                    <option value="EX">Estrangeiro</option>
+                </select>
+
+                <select id="cidade2" name="cidade2" className="estados" onChange={setDadosForm}>
+                    <option value="">Selecione sua cidade</option>
+                    { cidades2.length > 1 ? (
+                      <>
+                        {cidades2.map((cidade) => {
+                          return (
+                            <>
+                              <option value={`${cidade}`}>{`${cidade}`}</option>
+                            </>
+                          )
+                        })}
+                      </>
+                    ) : ( <></> )}
+                </select>
+
               </Form.Group>
               <div className="center">
                   <Form.Group as={Row} className="mb-3">
                     <Button
                       type="submit"
-                      className="btnEnviarRespostas"
+                      className="btnEnviarRespostas2"
                       style={{ 
                         background: '#00c354',
                         borderColor: '#00c354'
@@ -337,7 +424,7 @@ const Caronas = () => {
             <Form.Group as={Row} className="mb-3" style={{ width: '100%' }}>
               <Button
                 type="submit"
-                className="btnEnviarRespostas"
+                className="btnEnviarRespostas2"
                 onClick={abrirCadastro}
                 style={{ 
                   background: '#00c354',
@@ -355,10 +442,9 @@ const Caronas = () => {
           </h1>
           <div className="center">
             <Form.Group as={Row} className="mb-3" style={{ width: '100%' }}>
-              <Button
-                type="submit"
+              <Link
+                to="/caronas-tanques"
                 className="btnEnviarRespostas"
-                onClick={abrirLink}
                 style={{ 
                   background: '#00c354',
                   borderColor: '#00c354',
@@ -366,7 +452,7 @@ const Caronas = () => {
                 }}
               >
                 PRECISO DE CARONA
-              </Button>
+              </Link>
               <ToastContainer />
             </Form.Group>
           </div>

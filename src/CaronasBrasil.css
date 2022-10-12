@@ -72,10 +72,27 @@
 .btnEnviarRespostas {
   background: #FF006E;
   border-color: #FF006E;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  line-height: 60px;
   font-weight: bold;
   border-radius: 12px;
   height: 60px;
 }
+
+.btnEnviarRespostas:hover {
+  color: rgb(255, 255, 255);
+}
+
+.btnEnviarRespostas2 {
+  background: #FF006E;
+  border-color: #FF006E;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  border-radius: 12px;
+  height: 60px;
+}
+
 
 .btnEnviarRespostasWhats {
   background: #25D366;
