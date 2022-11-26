@@ -25,7 +25,7 @@ import Cardapio from '../pages/Cardapio';
 
 const Routes = () => (
   <Switch>
-    <Route path="/" exact component={Caronas} />
+    <Route path="/" exact component={Ip} />
     <Route path="/veloycard" exact component={VeloyCard} />
     <Route path="/eutonalive" component={EuToNaLive} />
     <Route path="/executivos" component={Executivos} />
