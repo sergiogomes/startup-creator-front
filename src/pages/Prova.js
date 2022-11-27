@@ -34,7 +34,7 @@ const Dashboard = () => {
 
   const getProva = async () => {
     try {
-      const { data } = await api.get(`/prova`);
+      const { data } = await api.get(`/prova/20`);
       const { perguntas, respostas, prova } = data.provaAtual;
       setPerguntas(perguntas);
       setRespostas(respostas);
@@ -159,12 +159,12 @@ const Dashboard = () => {
   return (
     <Container className="p-3" style={{ background: '#000' }}>
       <div className="centerImg">
-        <img src={"img/CDR600x300.png"} alt="A Ciência da Riqueza" height="75"/>
+        <img src={"img/spr.png"} alt="SPR" height="180"/>
       </div>
       {!isAluno ? (
         <Jumbotron className="painel" style={{ background: '#8c6531' }}>
-          <h1 className="pergunta center">Provas encerradas!</h1>
-          {/* <Form style={{ background: '#8c6531' }}>
+          <h1 className="pergunta center">Digite o seu email</h1>
+          <Form style={{ background: '#8c6531' }}>
             <fieldset>
               <Form.Group as={Row} className="mb-3">
                 <Form.Control 
@@ -181,13 +181,13 @@ const Dashboard = () => {
                   </Form.Group>
                 </div>
             </fieldset>
-          </Form> */}
+          </Form>
         </Jumbotron>
       ) : (
         <>
         {!isProvaRespondida ? (
           <>
-            <h1 className="nota center">A prova 11 estará disponível entre os dias 22 até 27 de dezembro, às 23H59.</h1>
+            <h1 className="nota center">A prova 01 estará disponível até 03 de dezembro, às 23H59.</h1>
           {perguntas.map((pergunta, i) => {
             return (
               <>
@@ -226,11 +226,11 @@ const Dashboard = () => {
             })}
             <Jumbotron className="painel" style={{ background: '#8c6531' }}>
               <Form style={{ background: '#8c6531' }} onSubmit={handleSubmit}>
-                <h1 className="pergunta">Insira o código da live informado no dia 21 de dezembro de 2021:</h1>
+                <h1 className="pergunta">Insira o código da semana 1:</h1>
                 <fieldset className="alternativasRadius">
                   <Form.Group as={Row} className="mb-3">
                     <Form.Control
-                      placeholder=""
+                      placeholder="Digite aqui..."
                       style={{ textTransform: 'uppercase' }}
                       type="email"
                       maxLength="4"

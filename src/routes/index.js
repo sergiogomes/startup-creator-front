@@ -9,7 +9,7 @@ import Ip from '../pages/Ip';
 import TurmaIp from '../pages/TurmaIp';
 import Comex from '../pages/Comex';
 import ComexRank from '../pages/ComexRank';
-// import Prova from '../pages/Prova';
+import Prova from '../pages/Prova';
 // import Rank from '../pages/Rank';
 import RotaDigital from '../pages/RotaDigital';
 // import RotaDigitalProva from '../pages/RotaDigitalProva';
@@ -39,6 +39,7 @@ const Routes = () => (
     {/* <Route path="/teste-rota-digital-prova" component={RotaDigitalProva} />
 
     <Route path="/resultado-rotadigital" component={RotaDigitalProva} /> */}
+    <Route path="/prova" component={Prova} />
 
     <Route path="/quiz-como-enriquecer" component={ComoEnriquecer} />
     
