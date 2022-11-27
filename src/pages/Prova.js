@@ -124,7 +124,7 @@ const Dashboard = () => {
         setIsAluno(true);
       });
     } catch (error) {
-      notifyError('O email apresentado não faz parte da nossa base de alunos.');
+      notifyError('Nossa base é atualizada todos os dias tente mais tarde.');
       console.log(error);
       setIsAluno(false);
     }
