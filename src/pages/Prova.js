@@ -224,7 +224,7 @@ const Dashboard = () => {
               </>
               )
             })}
-            <Jumbotron className="painel" style={{ background: '#8c6531' }}>
+            {/* <Jumbotron className="painel" style={{ background: '#8c6531' }}>
               <Form style={{ background: '#8c6531' }} onSubmit={handleSubmit}>
                 <h1 className="pergunta">Insira o código da semana 1:</h1>
                 <fieldset className="alternativasRadius">
@@ -240,7 +240,7 @@ const Dashboard = () => {
                   </Form.Group>
                 </fieldset>
               </Form>
-            </Jumbotron>
+            </Jumbotron> */}
             <div className="center">
               <Form.Group as={Row} className="mb-3">
                 <Button type="submit" className="btnEnviarRespostasProva" onClick={enviarResposta}>ENVIAR&nbsp;RESPOSTAS</Button>
@@ -251,7 +251,7 @@ const Dashboard = () => {
         ) : (
           <Jumbotron className="painel" style={{ background: '#8c6531' }}>
             <h1 className="pergunta center">Prova finalizada!</h1>
-            <h1 className="pergunta center">Valeu seu Rico e sua Rica.</h1>
+            <h1 className="pergunta center">Valeu SPR.</h1>
             <Form style={{ background: '#8c6531' }}>
               <fieldset>
                 <Form.Group as={Row} className="mb-3">
