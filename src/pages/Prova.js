@@ -34,7 +34,7 @@ const Dashboard = () => {
 
   const getProva = async () => {
     try {
-      const { data } = await api.get(`/prova/23`);
+      const { data } = await api.get(`/prova/24`);
       const { perguntas, respostas, prova } = data.provaAtual;
       setPerguntas(perguntas);
       setRespostas(respostas);
@@ -187,7 +187,7 @@ const Dashboard = () => {
         <>
         {!isProvaRespondida ? (
           <>
-            <h1 className="nota center">A prova 04 estará disponível até 24 de dezembro, às 23H59.</h1>
+            <h1 className="nota center">A prova 05 estará disponível até 31 de dezembro, às 23H59.</h1>
           {perguntas.map((pergunta, i) => {
             return (
               <>
