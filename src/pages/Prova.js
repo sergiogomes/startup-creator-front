@@ -34,7 +34,16 @@ const Dashboard = () => {
 
   const getProva = async () => {
     try {
-      const { data } = await api.get(`/prova/25`);
+      const urlParams = new URLSearchParams(window.location.search);
+      const myParam = urlParams.get('n');
+
+      let numeroProva = 25;
+
+      if (myParam) {
+        numeroProva = myParam;
+      }
+
+      const { data } = await api.get(`/prova/${numeroProva}`);
       const { perguntas, respostas, prova } = data.provaAtual;
       setPerguntas(perguntas);
       setRespostas(respostas);
