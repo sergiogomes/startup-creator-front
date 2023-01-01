@@ -45,7 +45,7 @@ const Dashboard = () => {
 
       const arrayProvas = [20, 21, 22, 23, 24, 25];
 
-      if (!arrayProvas.includes(numeroProva)) {
+      if (!arrayProvas.includes(parseInt(numeroProva))) {
         notifyError('Numero da prova inválido.');
         return;
       }
@@ -203,7 +203,7 @@ const Dashboard = () => {
         <>
         {!isProvaRespondida ? (
           <>
-            <h1 className="nota center">A prova 06 estará disponível até 02 de janeiro, às 23H59.</h1>
+            <h1 className="nota center">Recado: A prova 06 estará disponível até 02 de janeiro, às 23H59.</h1>
           {perguntas.map((pergunta, i) => {
             return (
               <>
