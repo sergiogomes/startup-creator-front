@@ -43,6 +43,13 @@ const Dashboard = () => {
         numeroProva = myParam;
       }
 
+      const arrayProvas = [20, 21, 22, 23, 24, 25];
+
+      if (!arrayProvas.includes(numeroProva)) {
+        notifyError('Numero da prova inválido.');
+        return;
+      }
+
       const { data } = await api.get(`/prova/${numeroProva}`);
       const { perguntas, respostas, prova } = data.provaAtual;
       setPerguntas(perguntas);
