@@ -330,7 +330,7 @@ const CaronaPhone = () => {
           </h1>
           <br/>
           <h1 className="perguntaGeneral center">
-            Vamos juntos pra Convenção Brasil Móbile ?
+            Vamos juntos pra Convenção Brazil Móbile ?
           </h1>
           <br/>
           <h1 className="perguntaGeneral center" style={{ fontWeight: 100 }}>
@@ -338,7 +338,7 @@ const CaronaPhone = () => {
           </h1>
           <br/>
           <h1 className="perguntaGeneral center">
-            Não queremos você aqui e vamos te ajudar!
+            Nós queremos você aqui e vamos te ajudar!
           </h1>
           <br/>
           <br/>
