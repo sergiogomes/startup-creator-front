@@ -19,6 +19,9 @@ import PiorSemana from '../pages/PiorSemana';
 import ComoEnriquecer from '../pages/ComoEnriquecer';
 import Caronas from '../pages/Caronas';
 import CaronasTanques from '../pages/CaronasTanques';
+import CaronaPhone from '../pages/CaronaPhone';
+import CaronaPhoneCadastro from '../pages/CaronaPhoneCadastro';
+
 import VeloyCard from '../pages/VeloyCard';
 
 import Cardapio from '../pages/Cardapio';
@@ -47,6 +50,9 @@ const Routes = () => (
     <Route path="/pior-semana-da-sua-vida-quizz" component={PiorSemana} />
     <Route path="/caronas" component={Caronas} />
     <Route path="/caronas-tanques" component={CaronasTanques} />
+
+    <Route path="/q" component={CaronaPhone} />
+    <Route path="/pesquisacarona" component={CaronaPhoneCadastro} />
 
     <Route path="/cardapio" component={Cardapio} />
   </Switch>
