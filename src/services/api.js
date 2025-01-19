@@ -3,7 +3,7 @@ import axiosRetry from 'axios-retry';
 
 const url =
   process.env.NODE_ENV === 'development'
-    ? 'http://localhost:3334'
+    ? 'http://localhost:2025'
     : '#UrlDeProducao';
 
 const api = axios.create({ baseURL: url });
