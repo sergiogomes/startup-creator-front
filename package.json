@@ -1,5 +1,5 @@
 {
-  "name": "plataformagame.com.br",
+  "name": "startup.creator",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,7 +13,7 @@
     "@react-br-forms/cpf-cnpj-mask": "^1.0.6",
     "analytics": "^0.7.15",
     "axios": "^0.22.0",
-    "axios-retry": "^3.3.1",
+    "axios-retry": "^3.2.5",
     "currency-formatter": "^1.5.9",
     "email-validator": "^2.0.4",
     "emotion": "^11.0.0",
@@ -26,7 +26,6 @@
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
     "react-iframe": "^1.8.0",
-    "react-inline-script": "^1.2.0",
     "react-lottie": "^1.2.3",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
@@ -36,10 +35,10 @@
     "reactstrap": "^9.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "react-scripts --openssl-legacy-provider start",
+    "build": "react-scripts --openssl-legacy-provider build",
+    "test": "react-scripts --openssl-legacy-provider test",
+    "eject": "react-scripts --openssl-legacy-provider eject"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -55,5 +54,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "resolutions": {
+    "react-error-overlay": "6.0.9"
   }
 }
